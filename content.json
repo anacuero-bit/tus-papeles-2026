@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "updated": "2026-02-03T12:00:00Z",
+    "version": "1.0.0",
+    "site": "tuspapeles2026.es"
+  },
+  "countdown": {
+    "deadline": "2026-06-30T23:59:59+02:00",
+    "start_date": "2026-04-01T00:00:00+02:00",
+    "title": "Fin del Plazo de Regularización"
+  },
+  "stats": {
+    "potential_beneficiaries": 500000,
+    "application_period_months": 3,
+    "admission_days": 15,
+    "resolution_months": 3,
+    "government_fee": 38.28
+  },
+  "requirements": [
+    {
+      "id": "entry_date",
+      "title": "Entrada antes del 31/12/2025",
+      "description": "Debes haber entrado a España antes del 31 de diciembre de 2025",
+      "icon": "📅"
+    },
+    {
+      "id": "residence_time",
+      "title": "5 meses de estancia",
+      "description": "Acreditar permanencia continuada de al menos 5 meses en España",
+      "icon": "🏠"
+    },
+    {
+      "id": "criminal_record",
+      "title": "Sin antecedentes penales",
+      "description": "No tener antecedentes penales en España ni en país de origen",
+      "icon": "✅"
+    }
+  ],
+  "documents": {
+    "identity": [
+      "Pasaporte válido (todas las páginas)",
+      "Certificado de antecedentes penales (país de origen, apostillado)",
+      "Foto tamaño carnet reciente"
+    ],
+    "residence_proof": [
+      "Certificado de empadronamiento (histórico si es posible)",
+      "Contrato de alquiler o recibos de pago",
+      "Facturas de servicios (luz, agua, internet)",
+      "Extractos bancarios con movimientos en España"
+    ],
+    "complementary": [
+      "Citas médicas o informes sanitarios",
+      "Justificantes de envío de dinero (Western Union, Ria)",
+      "Tarjeta sanitaria",
+      "Matrículas de cursos o academias"
+    ],
+    "minors": [
+      "Pasaporte del menor",
+      "Acta de nacimiento (apostillada)",
+      "Libro de familia (si aplica)",
+      "Certificados de escolarización"
+    ]
+  },
+  "articles": [
+    {
+      "id": "guia-completa-regularizacion-2026",
+      "slug": "guia-completa-regularizacion-2026",
+      "title": "Guía Completa: Regularización Extraordinaria 2026",
+      "excerpt": "Todo lo que necesitas saber sobre el proceso de regularización: requisitos, plazos, documentos y cómo prepararte.",
+      "content": "<p>El 27 de enero de 2026, el Gobierno de España aprobó la regularización extraordinaria más importante de las últimas dos décadas. Este proceso permitirá a más de 500,000 personas obtener su permiso de residencia y trabajo.</p><h3>¿Quién puede solicitarla?</h3><p>Pueden acogerse las personas que cumplan estos requisitos:</p><ul><li>Haber entrado a España antes del 31 de diciembre de 2025</li><li>Acreditar al menos 5 meses de estancia continuada</li><li>No tener antecedentes penales</li></ul><h3>¿Qué beneficios otorga?</h3><ul><li>Permiso de residencia de 1 año (5 años para menores)</li><li>Autorización de trabajo inmediata al admitirse a trámite</li><li>Acceso a la seguridad social</li></ul>",
+      "category": "guias",
+      "date": "2026-01-28",
+      "author": "Equipo P&H",
+      "readTime": "8 min",
+      "featured": true
+    },
+    {
+      "id": "como-conseguir-antecedentes-penales-apostillados",
+      "slug": "como-conseguir-antecedentes-penales-apostillados",
+      "title": "Cómo Conseguir el Certificado de Antecedentes Penales Apostillado",
+      "excerpt": "Guía paso a paso para solicitar y apostillar tu certificado de antecedentes sin necesidad de viajar a tu país.",
+      "content": "<p>El certificado de antecedentes penales de tu país de origen es uno de los documentos más importantes para la regularización. Te explicamos cómo conseguirlo.</p><h3>¿Qué es la Apostilla de La Haya?</h3><p>Es un sello que certifica la autenticidad del documento para que sea válido internacionalmente. Sin apostilla, el certificado no tiene validez en España.</p><h3>Por país</h3><h4>Colombia</h4><p>Solicita online en la Policía Nacional. Apostilla en el Ministerio de Relaciones Exteriores.</p><h4>Perú</h4><p>A través del Poder Judicial. La apostilla se gestiona en el Ministerio de Relaciones Exteriores.</p><h4>Honduras</h4><p>Se solicita en la DNIC. Puede tramitarse a través del consulado en España.</p>",
+      "category": "documentos",
+      "date": "2026-01-30",
+      "author": "Equipo P&H",
+      "readTime": "6 min",
+      "featured": false
+    },
+    {
+      "id": "documentos-probar-estancia-espana",
+      "slug": "documentos-probar-estancia-espana",
+      "title": "Documentos Válidos para Demostrar tu Estancia en España",
+      "excerpt": "Lista completa de todos los documentos que puedes usar para acreditar tu permanencia continuada en territorio español.",
+      "content": "<p>Una de las claves del proceso es demostrar que llevas al menos 5 meses viviendo en España. La buena noticia es que se admiten muchos tipos de documentos.</p><h3>Documentos principales</h3><ul><li><strong>Empadronamiento histórico:</strong> El más importante. Solicítalo en tu ayuntamiento.</li><li><strong>Contratos de alquiler:</strong> Incluso si estás de subarrendatario.</li><li><strong>Facturas de servicios:</strong> Luz, agua, gas, internet a tu nombre.</li></ul><h3>Documentos complementarios</h3><ul><li>Extractos bancarios con movimientos</li><li>Recibos de envíos de dinero (Western Union, Ria)</li><li>Tarjeta sanitaria o citas médicas</li><li>Matrículas en cursos o academias</li></ul>",
+      "category": "documentos",
+      "date": "2026-02-01",
+      "author": "Equipo P&H",
+      "readTime": "5 min",
+      "featured": false
+    }
+  ],
+  "faqs": [
+    {
+      "id": "faq-1",
+      "question": "¿Cuándo puedo presentar mi solicitud?",
+      "answer": "Las solicitudes se pueden presentar desde el 1 de abril de 2026 hasta el 30 de junio de 2026. Es un plazo de 3 meses.",
+      "category": "plazos"
+    },
+    {
+      "id": "faq-2",
+      "question": "¿Necesito tener un contrato de trabajo?",
+      "answer": "No. No necesitas presentar un contrato de trabajo para solicitar el permiso. Una vez obtengas el permiso, tendrás autorización para trabajar legalmente en cualquier sector.",
+      "category": "requisitos"
+    },
+    {
+      "id": "faq-3",
+      "question": "¿Qué pasa si no tengo empadronamiento?",
+      "answer": "El empadronamiento es importante pero no es el único documento válido. Puedes acreditar tu estancia con facturas, citas médicas, extractos bancarios, etc. Si no tienes empadronamiento, acude a tu ayuntamiento lo antes posible.",
+      "category": "documentos"
+    },
+    {
+      "id": "faq-4",
+      "question": "¿Puedo trabajar mientras se tramita mi solicitud?",
+      "answer": "¡Sí! Desde que tu solicitud es admitida a trámite (máximo 15 días), obtienes autorización provisional para trabajar legalmente en España en cualquier sector.",
+      "category": "proceso"
+    },
+    {
+      "id": "faq-5",
+      "question": "¿Qué pasa con mis hijos menores?",
+      "answer": "Los hijos menores pueden regularizarse junto con sus padres de forma simultánea. Además, reciben un permiso de 5 años (no solo 1 año como los adultos).",
+      "category": "familia"
+    },
+    {
+      "id": "faq-6",
+      "question": "¿Cuánto cuesta el proceso?",
+      "answer": "La tasa oficial del gobierno es de €38.28 por persona. Nuestros honorarios profesionales son de €99 inicial + €199 al presentar la solicitud, incluyendo evaluación, preparación, presentación y seguimiento.",
+      "category": "costos"
+    },
+    {
+      "id": "faq-7",
+      "question": "¿Qué pasa si tengo una orden de expulsión?",
+      "answer": "La presentación de la solicitud suspende los procedimientos de retorno y las órdenes de expulsión por motivos administrativos. Consulta tu caso específico con nosotros.",
+      "category": "situaciones"
+    },
+    {
+      "id": "faq-8",
+      "question": "¿Tengo que ir personalmente a presentar la solicitud?",
+      "answer": "No necesariamente. Las solicitudes pueden presentarse de forma telemática o presencial en oficinas de extranjería y subdelegaciones del gobierno. Nosotros nos encargamos de todo.",
+      "category": "proceso"
+    }
+  ],
+  "updates": [
+    {
+      "date": "2026-02-03",
+      "title": "Nuevas aclaraciones del Ministerio",
+      "message": "El Ministerio ha publicado aclaraciones sobre documentos válidos para acreditar estancia."
+    },
+    {
+      "date": "2026-01-28",
+      "title": "Real Decreto aprobado",
+      "message": "El Consejo de Ministros aprueba el inicio de la tramitación del proceso de regularización."
+    },
+    {
+      "date": "2026-01-27",
+      "title": "Anuncio oficial",
+      "message": "El Gobierno anuncia la regularización extraordinaria para más de 500.000 personas."
+    }
+  ],
+  "pricing": {
+    "initial_evaluation": 99,
+    "processing_fee": 199,
+    "government_fee": 38.28,
+    "total": 336.28,
+    "currency": "EUR"
+  }
+}
