@@ -73,18 +73,20 @@
 
         /* Ticker Bar */
         .ticker-bar {
-            background: var(--navy-dark);
+            background: var(--navy);
             color: white;
             padding: 0;
             font-size: 0.85rem;
             overflow: hidden;
             position: relative;
+            height: 40px;
         }
 
         .ticker-track {
             display: flex;
-            animation: ticker-scroll 25s linear infinite;
+            animation: ticker-scroll 12s linear infinite;
             white-space: nowrap;
+            height: 100%;
         }
 
         .ticker-track:hover {
@@ -94,29 +96,25 @@
         .ticker-content {
             display: flex;
             align-items: center;
-            gap: 40px;
-            padding: 10px 20px;
+            gap: 0;
+            padding: 0 0;
             flex-shrink: 0;
+            height: 100%;
         }
 
         .ticker-item {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             gap: 8px;
             font-weight: 600;
-        }
-
-        .ticker-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--error);
-            border-radius: 50%;
-            animation: pulse-dot 2s infinite;
+            padding: 0 10px;
         }
 
         .ticker-separator {
             color: var(--gold);
-            opacity: 0.4;
+            opacity: 0.5;
+            padding: 0 8px;
+            font-size: 0.75rem;
         }
 
         @keyframes ticker-scroll {
@@ -313,7 +311,7 @@
         .hero {
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 50%, var(--navy-light) 100%);
             color: white;
-            padding: 80px 0 90px;
+            padding: 80px 0 70px;
             position: relative;
             overflow: hidden;
         }
@@ -340,27 +338,12 @@
             border-radius: 50%;
         }
 
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 60px;
-            align-items: center;
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
             position: relative;
             z-index: 1;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(232, 212, 168, 0.15);
-            color: var(--gold);
-            padding: 8px 18px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-            border: 1px solid rgba(232, 212, 168, 0.2);
         }
 
         .hero h1 {
@@ -374,145 +357,91 @@
             color: var(--gold);
         }
 
-        .hero-subtitle {
+        .hero-subheadline {
             font-family: 'Inter', sans-serif;
-            font-size: 1.2rem;
-            opacity: 0.85;
-            margin-bottom: 30px;
-            line-height: 1.7;
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 45px;
+            line-height: 1.6;
         }
 
-        .hero-features {
+        /* Hero CTA Container */
+        .hero-cta-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        /* Hero CTA Buttons */
+        .hero-cta-button {
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            margin-bottom: 35px;
-        }
-
-        .hero-feature {
-            display: flex;
             align-items: center;
-            gap: 12px;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-        }
-
-        .hero-feature-icon {
-            width: 24px;
-            height: 24px;
-            background: var(--success);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 0.75rem;
-            flex-shrink: 0;
-        }
-
-        .hero-ctas {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        .hero-cta-note {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
-            opacity: 0.6;
-            margin-top: 15px;
-        }
-
-        /* Countdown Card */
-        .countdown-card {
-            background: white;
-            border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
-            color: var(--black);
-        }
-
-        .countdown-header {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .countdown-label {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--error);
-            margin-bottom: 5px;
-        }
-
-        .countdown-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.1rem;
-            color: var(--navy);
-        }
-
-        .countdown-timer {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            margin-bottom: 25px;
-        }
-
-        .countdown-unit {
-            text-align: center;
-            background: var(--gray-50);
-            padding: 15px 10px;
+            padding: 24px 48px;
             border-radius: 12px;
+            min-width: 280px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: none;
         }
 
-        .countdown-number {
-            font-family: 'Inter', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--navy);
-            line-height: 1;
+        .hero-cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
         }
 
-        .countdown-unit-label {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.7rem;
-            color: var(--gray-500);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 5px;
+        .hero-cta-button.telegram {
+            background: #0088cc;
+            color: white;
         }
 
-        .countdown-slots {
-            text-align: center;
-            padding: 15px;
-            background: rgba(30, 58, 95, 0.05);
-            border-radius: 10px;
-            margin-bottom: 20px;
+        .hero-cta-button.telegram:hover {
+            background: #0077b5;
         }
 
-        .countdown-slots-number {
-            font-family: 'Inter', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 800;
+        .hero-cta-button.web {
+            background: var(--gold);
             color: var(--navy);
         }
 
-        .countdown-slots-label {
+        .hero-cta-button.web:hover {
+            background: var(--gold-dark);
+        }
+
+        .hero-cta-button .cta-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 12px;
+        }
+
+        .hero-cta-button .cta-main-text {
             font-family: 'Inter', sans-serif;
-            font-size: 0.8rem;
-            color: var(--charcoal);
+            font-size: 18px;
+            font-weight: 600;
         }
 
-        .countdown-cta {
-            text-align: center;
+        .hero-cta-button .cta-subtext {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            opacity: 0.8;
+            margin-top: 4px;
         }
 
-        .countdown-cta .btn {
-            width: 100%;
-            justify-content: center;
+        /* Scroll Prompt */
+        .scroll-prompt {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .scroll-prompt:hover {
+            color: rgba(255,255,255,0.9);
         }
 
         /* Trust Strip */
@@ -1455,8 +1384,6 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .hero-grid { grid-template-columns: 1fr; }
-            .countdown-card { max-width: 450px; margin: 40px auto 0; }
             .trust-grid { grid-template-columns: repeat(2, 1fr); }
             .phases-grid { grid-template-columns: repeat(2, 1fr); }
             .requirements-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
@@ -1468,12 +1395,23 @@
         }
 
         @media (max-width: 768px) {
+            .ticker-bar { height: 36px; }
             .trust-bar-inner { justify-content: center; text-align: center; }
             .nav { display: none; }
             .slot-counter { font-size: 0.75rem; padding: 6px 12px; }
-            .hero { padding: 50px 0 60px; }
+            .hero { padding: 50px 0 40px; }
             .hero h1 { font-size: 2.2rem; }
-            .hero-subtitle { font-size: 1rem; }
+            .hero-subheadline { font-size: 1.05rem; margin-bottom: 30px; }
+            .hero-cta-container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 15px;
+            }
+            .hero-cta-button {
+                min-width: unset;
+                width: 100%;
+                padding: 20px 24px;
+            }
             .section { padding: 60px 0; }
             .section-header h2 { font-size: 2rem; }
             .phases-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto 40px; }
@@ -1507,40 +1445,48 @@
     <div class="ticker-bar">
         <div class="ticker-track">
             <div class="ticker-content">
-                <div class="ticker-item"><span class="ticker-dot"></span> <span id="ticker-slots">847 de 1,000 plazas</span></div>
-                <span class="ticker-separator">|</span>
-                <div class="ticker-item">&#9200; <span id="ticker-days">--</span> d&iacute;as restantes</div>
-                <span class="ticker-separator">|</span>
-                <div class="ticker-item">&#128200; <span id="ticker-signups">89</span> inscritos esta semana</div>
-                <span class="ticker-separator">|</span>
-                <div class="ticker-item">&#9878; Un servicio de <strong>Pombo, Horowitz &amp; Espinosa</strong></div>
-                <span class="ticker-separator">|</span>
-                <div class="ticker-item"><span class="ticker-dot"></span> <span>847 de 1,000 plazas</span></div>
-                <span class="ticker-separator">|</span>
-                <div class="ticker-item">&#9200; <span>-- d&iacute;as restantes</span></div>
-                <span class="ticker-separator">|</span>
-                <div class="ticker-item">&#128200; <span>89 inscritos esta semana</span></div>
-                <span class="ticker-separator">|</span>
-                <div class="ticker-item">&#9878; Un servicio de <strong>Pombo, Horowitz &amp; Espinosa</strong></div>
-                <span class="ticker-separator">|</span>
+                <div class="ticker-item">&#128308; Solo quedan 847 de 1,000 plazas disponibles &mdash; cuando se acaben, se acaben</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#9200; El plazo cierra el 30 de junio de 2026 &mdash; faltan <span id="ticker-days">--</span> d&iacute;as para preparar tu caso</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#9989; Esta semana 89 personas han empezado su proceso de regularizaci&oacute;n con nosotros</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#128188; Este decreto NO requiere contrato de trabajo &mdash; tu situaci&oacute;n irregular ya te califica</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#128241; Todo el proceso es 100% online &mdash; sin citas, sin colas, sin ir a ninguna oficina</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#9878; Cada expediente es revisado por abogados colegiados con 25 a&ntilde;os de experiencia</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#128176; El servicio completo cuesta menos de 300 euros &mdash; y pagas en fases, no todo de golpe</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#127939; Los primeros en presentar su solicitud ser&aacute;n los primeros en recibir respuesta</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#128197; La &uacute;ltima regularizaci&oacute;n extraordinaria fue en 2005 &mdash; hace m&aacute;s de 20 a&ntilde;os</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#127881; El 80-90% de las solicitudes en 2005 fueron aprobadas &mdash; este decreto es a&uacute;n m&aacute;s flexible</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
             </div>
             <div class="ticker-content" aria-hidden="true">
-                <div class="ticker-item"><span class="ticker-dot"></span> <span>847 de 1,000 plazas</span></div>
-                <span class="ticker-separator">|</span>
-                <div class="ticker-item">&#9200; <span>-- d&iacute;as restantes</span></div>
-                <span class="ticker-separator">|</span>
-                <div class="ticker-item">&#128200; <span>89 inscritos esta semana</span></div>
-                <span class="ticker-separator">|</span>
-                <div class="ticker-item">&#9878; Un servicio de <strong>Pombo, Horowitz &amp; Espinosa</strong></div>
-                <span class="ticker-separator">|</span>
-                <div class="ticker-item"><span class="ticker-dot"></span> <span>847 de 1,000 plazas</span></div>
-                <span class="ticker-separator">|</span>
-                <div class="ticker-item">&#9200; <span>-- d&iacute;as restantes</span></div>
-                <span class="ticker-separator">|</span>
-                <div class="ticker-item">&#128200; <span>89 inscritos esta semana</span></div>
-                <span class="ticker-separator">|</span>
-                <div class="ticker-item">&#9878; Un servicio de <strong>Pombo, Horowitz &amp; Espinosa</strong></div>
-                <span class="ticker-separator">|</span>
+                <div class="ticker-item">&#128308; Solo quedan 847 de 1,000 plazas disponibles &mdash; cuando se acaben, se acaben</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#9200; El plazo cierra el 30 de junio de 2026 &mdash; faltan <span>--</span> d&iacute;as para preparar tu caso</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#9989; Esta semana 89 personas han empezado su proceso de regularizaci&oacute;n con nosotros</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#128188; Este decreto NO requiere contrato de trabajo &mdash; tu situaci&oacute;n irregular ya te califica</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#128241; Todo el proceso es 100% online &mdash; sin citas, sin colas, sin ir a ninguna oficina</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#9878; Cada expediente es revisado por abogados colegiados con 25 a&ntilde;os de experiencia</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#128176; El servicio completo cuesta menos de 300 euros &mdash; y pagas en fases, no todo de golpe</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#127939; Los primeros en presentar su solicitud ser&aacute;n los primeros en recibir respuesta</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#128197; La &uacute;ltima regularizaci&oacute;n extraordinaria fue en 2005 &mdash; hace m&aacute;s de 20 a&ntilde;os</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
+                <div class="ticker-item">&#127881; El 80-90% de las solicitudes en 2005 fueron aprobadas &mdash; este decreto es a&uacute;n m&aacute;s flexible</div>
+                <span class="ticker-separator">&bull;&bull;&bull;</span>
             </div>
         </div>
     </div>
@@ -1574,72 +1520,40 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <div class="hero-grid">
-                <div class="hero-content">
-                    <div class="hero-badge">
-                        Regularizaci&oacute;n Extraordinaria 2026
-                    </div>
-                    <h1>Regulariza tu situaci&oacute;n <span class="gold">en Espa&ntilde;a</span></h1>
-                    <p class="hero-subtitle">Verifica si calificas en 2 minutos. Gratis y sin compromiso. Te acompa&ntilde;amos desde la verificaci&oacute;n hasta que tengas tu permiso de residencia y trabajo.</p>
+            <div class="hero-content">
+                <h1>Regulariza tu situaci&oacute;n <span class="gold">en Espa&ntilde;a</span></h1>
+                <p class="hero-subheadline">Verifica si calificas en 2 minutos. Gratis. Sin compromiso.</p>
 
-                    <div class="hero-features">
-                        <div class="hero-feature">
-                            <div class="hero-feature-icon">&#10003;</div>
-                            <span><strong>Permiso de residencia</strong> de 1 a&ntilde;o (5 a&ntilde;os para menores)</span>
-                        </div>
-                        <div class="hero-feature">
-                            <div class="hero-feature-icon">&#10003;</div>
-                            <span><strong>Autorizaci&oacute;n de trabajo</strong> inmediata al presentar solicitud</span>
-                        </div>
-                        <div class="hero-feature">
-                            <div class="hero-feature-icon">&#10003;</div>
-                            <span><strong>Sin contrato de trabajo</strong> previo requerido</span>
-                        </div>
-                    </div>
+                <div class="hero-cta-container">
+                    <a href="https://t.me/tuspapeles2026_bot" target="_blank" rel="noopener noreferrer" class="hero-cta-button telegram">
+                        <svg class="cta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240">
+                            <defs>
+                                <linearGradient id="tg-grad" x1="0.667" x2="0.417" y1="0.167" y2="0.75">
+                                    <stop offset="0" stop-color="#37aee2"/>
+                                    <stop offset="1" stop-color="#1e96c8"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="120" cy="120" r="120" fill="url(#tg-grad)"/>
+                            <path fill="#fff" d="M98 175c-3.9 0-3.2-1.5-4.6-5.2L82 132.2 152.8 88l8.3 2.2-6.9 18.8L98 175z"/>
+                            <path fill="#d2e5f1" d="M98 175c3 0 4.3-1.4 6-3l16-15.6-20-12L98 175z"/>
+                            <path fill="#fff" d="M100 144.4l48.4 35.7c5.5 3 9.5 1.5 10.9-5.1l19.7-92.8c2-8.1-3.1-11.7-8.4-9.3L51 108.5c-7.9 3.2-7.8 7.6-1.4 9.5l29.7 9.3L152 83c3.2-2 6.2-.9 3.8 1.3L100 144.4z"/>
+                        </svg>
+                        <span class="cta-main-text">Empezar en Telegram</span>
+                        <span class="cta-subtext">Bot disponible 24/7</span>
+                    </a>
 
-                    <div class="hero-ctas">
-                        <a href="#verificar" class="btn btn-gold btn-lg">Verificar si califico &#8594;</a>
-                        <a href="#como-funciona" class="btn btn-outline-white">&iquest;C&oacute;mo funciona?</a>
-                    </div>
-                    <p class="hero-cta-note">Faltan <strong id="hero-days">--</strong> d&iacute;as para la fecha l&iacute;mite</p>
+                    <a href="/verificar" class="hero-cta-button web">
+                        <svg class="cta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <span class="cta-main-text">Empezar en la Web</span>
+                        <span class="cta-subtext">Contin&uacute;a aqu&iacute; mismo</span>
+                    </a>
                 </div>
 
-                <div class="countdown-card">
-                    <div class="countdown-header">
-                        <div class="countdown-label pulse">Tiempo Limitado</div>
-                        <div class="countdown-title">Plazo para presentar solicitudes</div>
-                    </div>
-
-                    <div class="countdown-timer">
-                        <div class="countdown-unit">
-                            <div class="countdown-number" id="days">--</div>
-                            <div class="countdown-unit-label">D&iacute;as</div>
-                        </div>
-                        <div class="countdown-unit">
-                            <div class="countdown-number" id="hours">--</div>
-                            <div class="countdown-unit-label">Horas</div>
-                        </div>
-                        <div class="countdown-unit">
-                            <div class="countdown-number" id="minutes">--</div>
-                            <div class="countdown-unit-label">Min</div>
-                        </div>
-                        <div class="countdown-unit">
-                            <div class="countdown-number" id="seconds">--</div>
-                            <div class="countdown-unit-label">Seg</div>
-                        </div>
-                    </div>
-
-                    <div class="countdown-slots">
-                        <div class="countdown-slots-number" id="countdown-slots">847 de 1,000</div>
-                        <div class="countdown-slots-label">plazas disponibles</div>
-                    </div>
-
-                    <div class="countdown-cta">
-                        <a href="#verificar" class="btn btn-navy btn-lg">
-                            Verificar elegibilidad
-                        </a>
-                    </div>
-                </div>
+                <a href="#como-funciona" class="scroll-prompt">&iquest;C&oacute;mo funciona? &darr;</a>
             </div>
         </div>
     </section>
@@ -2241,17 +2155,6 @@
 
             if (distance > 0) {
                 var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById('days').textContent = days;
-                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-
-                var heroDays = document.getElementById('hero-days');
-                if (heroDays) heroDays.textContent = days;
 
                 var tickerDays = document.getElementById('ticker-days');
                 if (tickerDays) tickerDays.textContent = days;
@@ -2259,7 +2162,7 @@
         }
 
         updateCountdown();
-        setInterval(updateCountdown, 1000);
+        setInterval(updateCountdown, 60000);
 
         // FAQ Toggle
         function toggleFaq(element) {
