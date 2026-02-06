@@ -4,29 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tus Papeles 2026 | Regularización Extraordinaria España | Obtén tu Residencia</title>
-    <meta name="description" content="¿Llevas más de 5 meses en España? Puedes regularizar tu situación antes del 30 de junio de 2026. Consulta gratuita. Un servicio de Pombo & Horowitz Abogados.">
-    <meta name="keywords" content="regularización 2026, papeles españa, residencia españa, regularización extraordinaria, sin papeles españa">
-    
+    <meta name="description" content="¿Llevas más de 5 meses en España? Puedes regularizar tu situación antes del 30 de junio de 2026. Verificación gratuita. Un servicio de Pombo, Horowitz & Espinosa — 25 años de experiencia en inmigración.">
+    <meta name="keywords" content="regularización 2026, papeles españa, residencia españa, regularización extraordinaria, sin papeles españa, pombo horowitz espinosa">
+
     <meta property="og:title" content="Regularización 2026 - Obtén tus papeles en España">
-    <meta property="og:description" content="Si llevas más de 5 meses en España, puedes obtener tu permiso de residencia y trabajo. Plazo hasta 30 de junio 2026.">
+    <meta property="og:description" content="Si llevas más de 5 meses en España, puedes obtener tu permiso de residencia y trabajo. Plazo hasta 30 de junio 2026. Todo por menos de 300 euros.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
-    
+    <meta property="og:url" content="https://tuspapeles2026.es">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary: #E85D04;
-            --primary-dark: #D35400;
-            --primary-light: #FF7B2E;
-            --secondary: #0F1C2E;
-            --secondary-light: #1A2D47;
-            --success: #10B981;
-            --warning: #F59E0B;
-            --danger: #EF4444;
+            /* Brand Colors - PHE Palette */
+            --navy: #1E3A5F;
+            --navy-light: #2C4A6E;
+            --navy-dark: #152B48;
+            --gold: #E8D4A8;
+            --gold-dark: #D4C494;
+            --gold-light: #F0E0BE;
+            --charcoal: #4D4D4D;
+            --gray-light: #E8E8E8;
             --white: #FFFFFF;
+            --black: #1A1A1A;
+
+            /* Status Colors */
+            --success: #22C55E;
+            --warning: #F59E0B;
+            --error: #EF4444;
+            --info: #3B82F6;
+
+            /* Gray Scale */
             --gray-50: #F9FAFB;
             --gray-100: #F3F4F6;
             --gray-200: #E5E7EB;
@@ -37,18 +48,21 @@
             --gray-700: #374151;
             --gray-800: #1F2937;
             --gray-900: #111827;
-            --gold: #D4A843;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         html { scroll-behavior: smooth; }
-        
+
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--gray-800);
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
             line-height: 1.6;
             background: var(--white);
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
         }
 
         .container {
@@ -59,7 +73,7 @@
 
         /* Trust Bar */
         .trust-bar {
-            background: var(--secondary);
+            background: var(--navy-dark);
             color: white;
             padding: 10px 0;
             font-size: 0.85rem;
@@ -73,6 +87,16 @@
             gap: 10px;
         }
 
+        .trust-badge {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
         .trust-item {
             display: flex;
             align-items: center;
@@ -80,22 +104,15 @@
             opacity: 0.9;
         }
 
-        .trust-badge {
-            background: var(--primary);
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 0.75rem;
-        }
-
         /* Header */
         .header {
             background: white;
-            padding: 15px 0;
+            padding: 12px 0;
             border-bottom: 1px solid var(--gray-200);
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
         }
 
         .header-inner {
@@ -112,50 +129,84 @@
         }
 
         .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            width: 42px;
+            height: 42px;
+            background: var(--navy);
             border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
         .logo-text {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: var(--secondary);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--navy);
         }
 
         .logo-text span {
-            color: var(--primary);
+            color: var(--gold-dark);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .slot-counter {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--navy);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .slot-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+
+        @keyframes pulse-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
         }
 
         .nav {
             display: flex;
-            gap: 30px;
+            gap: 25px;
             align-items: center;
         }
 
         .nav a {
-            color: var(--gray-600);
+            color: var(--charcoal);
             text-decoration: none;
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: color 0.2s;
         }
 
         .nav a:hover {
-            color: var(--primary);
+            color: var(--navy);
         }
 
+        /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             padding: 12px 24px;
             border-radius: 8px;
+            font-family: 'Inter', sans-serif;
             font-weight: 600;
             font-size: 0.95rem;
             text-decoration: none;
@@ -164,26 +215,49 @@
             transition: all 0.3s;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            box-shadow: 0 4px 15px rgba(232, 93, 4, 0.3);
+        .btn-gold {
+            background: var(--gold);
+            color: var(--navy);
+            box-shadow: 0 4px 15px rgba(232, 212, 168, 0.4);
         }
 
-        .btn-primary:hover {
+        .btn-gold:hover {
+            background: var(--gold-dark);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(232, 93, 4, 0.4);
+            box-shadow: 0 6px 20px rgba(232, 212, 168, 0.5);
+        }
+
+        .btn-navy {
+            background: var(--navy);
+            color: white;
+            box-shadow: 0 4px 15px rgba(30, 58, 95, 0.3);
+        }
+
+        .btn-navy:hover {
+            background: var(--navy-light);
+            transform: translateY(-2px);
         }
 
         .btn-outline {
             background: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
+            color: var(--navy);
+            border: 2px solid var(--navy);
         }
 
         .btn-outline:hover {
-            background: var(--primary);
+            background: var(--navy);
             color: white;
+        }
+
+        .btn-outline-white {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255,255,255,0.5);
+        }
+
+        .btn-outline-white:hover {
+            background: white;
+            color: var(--navy);
         }
 
         .btn-whatsapp {
@@ -205,10 +279,16 @@
             font-size: 1.1rem;
         }
 
+        .btn-sm {
+            padding: 8px 16px;
+            font-size: 0.85rem;
+        }
+
         /* Hero */
         .hero {
-            background: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
-            padding: 60px 0 80px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 50%, var(--navy-light) 100%);
+            color: white;
+            padding: 80px 0 90px;
             position: relative;
             overflow: hidden;
         }
@@ -217,48 +297,62 @@
             content: '';
             position: absolute;
             top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(232, 93, 4, 0.08) 0%, transparent 70%);
+            right: -20%;
+            width: 700px;
+            height: 700px;
+            background: radial-gradient(circle, rgba(232, 212, 168, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(232, 212, 168, 0.05) 0%, transparent 70%);
             border-radius: 50%;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 60px;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(232, 93, 4, 0.1);
-            color: var(--primary-dark);
-            padding: 8px 16px;
+            background: rgba(232, 212, 168, 0.15);
+            color: var(--gold);
+            padding: 8px 18px;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(232, 212, 168, 0.2);
         }
 
         .hero h1 {
             font-size: 3.2rem;
-            font-weight: 800;
-            color: var(--secondary);
+            font-weight: 700;
             line-height: 1.15;
             margin-bottom: 20px;
         }
 
-        .hero h1 span {
-            color: var(--primary);
+        .hero h1 .gold {
+            color: var(--gold);
         }
 
         .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--gray-600);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            opacity: 0.85;
             margin-bottom: 30px;
             line-height: 1.7;
         }
@@ -274,8 +368,8 @@
             display: flex;
             align-items: center;
             gap: 12px;
+            font-family: 'Inter', sans-serif;
             font-size: 1rem;
-            color: var(--gray-700);
         }
 
         .hero-feature-icon {
@@ -295,6 +389,14 @@
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .hero-cta-note {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            opacity: 0.6;
+            margin-top: 15px;
         }
 
         /* Countdown Card */
@@ -302,8 +404,8 @@
             background: white;
             border-radius: 20px;
             padding: 35px;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.1);
-            border: 1px solid var(--gray-200);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+            color: var(--black);
         }
 
         .countdown-header {
@@ -312,17 +414,19 @@
         }
 
         .countdown-label {
+            font-family: 'Inter', sans-serif;
             font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            color: var(--danger);
+            color: var(--error);
             margin-bottom: 5px;
         }
 
         .countdown-title {
+            font-family: 'Playfair Display', serif;
             font-size: 1.1rem;
-            color: var(--gray-700);
+            color: var(--navy);
         }
 
         .countdown-timer {
@@ -340,13 +444,15 @@
         }
 
         .countdown-number {
+            font-family: 'Inter', sans-serif;
             font-size: 2.2rem;
             font-weight: 800;
-            color: var(--secondary);
+            color: var(--navy);
             line-height: 1;
         }
 
         .countdown-unit-label {
+            font-family: 'Inter', sans-serif;
             font-size: 0.7rem;
             color: var(--gray-500);
             text-transform: uppercase;
@@ -354,66 +460,68 @@
             margin-top: 5px;
         }
 
-        .countdown-progress {
+        .countdown-slots {
+            text-align: center;
+            padding: 15px;
+            background: rgba(30, 58, 95, 0.05);
+            border-radius: 10px;
             margin-bottom: 20px;
         }
 
-        .progress-bar {
-            height: 8px;
-            background: var(--gray-200);
-            border-radius: 4px;
-            overflow: hidden;
+        .countdown-slots-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--navy);
         }
 
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--success) 0%, var(--warning) 50%, var(--danger) 100%);
-            border-radius: 4px;
-            transition: width 0.5s;
-        }
-
-        .progress-labels {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.75rem;
-            color: var(--gray-500);
-            margin-top: 8px;
+        .countdown-slots-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--charcoal);
         }
 
         .countdown-cta {
             text-align: center;
         }
 
-        /* Stats Bar */
-        .stats-bar {
-            background: var(--secondary);
+        .countdown-cta .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Trust Strip */
+        .trust-strip {
+            background: var(--navy);
             padding: 40px 0;
         }
 
-        .stats-grid {
+        .trust-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 30px;
         }
 
-        .stat-item {
+        .trust-stat {
             text-align: center;
             color: white;
         }
 
-        .stat-number {
+        .trust-stat-number {
+            font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
-            font-weight: 800;
+            font-weight: 700;
             color: var(--gold);
             margin-bottom: 5px;
         }
 
-        .stat-label {
+        .trust-stat-label {
+            font-family: 'Inter', sans-serif;
             font-size: 0.9rem;
             opacity: 0.8;
         }
 
-        /* Section Styles */
+        /* Sections */
         .section {
             padding: 80px 0;
         }
@@ -430,10 +538,11 @@
 
         .section-badge {
             display: inline-block;
-            background: rgba(232, 93, 4, 0.1);
-            color: var(--primary-dark);
-            padding: 6px 14px;
+            background: rgba(30, 58, 95, 0.08);
+            color: var(--navy);
+            padding: 6px 16px;
             border-radius: 20px;
+            font-family: 'Inter', sans-serif;
             font-size: 0.8rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -443,17 +552,17 @@
 
         .section-header h2 {
             font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--secondary);
+            font-weight: 700;
+            color: var(--navy);
             margin-bottom: 15px;
         }
 
         .section-header p {
             font-size: 1.1rem;
-            color: var(--gray-600);
+            color: var(--charcoal);
         }
 
-        /* Requirements Section */
+        /* Requirements */
         .requirements-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -463,9 +572,10 @@
         .requirement-card {
             background: white;
             border-radius: 16px;
-            padding: 30px;
+            padding: 35px;
             border: 1px solid var(--gray-200);
             transition: all 0.3s;
+            text-align: center;
         }
 
         .requirement-card:hover {
@@ -474,85 +584,123 @@
         }
 
         .requirement-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            border-radius: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .requirement-card h3 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 10px;
-        }
-
-        .requirement-card p {
-            color: var(--gray-600);
-            font-size: 0.95rem;
-        }
-
-        /* Process Timeline */
-        .process-timeline {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .process-step {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .process-step:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            left: 29px;
-            top: 70px;
-            bottom: -30px;
-            width: 2px;
-            background: var(--gray-200);
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            width: 70px;
+            height: 70px;
+            background: rgba(30, 58, 95, 0.08);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 800;
-            flex-shrink: 0;
-            position: relative;
-            z-index: 1;
+            font-size: 2rem;
+            margin: 0 auto 20px;
         }
 
-        .step-content {
-            flex: 1;
-            padding-top: 10px;
-        }
-
-        .step-content h3 {
-            font-size: 1.3rem;
+        .requirement-card h3 {
+            font-size: 1.2rem;
             font-weight: 700;
-            color: var(--secondary);
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .requirement-card p {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            font-size: 0.95rem;
+        }
+
+        /* Process / 4 Phases */
+        .phases-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .phase-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid var(--gray-200);
+            position: relative;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .phase-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+        }
+
+        .phase-card.featured {
+            border-color: var(--navy);
+            box-shadow: 0 10px 30px rgba(30, 58, 95, 0.15);
+        }
+
+        .phase-number {
+            font-family: 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: var(--navy);
+            color: white;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .phase-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--navy);
             margin-bottom: 8px;
         }
 
-        .step-content p {
-            color: var(--gray-600);
+        .phase-price {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--navy);
+            margin-bottom: 5px;
         }
 
-        /* Documents Section */
+        .phase-price.free {
+            color: var(--success);
+        }
+
+        .phase-card p {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .phase-connector {
+            display: none;
+        }
+
+        .total-callout {
+            text-align: center;
+            padding: 30px;
+            background: var(--navy);
+            color: white;
+            border-radius: 16px;
+        }
+
+        .total-callout h3 {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .total-callout p {
+            font-family: 'Inter', sans-serif;
+            opacity: 0.8;
+        }
+
+        /* Documents */
         .documents-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -576,7 +724,7 @@
         .doc-icon {
             width: 50px;
             height: 50px;
-            background: var(--gray-100);
+            background: rgba(30, 58, 95, 0.08);
             border-radius: 12px;
             display: flex;
             align-items: center;
@@ -587,7 +735,7 @@
         .doc-category-header h3 {
             font-size: 1.15rem;
             font-weight: 700;
-            color: var(--secondary);
+            color: var(--navy);
         }
 
         .doc-list {
@@ -600,8 +748,9 @@
             gap: 10px;
             padding: 10px 0;
             border-bottom: 1px solid var(--gray-100);
+            font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
-            color: var(--gray-700);
+            color: var(--charcoal);
         }
 
         .doc-list li:last-child {
@@ -612,12 +761,225 @@
             color: var(--success);
             font-size: 1rem;
             margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        /* Why Us */
+        .why-us {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .why-us h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .why-us h2 .gold {
+            color: var(--gold);
+        }
+
+        .why-us-text {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .why-us-points {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .why-us-point {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .why-us-point-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(232, 212, 168, 0.15);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .why-us-point h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--gold);
+        }
+
+        .why-us-point p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .why-us-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .why-us-stat {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .why-us-stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 5px;
+        }
+
+        .why-us-stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Updates */
+        .updates-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .update-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+            margin-bottom: 15px;
+            transition: all 0.2s;
+        }
+
+        .update-item:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .update-date {
+            font-family: 'Inter', sans-serif;
+            min-width: 80px;
+            text-align: center;
+            padding: 10px;
+            background: var(--navy);
+            color: white;
+            border-radius: 10px;
+            flex-shrink: 0;
+        }
+
+        .update-date-day {
+            font-size: 1.5rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .update-date-month {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+        }
+
+        .update-content h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 5px;
+        }
+
+        .update-content p {
+            font-size: 0.95rem;
+            color: var(--charcoal);
+        }
+
+        /* Articles */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s;
+        }
+
+        .article-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transform: translateY(-5px);
+        }
+
+        .article-header {
+            background: var(--navy);
+            color: white;
+            padding: 30px 25px;
+        }
+
+        .article-category {
+            font-family: 'Inter', sans-serif;
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold);
+            margin-bottom: 10px;
+        }
+
+        .article-header h3 {
+            font-size: 1.15rem;
+            line-height: 1.4;
+            color: white;
+        }
+
+        .article-body {
+            padding: 25px;
+        }
+
+        .article-excerpt {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .article-meta {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: var(--gray-500);
         }
 
         /* Bot Section */
         .bot-section {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
-            color: white;
+            background: var(--gray-50);
             padding: 80px 0;
         }
 
@@ -630,13 +992,14 @@
 
         .bot-content h2 {
             font-size: 2.5rem;
-            font-weight: 800;
+            font-weight: 700;
+            color: var(--navy);
             margin-bottom: 20px;
         }
 
-        .bot-content p {
+        .bot-content > p {
             font-size: 1.1rem;
-            opacity: 0.9;
+            color: var(--charcoal);
             margin-bottom: 30px;
             line-height: 1.8;
         }
@@ -657,7 +1020,7 @@
         .bot-feature-icon {
             width: 40px;
             height: 40px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(30, 58, 95, 0.08);
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -666,7 +1029,9 @@
         }
 
         .bot-feature span {
+            font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
+            color: var(--charcoal);
         }
 
         .bot-buttons {
@@ -675,10 +1040,11 @@
         }
 
         .bot-mockup {
-            background: rgba(255,255,255,0.05);
+            background: white;
             border-radius: 20px;
             padding: 30px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
         }
 
         .chat-message {
@@ -691,16 +1057,17 @@
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            background: var(--primary);
+            background: var(--navy);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.2rem;
             flex-shrink: 0;
+            color: white;
         }
 
         .chat-bubble {
-            background: rgba(255,255,255,0.1);
+            background: var(--gray-50);
             padding: 12px 16px;
             border-radius: 12px;
             border-top-left-radius: 0;
@@ -708,19 +1075,19 @@
         }
 
         .chat-bubble.user {
-            background: var(--primary);
+            background: var(--navy);
+            color: white;
             border-radius: 12px;
             border-top-right-radius: 0;
             margin-left: auto;
         }
 
         .chat-bubble p {
+            font-family: 'Inter', sans-serif;
             font-size: 0.9rem;
-            margin: 0;
-            opacity: 1;
         }
 
-        /* FAQ Section */
+        /* FAQ */
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
@@ -729,7 +1096,7 @@
         .faq-item {
             background: white;
             border-radius: 12px;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             border: 1px solid var(--gray-200);
             overflow: hidden;
         }
@@ -740,9 +1107,11 @@
             align-items: center;
             padding: 20px 25px;
             cursor: pointer;
+            font-family: 'Inter', sans-serif;
             font-weight: 600;
-            color: var(--secondary);
-            font-size: 1.05rem;
+            color: var(--navy);
+            font-size: 1rem;
+            transition: background 0.2s;
         }
 
         .faq-question:hover {
@@ -751,8 +1120,10 @@
 
         .faq-icon {
             font-size: 1.5rem;
-            color: var(--primary);
+            color: var(--gold-dark);
             transition: transform 0.3s;
+            flex-shrink: 0;
+            margin-left: 15px;
         }
 
         .faq-item.active .faq-icon {
@@ -771,27 +1142,29 @@
 
         .faq-answer-content {
             padding: 0 25px 20px;
-            color: var(--gray-600);
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
             line-height: 1.8;
+            font-size: 0.95rem;
         }
 
         /* CTA Section */
         .cta-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            background: var(--gold);
             padding: 80px 0;
             text-align: center;
-            color: white;
         }
 
         .cta-section h2 {
             font-size: 2.5rem;
-            font-weight: 800;
+            font-weight: 700;
+            color: var(--navy);
             margin-bottom: 15px;
         }
 
-        .cta-section p {
+        .cta-section > .container > p {
             font-size: 1.2rem;
-            opacity: 0.9;
+            color: var(--charcoal);
             margin-bottom: 35px;
             max-width: 600px;
             margin-left: auto;
@@ -805,19 +1178,9 @@
             flex-wrap: wrap;
         }
 
-        .cta-section .btn {
-            background: white;
-            color: var(--primary);
-        }
-
-        .cta-section .btn:hover {
-            background: var(--secondary);
-            color: white;
-        }
-
         /* Footer */
         .footer {
-            background: var(--secondary);
+            background: var(--navy-dark);
             color: white;
             padding: 60px 0 30px;
         }
@@ -830,15 +1193,47 @@
         }
 
         .footer h4 {
+            font-family: 'Inter', sans-serif;
             font-size: 1rem;
             font-weight: 700;
             margin-bottom: 20px;
+            color: var(--gold);
         }
 
         .footer p {
             font-size: 0.9rem;
             opacity: 0.7;
             line-height: 1.8;
+        }
+
+        .footer-brand {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-brand .logo-text {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .logo-text span {
+            color: var(--gold);
+        }
+
+        .footer-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255,255,255,0.05);
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .footer-badge span {
+            font-size: 0.85rem;
+            opacity: 0.8;
         }
 
         .footer-links {
@@ -857,26 +1252,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .footer-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: rgba(255,255,255,0.05);
-            padding: 15px 20px;
-            border-radius: 10px;
-            margin-top: 15px;
-        }
-
-        .footer-badge img {
-            height: 30px;
-        }
-
-        .footer-badge span {
-            font-size: 0.85rem;
-            opacity: 0.8;
+            color: var(--gold);
         }
 
         .footer-bottom {
@@ -888,28 +1264,63 @@
             opacity: 0.6;
         }
 
-        /* Mobile */
-        @media (max-width: 968px) {
+        .footer-bottom a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+
+        /* Mobile CTA Bar */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 12px 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            z-index: 99;
+        }
+
+        .mobile-cta .btn {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
             .hero-grid { grid-template-columns: 1fr; }
             .countdown-card { max-width: 450px; margin: 40px auto 0; }
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .requirements-grid { grid-template-columns: 1fr; }
+            .trust-grid { grid-template-columns: repeat(2, 1fr); }
+            .phases-grid { grid-template-columns: repeat(2, 1fr); }
+            .requirements-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
             .documents-grid { grid-template-columns: 1fr; }
+            .why-us-grid { grid-template-columns: 1fr; }
             .bot-grid { grid-template-columns: 1fr; }
+            .articles-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
         }
 
         @media (max-width: 768px) {
-            .trust-bar-inner { justify-content: center; }
+            .trust-bar-inner { justify-content: center; text-align: center; }
             .nav { display: none; }
+            .slot-counter { font-size: 0.75rem; padding: 6px 12px; }
+            .hero { padding: 50px 0 60px; }
             .hero h1 { font-size: 2.2rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .section { padding: 60px 0; }
             .section-header h2 { font-size: 2rem; }
+            .phases-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto 40px; }
+            .trust-grid { grid-template-columns: 1fr 1fr; }
+            .why-us h2 { font-size: 2rem; }
+            .why-us-stats { grid-template-columns: 1fr 1fr; }
             .bot-content h2 { font-size: 2rem; }
-            .cta-section h2 { font-size: 2rem; }
-            .stats-grid { grid-template-columns: 1fr 1fr; }
             .bot-features { grid-template-columns: 1fr; }
+            .cta-section h2 { font-size: 2rem; }
             .footer-grid { grid-template-columns: 1fr; }
             .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+            .mobile-cta { display: block; }
+            body { padding-bottom: 70px; }
         }
 
         /* Animations */
@@ -918,9 +1329,7 @@
             50% { transform: scale(1.05); }
         }
 
-        .pulse {
-            animation: pulse 2s infinite;
-        }
+        .pulse { animation: pulse 2s infinite; }
     </style>
 </head>
 <body>
@@ -933,7 +1342,7 @@
                     <span>Proceso aprobado por el Gobierno de España - Real Decreto 27/01/2026</span>
                 </div>
                 <div class="trust-item">
-                    <span>⚖️ Un servicio de <strong>Pombo & Horowitz Abogados</strong></span>
+                    Un servicio de <strong>Pombo, Horowitz &amp; Espinosa</strong> &mdash; 25 a&ntilde;os de experiencia
                 </div>
             </div>
         </div>
@@ -943,17 +1352,23 @@
     <header class="header">
         <div class="container">
             <div class="header-inner">
-                <a href="#" class="logo">
-                    <div class="logo-icon">📄</div>
+                <a href="/" class="logo">
+                    <div class="logo-icon">&#9878;</div>
                     <div class="logo-text">tuspapeles<span>2026</span></div>
                 </a>
-                <nav class="nav">
-                    <a href="#requisitos">Requisitos</a>
-                    <a href="#documentos">Documentos</a>
-                    <a href="#proceso">Proceso</a>
-                    <a href="#preguntas">Preguntas</a>
-                    <a href="#contacto" class="btn btn-primary">Comenzar Ahora</a>
-                </nav>
+                <div class="header-right">
+                    <div class="slot-counter">
+                        <div class="slot-dot"></div>
+                        <span id="slot-counter-text">847 de 1,000 plazas</span>
+                    </div>
+                    <nav class="nav">
+                        <a href="#como-funciona">Proceso</a>
+                        <a href="#requisitos">Requisitos</a>
+                        <a href="#documentos">Documentos</a>
+                        <a href="#preguntas">FAQ</a>
+                        <a href="#verificar" class="btn btn-gold btn-sm">Verificar elegibilidad</a>
+                    </nav>
+                </div>
             </div>
         </div>
     </header>
@@ -964,70 +1379,66 @@
             <div class="hero-grid">
                 <div class="hero-content">
                     <div class="hero-badge">
-                        🇪🇸 Regularización Extraordinaria 2026
+                        Regularizaci&oacute;n Extraordinaria 2026
                     </div>
-                    <h1>¿Llevas más de 5 meses en España? <span>Puedes obtener tus papeles</span></h1>
-                    <p class="hero-subtitle">El Gobierno ha aprobado un proceso histórico de regularización. Si entraste antes del 31 de diciembre de 2025, esta es tu oportunidad de vivir y trabajar legalmente.</p>
-                    
+                    <h1>Regulariza tu situaci&oacute;n <span class="gold">en Espa&ntilde;a</span></h1>
+                    <p class="hero-subtitle">Verifica si calificas en 2 minutos. Gratis y sin compromiso. Te acompa&ntilde;amos desde la verificaci&oacute;n hasta que tengas tu permiso de residencia y trabajo.</p>
+
                     <div class="hero-features">
                         <div class="hero-feature">
-                            <div class="hero-feature-icon">✓</div>
-                            <span><strong>Permiso de residencia</strong> de 1 año (5 años para menores)</span>
+                            <div class="hero-feature-icon">&#10003;</div>
+                            <span><strong>Permiso de residencia</strong> de 1 a&ntilde;o (5 a&ntilde;os para menores)</span>
                         </div>
                         <div class="hero-feature">
-                            <div class="hero-feature-icon">✓</div>
-                            <span><strong>Autorización de trabajo</strong> inmediata al presentar solicitud</span>
+                            <div class="hero-feature-icon">&#10003;</div>
+                            <span><strong>Autorizaci&oacute;n de trabajo</strong> inmediata al presentar solicitud</span>
                         </div>
                         <div class="hero-feature">
-                            <div class="hero-feature-icon">✓</div>
+                            <div class="hero-feature-icon">&#10003;</div>
                             <span><strong>Sin contrato de trabajo</strong> previo requerido</span>
                         </div>
                     </div>
 
                     <div class="hero-ctas">
-                        <a href="#contacto" class="btn btn-primary btn-lg">Verificar mi Elegibilidad →</a>
-                        <a href="https://wa.me/34600000000" class="btn btn-whatsapp btn-lg">💬 WhatsApp</a>
+                        <a href="#verificar" class="btn btn-gold btn-lg">Verificar ahora &#8594;</a>
+                        <a href="#como-funciona" class="btn btn-outline-white">&iquest;C&oacute;mo funciona?</a>
                     </div>
+                    <p class="hero-cta-note">Faltan <strong id="hero-days">--</strong> d&iacute;as para la fecha l&iacute;mite</p>
                 </div>
 
                 <div class="countdown-card">
                     <div class="countdown-header">
-                        <div class="countdown-label pulse">⏰ Tiempo Limitado</div>
+                        <div class="countdown-label pulse">Tiempo Limitado</div>
                         <div class="countdown-title">Plazo para presentar solicitudes</div>
                     </div>
-                    
+
                     <div class="countdown-timer">
                         <div class="countdown-unit">
-                            <div class="countdown-number" id="days">147</div>
-                            <div class="countdown-unit-label">Días</div>
+                            <div class="countdown-number" id="days">--</div>
+                            <div class="countdown-unit-label">D&iacute;as</div>
                         </div>
                         <div class="countdown-unit">
-                            <div class="countdown-number" id="hours">12</div>
+                            <div class="countdown-number" id="hours">--</div>
                             <div class="countdown-unit-label">Horas</div>
                         </div>
                         <div class="countdown-unit">
-                            <div class="countdown-number" id="minutes">34</div>
+                            <div class="countdown-number" id="minutes">--</div>
                             <div class="countdown-unit-label">Min</div>
                         </div>
                         <div class="countdown-unit">
-                            <div class="countdown-number" id="seconds">56</div>
+                            <div class="countdown-number" id="seconds">--</div>
                             <div class="countdown-unit-label">Seg</div>
                         </div>
                     </div>
 
-                    <div class="countdown-progress">
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="progress-fill" style="width: 30%"></div>
-                        </div>
-                        <div class="progress-labels">
-                            <span>Abril 2026</span>
-                            <span>30 Junio 2026</span>
-                        </div>
+                    <div class="countdown-slots">
+                        <div class="countdown-slots-number" id="countdown-slots">847 de 1,000</div>
+                        <div class="countdown-slots-label">plazas disponibles</div>
                     </div>
 
                     <div class="countdown-cta">
-                        <a href="#contacto" class="btn btn-primary" style="width: 100%;">
-                            Empezar mi Solicitud
+                        <a href="#verificar" class="btn btn-navy btn-lg">
+                            Verificar elegibilidad
                         </a>
                     </div>
                 </div>
@@ -1035,233 +1446,379 @@
         </div>
     </section>
 
-    <!-- Stats Bar -->
-    <div class="stats-bar">
+    <!-- Trust Strip -->
+    <div class="trust-strip">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">500,000+</div>
-                    <div class="stat-label">Personas pueden beneficiarse</div>
+            <div class="trust-grid">
+                <div class="trust-stat">
+                    <div class="trust-stat-number">500,000+</div>
+                    <div class="trust-stat-label">Personas pueden beneficiarse</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">3 meses</div>
-                    <div class="stat-label">Plazo de presentación</div>
+                <div class="trust-stat">
+                    <div class="trust-stat-number">3 meses</div>
+                    <div class="trust-stat-label">Plazo de presentaci&oacute;n</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">15 días</div>
-                    <div class="stat-label">Para admisión a trámite</div>
+                <div class="trust-stat">
+                    <div class="trust-stat-number">15 d&iacute;as</div>
+                    <div class="trust-stat-label">Para admisi&oacute;n a tr&aacute;mite</div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">€38.28</div>
-                    <div class="stat-label">Tasa oficial del gobierno</div>
+                <div class="trust-stat">
+                    <div class="trust-stat-number">&euro;38.28</div>
+                    <div class="trust-stat-label">Tasa oficial del gobierno</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Requirements Section -->
+    <!-- Requirements -->
     <section id="requisitos" class="section">
         <div class="container">
             <div class="section-header">
                 <div class="section-badge">Requisitos</div>
-                <h2>¿Puedo solicitar la regularización?</h2>
-                <p>Si cumples estos tres requisitos básicos, puedes acogerte al proceso extraordinario.</p>
+                <h2>&iquest;Puedo solicitar la regularizaci&oacute;n?</h2>
+                <p>Si cumples estos tres requisitos b&aacute;sicos, puedes acogerte al proceso extraordinario.</p>
             </div>
 
             <div class="requirements-grid">
                 <div class="requirement-card">
-                    <div class="requirement-icon">📅</div>
+                    <div class="requirement-icon">&#128197;</div>
                     <h3>Entrada antes del 31/12/2025</h3>
-                    <p>Debes haber entrado a España antes del 31 de diciembre de 2025. Esto se puede acreditar con cualquier documento que demuestre tu presencia en esa fecha.</p>
+                    <p>Debes haber entrado a Espa&ntilde;a antes del 31 de diciembre de 2025. Esto se puede acreditar con cualquier documento que demuestre tu presencia.</p>
                 </div>
                 <div class="requirement-card">
-                    <div class="requirement-icon">🏠</div>
+                    <div class="requirement-icon">&#127968;</div>
                     <h3>5 meses de estancia</h3>
-                    <p>Acreditar una permanencia continuada de al menos 5 meses en España. Se admiten documentos públicos y privados para demostrarlo.</p>
+                    <p>Acreditar una permanencia continuada de al menos 5 meses en Espa&ntilde;a. Se admiten documentos p&uacute;blicos y privados.</p>
                 </div>
                 <div class="requirement-card">
-                    <div class="requirement-icon">✅</div>
+                    <div class="requirement-icon">&#9989;</div>
                     <h3>Sin antecedentes penales</h3>
-                    <p>No tener antecedentes penales en España ni en tu país de origen. Necesitarás el certificado apostillado de tu país.</p>
+                    <p>No tener antecedentes penales en Espa&ntilde;a ni en tu pa&iacute;s de origen. Necesitar&aacute;s el certificado apostillado.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Documents Section -->
-    <section id="documentos" class="section section-gray">
+    <!-- Process: 4 Phases -->
+    <section id="como-funciona" class="section section-gray">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge">Documentación</div>
-                <h2>¿Qué documentos necesito?</h2>
+                <div class="section-badge">C&oacute;mo funciona</div>
+                <h2>Tu proceso en 4 pasos</h2>
+                <p>Te acompa&ntilde;amos desde la verificaci&oacute;n inicial hasta que tengas tu permiso en mano.</p>
+            </div>
+
+            <div class="phases-grid">
+                <div class="phase-card">
+                    <div class="phase-number">1</div>
+                    <h3>Verificaci&oacute;n</h3>
+                    <div class="phase-price free">GRATIS</div>
+                    <p>Responde 3 preguntas para saber si calificas. Recibe tu hoja de ruta personalizada.</p>
+                </div>
+                <div class="phase-card">
+                    <div class="phase-number">2</div>
+                    <h3>Preparaci&oacute;n</h3>
+                    <div class="phase-price">&euro;39</div>
+                    <p>Sube tus documentos y recibe tu checklist personalizado. Verificaci&oacute;n autom&aacute;tica incluida.</p>
+                </div>
+                <div class="phase-card featured">
+                    <div class="phase-number">3</div>
+                    <h3>Revisi&oacute;n Legal</h3>
+                    <div class="phase-price">&euro;150</div>
+                    <p>Un abogado colegiado revisa todo, solicita correcciones y prepara tu expediente legal completo.</p>
+                </div>
+                <div class="phase-card">
+                    <div class="phase-number">4</div>
+                    <h3>Presentaci&oacute;n</h3>
+                    <div class="phase-price">&euro;110</div>
+                    <p>Presentamos tu solicitud y te acompa&ntilde;amos hasta la resoluci&oacute;n. Soporte prioritario incluido.</p>
+                </div>
+            </div>
+
+            <div class="total-callout">
+                <h3>Todo por menos de 300 euros</h3>
+                <p>Servicio completo: verificaci&oacute;n + preparaci&oacute;n + revisi&oacute;n legal + presentaci&oacute;n = &euro;299</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents -->
+    <section id="documentos" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Documentaci&oacute;n</div>
+                <h2>&iquest;Qu&eacute; documentos necesito?</h2>
                 <p>Empieza a recopilar estos documentos ahora. No esperes a abril.</p>
             </div>
 
             <div class="documents-grid">
                 <div class="document-category">
                     <div class="doc-category-header">
-                        <div class="doc-icon">🪪</div>
+                        <div class="doc-icon">&#128179;</div>
                         <h3>Documentos de Identidad</h3>
                     </div>
                     <ul class="doc-list">
-                        <li><span class="doc-check">✓</span> Pasaporte válido (todas las páginas)</li>
-                        <li><span class="doc-check">✓</span> Certificado de antecedentes penales (país de origen, apostillado)</li>
-                        <li><span class="doc-check">✓</span> Foto tamaño carnet reciente</li>
+                        <li><span class="doc-check">&#10003;</span> Pasaporte v&aacute;lido (todas las p&aacute;ginas)</li>
+                        <li><span class="doc-check">&#10003;</span> Certificado de antecedentes penales (pa&iacute;s de origen, apostillado)</li>
+                        <li><span class="doc-check">&#10003;</span> Foto tama&ntilde;o carnet reciente</li>
                     </ul>
                 </div>
 
                 <div class="document-category">
                     <div class="doc-category-header">
-                        <div class="doc-icon">📍</div>
+                        <div class="doc-icon">&#128205;</div>
                         <h3>Pruebas de Estancia</h3>
                     </div>
                     <ul class="doc-list">
-                        <li><span class="doc-check">✓</span> Certificado de empadronamiento (histórico si es posible)</li>
-                        <li><span class="doc-check">✓</span> Contrato de alquiler o recibos de pago</li>
-                        <li><span class="doc-check">✓</span> Facturas de servicios (luz, agua, internet)</li>
-                        <li><span class="doc-check">✓</span> Extractos bancarios con movimientos en España</li>
+                        <li><span class="doc-check">&#10003;</span> Certificado de empadronamiento (hist&oacute;rico si es posible)</li>
+                        <li><span class="doc-check">&#10003;</span> Contrato de alquiler o recibos de pago</li>
+                        <li><span class="doc-check">&#10003;</span> Facturas de servicios (luz, agua, internet)</li>
+                        <li><span class="doc-check">&#10003;</span> Extractos bancarios con movimientos en Espa&ntilde;a</li>
                     </ul>
                 </div>
 
                 <div class="document-category">
                     <div class="doc-category-header">
-                        <div class="doc-icon">📋</div>
+                        <div class="doc-icon">&#128203;</div>
                         <h3>Documentos Complementarios</h3>
                     </div>
                     <ul class="doc-list">
-                        <li><span class="doc-check">✓</span> Citas médicas o informes sanitarios</li>
-                        <li><span class="doc-check">✓</span> Justificantes de envío de dinero (Western Union, Ria)</li>
-                        <li><span class="doc-check">✓</span> Tarjeta sanitaria</li>
-                        <li><span class="doc-check">✓</span> Matrículas de cursos o academias</li>
+                        <li><span class="doc-check">&#10003;</span> Citas m&eacute;dicas o informes sanitarios</li>
+                        <li><span class="doc-check">&#10003;</span> Justificantes de env&iacute;o de dinero (Western Union, Ria)</li>
+                        <li><span class="doc-check">&#10003;</span> Tarjeta sanitaria</li>
+                        <li><span class="doc-check">&#10003;</span> Matr&iacute;culas de cursos o academias</li>
                     </ul>
                 </div>
 
                 <div class="document-category">
                     <div class="doc-category-header">
-                        <div class="doc-icon">👨‍👩‍👧</div>
+                        <div class="doc-icon">&#128106;</div>
                         <h3>Si tienes hijos menores</h3>
                     </div>
                     <ul class="doc-list">
-                        <li><span class="doc-check">✓</span> Pasaporte del menor</li>
-                        <li><span class="doc-check">✓</span> Acta de nacimiento (apostillada)</li>
-                        <li><span class="doc-check">✓</span> Libro de familia (si aplica)</li>
-                        <li><span class="doc-check">✓</span> Certificados de escolarización</li>
+                        <li><span class="doc-check">&#10003;</span> Pasaporte del menor</li>
+                        <li><span class="doc-check">&#10003;</span> Acta de nacimiento (apostillada)</li>
+                        <li><span class="doc-check">&#10003;</span> Libro de familia (si aplica)</li>
+                        <li><span class="doc-check">&#10003;</span> Certificados de escolarizaci&oacute;n</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Timeline -->
-    <section id="proceso" class="section">
+    <!-- Why Us -->
+    <section class="why-us">
         <div class="container">
-            <div class="section-header">
-                <div class="section-badge">Proceso</div>
-                <h2>¿Cómo funciona el proceso?</h2>
-                <p>Te acompañamos en cada paso hasta que tengas tu permiso en mano.</p>
-            </div>
+            <div class="why-us-grid">
+                <div>
+                    <h2>No somos gestores. <span class="gold">Somos abogados.</span></h2>
+                    <p class="why-us-text">Pombo, Horowitz &amp; Espinosa lleva 25 a&ntilde;os dedicado exclusivamente a inmigraci&oacute;n. Participamos en la regularizaci&oacute;n de 2005 &mdash; sabemos c&oacute;mo funciona.</p>
 
-            <div class="process-timeline">
-                <div class="process-step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Evaluación de Elegibilidad</h3>
-                        <p>Analizamos tu caso para confirmar que cumples los requisitos. Te indicamos exactamente qué documentos necesitas y cómo conseguirlos.</p>
+                    <div class="why-us-points">
+                        <div class="why-us-point">
+                            <div class="why-us-point-icon">&#9878;</div>
+                            <div>
+                                <h4>Abogados colegiados</h4>
+                                <p>Colegio de Abogados de Madrid. Tu caso lo lleva un abogado, no un gestor.</p>
+                            </div>
+                        </div>
+                        <div class="why-us-point">
+                            <div class="why-us-point-icon">&#128200;</div>
+                            <div>
+                                <h4>Experiencia en regularizaciones</h4>
+                                <p>Nuestro equipo incluye abogados que trabajaron en el proceso de 2005.</p>
+                            </div>
+                        </div>
+                        <div class="why-us-point">
+                            <div class="why-us-point-icon">&#128172;</div>
+                            <div>
+                                <h4>Soporte continuo</h4>
+                                <p>Atenci&oacute;n por WhatsApp, email y tel&eacute;fono durante todo el proceso.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Recopilación de Documentos</h3>
-                        <p>Te guiamos paso a paso para obtener cada documento. Nuestro sistema te avisa cuando falta algo o hay un problema.</p>
+
+                <div class="why-us-stats">
+                    <div class="why-us-stat">
+                        <div class="why-us-stat-number">25</div>
+                        <div class="why-us-stat-label">A&ntilde;os de experiencia</div>
                     </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Preparación de Solicitud</h3>
-                        <p>Preparamos tu expediente completo, revisamos toda la documentación y nos aseguramos de que esté perfecta antes de presentar.</p>
+                    <div class="why-us-stat">
+                        <div class="why-us-stat-number">+10,000</div>
+                        <div class="why-us-stat-label">Casos resueltos</div>
                     </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">4</div>
-                    <div class="step-content">
-                        <h3>Presentación (Abril-Junio 2026)</h3>
-                        <p>Presentamos tu solicitud de forma telemática o presencial. Con la admisión a trámite ya podrás trabajar legalmente.</p>
+                    <div class="why-us-stat">
+                        <div class="why-us-stat-number">2005</div>
+                        <div class="why-us-stat-label">Regularizaci&oacute;n anterior</div>
                     </div>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">5</div>
-                    <div class="step-content">
-                        <h3>Seguimiento y Resolución</h3>
-                        <p>Hacemos seguimiento continuo de tu expediente. El plazo máximo de resolución es de 3 meses. Te informamos de cada avance.</p>
+                    <div class="why-us-stat">
+                        <div class="why-us-stat-number">&euro;299</div>
+                        <div class="why-us-stat-label">Servicio completo</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bot Section -->
-    <section id="contacto" class="bot-section">
+    <!-- Updates -->
+    <section id="actualizaciones" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Novedades</div>
+                <h2>&Uacute;ltimas actualizaciones</h2>
+                <p>Mantente informado sobre el proceso de regularizaci&oacute;n.</p>
+            </div>
+
+            <div class="updates-list">
+                <div class="update-item">
+                    <div class="update-date">
+                        <div class="update-date-day">03</div>
+                        <div class="update-date-month">Feb 2026</div>
+                    </div>
+                    <div class="update-content">
+                        <h4>Nuevas aclaraciones del Ministerio</h4>
+                        <p>El Ministerio ha publicado aclaraciones sobre documentos v&aacute;lidos para acreditar estancia.</p>
+                    </div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date">
+                        <div class="update-date-day">28</div>
+                        <div class="update-date-month">Ene 2026</div>
+                    </div>
+                    <div class="update-content">
+                        <h4>Real Decreto aprobado</h4>
+                        <p>El Consejo de Ministros aprueba el inicio de la tramitaci&oacute;n del proceso de regularizaci&oacute;n.</p>
+                    </div>
+                </div>
+                <div class="update-item">
+                    <div class="update-date">
+                        <div class="update-date-day">27</div>
+                        <div class="update-date-month">Ene 2026</div>
+                    </div>
+                    <div class="update-content">
+                        <h4>Anuncio oficial</h4>
+                        <p>El Gobierno anuncia la regularizaci&oacute;n extraordinaria para m&aacute;s de 500.000 personas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Gu&iacute;as</div>
+                <h2>Art&iacute;culos para prepararte</h2>
+                <p>Informaci&oacute;n pr&aacute;ctica para que empieces a preparar tu caso hoy.</p>
+            </div>
+
+            <div class="articles-grid">
+                <div class="article-card">
+                    <div class="article-header">
+                        <div class="article-category">Gu&iacute;a completa</div>
+                        <h3>Gu&iacute;a Completa: Regularizaci&oacute;n Extraordinaria 2026</h3>
+                    </div>
+                    <div class="article-body">
+                        <p class="article-excerpt">Todo lo que necesitas saber sobre el proceso de regularizaci&oacute;n: requisitos, plazos, documentos y c&oacute;mo prepararte.</p>
+                        <div class="article-meta">
+                            <span>Equipo PHE</span>
+                            <span>8 min lectura</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <div class="article-header">
+                        <div class="article-category">Documentos</div>
+                        <h3>C&oacute;mo Conseguir el Certificado de Antecedentes Penales Apostillado</h3>
+                    </div>
+                    <div class="article-body">
+                        <p class="article-excerpt">Gu&iacute;a paso a paso para solicitar y apostillar tu certificado de antecedentes sin necesidad de viajar a tu pa&iacute;s.</p>
+                        <div class="article-meta">
+                            <span>Equipo PHE</span>
+                            <span>6 min lectura</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="article-card">
+                    <div class="article-header">
+                        <div class="article-category">Documentos</div>
+                        <h3>Documentos V&aacute;lidos para Demostrar tu Estancia en Espa&ntilde;a</h3>
+                    </div>
+                    <div class="article-body">
+                        <p class="article-excerpt">Lista completa de todos los documentos que puedes usar para acreditar tu permanencia continuada en territorio espa&ntilde;ol.</p>
+                        <div class="article-meta">
+                            <span>Equipo PHE</span>
+                            <span>5 min lectura</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bot / Assistant Section -->
+    <section id="verificar" class="bot-section">
         <div class="container">
             <div class="bot-grid">
                 <div class="bot-content">
                     <h2>Tu asistente personal 24/7</h2>
-                    <p>Nuestro sistema automatizado te guía en todo el proceso. Sube documentos, consulta el estado de tu caso, recibe recordatorios y resuelve dudas al instante.</p>
-                    
+                    <p>Nuestro sistema automatizado te gu&iacute;a en todo el proceso. Verifica tu elegibilidad, sube documentos, consulta el estado de tu caso y resuelve dudas al instante.</p>
+
                     <div class="bot-features">
                         <div class="bot-feature">
-                            <div class="bot-feature-icon">📤</div>
+                            <div class="bot-feature-icon">&#128220;</div>
+                            <span>Verificar elegibilidad</span>
+                        </div>
+                        <div class="bot-feature">
+                            <div class="bot-feature-icon">&#128228;</div>
                             <span>Subir documentos</span>
                         </div>
                         <div class="bot-feature">
-                            <div class="bot-feature-icon">📊</div>
+                            <div class="bot-feature-icon">&#128202;</div>
                             <span>Ver estado del caso</span>
                         </div>
                         <div class="bot-feature">
-                            <div class="bot-feature-icon">🔔</div>
-                            <span>Recordatorios automáticos</span>
+                            <div class="bot-feature-icon">&#128276;</div>
+                            <span>Recordatorios</span>
                         </div>
                         <div class="bot-feature">
-                            <div class="bot-feature-icon">❓</div>
-                            <span>Preguntas frecuentes</span>
-                        </div>
-                        <div class="bot-feature">
-                            <div class="bot-feature-icon">💳</div>
+                            <div class="bot-feature-icon">&#128179;</div>
                             <span>Estado de pagos</span>
                         </div>
                         <div class="bot-feature">
-                            <div class="bot-feature-icon">📰</div>
-                            <span>Noticias y actualizaciones</span>
+                            <div class="bot-feature-icon">&#10067;</div>
+                            <span>Preguntas frecuentes</span>
                         </div>
                     </div>
 
                     <div class="bot-buttons">
-                        <a href="https://wa.me/34600000000?text=Hola,%20quiero%20información%20sobre%20la%20regularización%202026" class="btn btn-whatsapp btn-lg">
-                            💬 WhatsApp
+                        <a href="https://wa.me/34600000000?text=Hola,%20quiero%20verificar%20mi%20elegibilidad%20para%20la%20regularizaci%C3%B3n%202026" class="btn btn-whatsapp btn-lg">
+                            WhatsApp
                         </a>
                         <a href="https://t.me/PHRegularizacionBot" class="btn btn-telegram btn-lg">
-                            ✈️ Telegram
+                            Telegram
                         </a>
                     </div>
                 </div>
 
                 <div class="bot-mockup">
                     <div class="chat-message">
-                        <div class="chat-avatar">🤖</div>
+                        <div class="chat-avatar">PHE</div>
                         <div class="chat-bubble">
-                            <p>¡Hola! 👋 Soy el asistente de tuspapeles2026. ¿Entraste a España antes del 31 de diciembre de 2025?</p>
+                            <p>Hola, soy el asistente de tuspapeles2026. &iquest;Entraste a Espa&ntilde;a antes del 31 de diciembre de 2025?</p>
                         </div>
                     </div>
                     <div class="chat-message">
                         <div class="chat-bubble user">
-                            <p>Sí, llegué en agosto de 2024</p>
+                            <p>S&iacute;, llegu&eacute; en agosto de 2024</p>
                         </div>
                     </div>
                     <div class="chat-message">
-                        <div class="chat-avatar">🤖</div>
+                        <div class="chat-avatar">PHE</div>
                         <div class="chat-bubble">
-                            <p>¡Perfecto! Eso significa que llevas más de 5 meses en España. ✅ Cumples el primer requisito. Ahora te haré algunas preguntas más para evaluar tu caso...</p>
+                            <p>Perfecto. Eso significa que llevas m&aacute;s de 5 meses en Espa&ntilde;a. Cumples el primer requisito. Ahora te har&eacute; algunas preguntas m&aacute;s para evaluar tu caso...</p>
                         </div>
                     </div>
                 </div>
@@ -1269,7 +1826,7 @@
         </div>
     </section>
 
-    <!-- FAQ Section -->
+    <!-- FAQ -->
     <section id="preguntas" class="section">
         <div class="container">
             <div class="section-header">
@@ -1280,87 +1837,116 @@
             <div class="faq-container">
                 <div class="faq-item active">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        ¿Cuándo puedo presentar mi solicitud?
+                        &iquest;Cu&aacute;ndo puedo presentar mi solicitud?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Las solicitudes se pueden presentar desde el 1 de abril de 2026 hasta el 30 de junio de 2026. Es un plazo de 3 meses. Te recomendamos preparar todos los documentos con antelación para no perder tiempo cuando se abra el plazo.
+                            Las solicitudes se pueden presentar desde el 1 de abril de 2026 hasta el 30 de junio de 2026. Es un plazo de 3 meses. Te recomendamos preparar todos los documentos con antelaci&oacute;n para no perder tiempo cuando se abra el plazo.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        ¿Necesito tener un contrato de trabajo?
+                        &iquest;Necesito tener un contrato de trabajo?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            No. Esta es una de las grandes ventajas de la regularización extraordinaria. No necesitas presentar un contrato de trabajo para solicitar el permiso. Una vez obtengas el permiso, tendrás autorización para trabajar legalmente en cualquier sector y lugar de España.
+                            No. Esta es una de las grandes ventajas de la regularizaci&oacute;n extraordinaria. No necesitas presentar un contrato de trabajo para solicitar el permiso. Una vez obtengas el permiso, tendr&aacute;s autorizaci&oacute;n para trabajar legalmente en cualquier sector y lugar de Espa&ntilde;a.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        ¿Qué pasa si no tengo empadronamiento?
+                        &iquest;Qu&eacute; pasa si no tengo empadronamiento?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            El empadronamiento es muy importante pero no es el único documento válido. Puedes acreditar tu estancia con otros documentos como facturas de servicios, citas médicas, extractos bancarios, justificantes de envío de dinero, etc. Si no tienes empadronamiento, acude a tu ayuntamiento lo antes posible para registrarte.
+                            El empadronamiento es muy importante pero no es el &uacute;nico documento v&aacute;lido. Puedes acreditar tu estancia con otros documentos como facturas de servicios, citas m&eacute;dicas, extractos bancarios, justificantes de env&iacute;o de dinero, etc. Si no tienes empadronamiento, acude a tu ayuntamiento lo antes posible para registrarte.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        ¿Puedo trabajar mientras se tramita mi solicitud?
+                        &iquest;Puedo trabajar mientras se tramita mi solicitud?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            ¡Sí! Desde el momento en que tu solicitud es admitida a trámite (máximo 15 días desde la presentación), obtienes una autorización provisional para trabajar legalmente en España en cualquier sector. Esta es una ventaja muy importante del proceso.
+                            S&iacute;. Desde el momento en que tu solicitud es admitida a tr&aacute;mite (m&aacute;ximo 15 d&iacute;as desde la presentaci&oacute;n), obtienes una autorizaci&oacute;n provisional para trabajar legalmente en Espa&ntilde;a en cualquier sector. Esta es una ventaja muy importante del proceso.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        ¿Qué pasa con mis hijos menores?
+                        &iquest;Qu&eacute; pasa con mis hijos menores?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Los hijos menores de edad que se encuentren en España pueden regularizarse junto con sus padres de forma simultánea. Además, reciben un permiso de 5 años (no solo 1 año como los adultos), lo que les da mayor estabilidad para su educación y desarrollo.
+                            Los hijos menores de edad que se encuentren en Espa&ntilde;a pueden regularizarse junto con sus padres de forma simult&aacute;nea. Adem&aacute;s, reciben un permiso de 5 a&ntilde;os (no solo 1 a&ntilde;o como los adultos), lo que les da mayor estabilidad para su educaci&oacute;n y desarrollo.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
-                        ¿Cuánto cuesta el proceso?
+                        &iquest;Cu&aacute;nto cuesta el proceso?
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            La tasa oficial del gobierno es de €38.28 por persona. Nuestros honorarios profesionales para la gestión completa del caso son de €99 inicial + €199 al presentar la solicitud. Esto incluye evaluación, preparación de documentos, presentación y seguimiento hasta la resolución.
+                            La tasa oficial del gobierno es de &euro;38.28 por persona. Nuestro servicio profesional completo cuesta &euro;299 (verificaci&oacute;n gratuita + &euro;39 preparaci&oacute;n + &euro;150 revisi&oacute;n legal + &euro;110 presentaci&oacute;n). Esto incluye todo: evaluaci&oacute;n personalizada, preparaci&oacute;n de documentos, revisi&oacute;n por abogado, presentaci&oacute;n y seguimiento hasta la resoluci&oacute;n. Todo por menos de 300 euros.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        &iquest;Qu&eacute; pasa si tengo una orden de expulsi&oacute;n?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            La presentaci&oacute;n de la solicitud suspende los procedimientos de retorno y las &oacute;rdenes de expulsi&oacute;n por motivos administrativos. Esto significa que estar&aacute;s protegido mientras se tramita tu caso. Consulta tu situaci&oacute;n espec&iacute;fica con nosotros para una orientaci&oacute;n personalizada.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        &iquest;Tengo que ir personalmente a presentar la solicitud?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            No necesariamente. Las solicitudes pueden presentarse de forma telem&aacute;tica o presencial en oficinas de extranjer&iacute;a y subdelegaciones del gobierno. Nosotros nos encargamos de todo el proceso de presentaci&oacute;n para que no tengas que preocuparte.
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div style="text-align: center; margin-top: 30px;">
+                <p style="color: var(--charcoal); margin-bottom: 15px;">&iquest;No encuentras tu respuesta?</p>
+                <a href="https://wa.me/34600000000?text=Hola,%20tengo%20una%20pregunta%20sobre%20la%20regularizaci%C3%B3n%202026" class="btn btn-whatsapp">Preg&uacute;ntanos por WhatsApp</a>
+            </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Final CTA -->
     <section class="cta-section">
         <div class="container">
-            <h2>No dejes pasar esta oportunidad histórica</h2>
-            <p>El plazo termina el 30 de junio de 2026. Después de esa fecha, no habrá otra regularización extraordinaria.</p>
+            <h2>&iquest;Listo para empezar?</h2>
+            <p>La verificaci&oacute;n es gratis y toma 2 minutos. No dejes pasar esta oportunidad hist&oacute;rica.</p>
             <div class="cta-buttons">
-                <a href="https://wa.me/34600000000" class="btn btn-lg">💬 Hablar por WhatsApp</a>
-                <a href="https://t.me/PHRegularizacionBot" class="btn btn-lg">✈️ Usar Telegram</a>
+                <a href="#verificar" class="btn btn-navy btn-lg">Verificar elegibilidad</a>
+                <a href="https://wa.me/34600000000" class="btn btn-outline btn-lg">Hablar por WhatsApp</a>
             </div>
         </div>
     </section>
@@ -1369,109 +1955,122 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div>
-                    <h4>tuspapeles2026.es</h4>
-                    <p>Servicio especializado en la regularización extraordinaria 2026. Te acompañamos en todo el proceso para que obtengas tu permiso de residencia y trabajo.</p>
+                <div class="footer-brand">
+                    <div class="logo-text" style="margin-bottom: 15px;">tuspapeles<span>2026</span></div>
+                    <p>Servicio especializado en la regularizaci&oacute;n extraordinaria 2026. Te acompa&ntilde;amos en todo el proceso para que obtengas tu permiso de residencia y trabajo.</p>
                     <div class="footer-badge">
-                        <span>⚖️ Un servicio de <strong>Pombo & Horowitz Abogados</strong><br>ICAM Colegiados nº 12345 y 12346</span>
+                        <span>Un servicio de <strong>Pombo, Horowitz &amp; Espinosa</strong><br>Abogados colegiados - Colegio de Abogados de Madrid</span>
                     </div>
                 </div>
                 <div>
-                    <h4>Enlaces</h4>
+                    <h4>Navegaci&oacute;n</h4>
                     <ul class="footer-links">
                         <li><a href="#requisitos">Requisitos</a></li>
+                        <li><a href="#como-funciona">C&oacute;mo funciona</a></li>
                         <li><a href="#documentos">Documentos</a></li>
-                        <li><a href="#proceso">Proceso</a></li>
                         <li><a href="#preguntas">Preguntas</a></li>
+                        <li><a href="#actualizaciones">Novedades</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Legal</h4>
                     <ul class="footer-links">
+                        <li><a href="/privacidad">Pol&iacute;tica de privacidad</a></li>
+                        <li><a href="/terminos">T&eacute;rminos de servicio</a></li>
                         <li><a href="#">Aviso legal</a></li>
-                        <li><a href="#">Política de privacidad</a></li>
                         <li><a href="#">Cookies</a></li>
-                        <li><a href="https://pombohorowitz.es">Pombo & Horowitz</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Contacto</h4>
                     <ul class="footer-links">
-                        <li>📍 Calle Serrano 45, Madrid</li>
-                        <li>📞 +34 91 555 0123</li>
-                        <li>✉️ info@tuspapeles2026.es</li>
-                        <li>💬 WhatsApp: +34 600 000 000</li>
+                        <li>&#128205; Calle Serrano 45, Madrid</li>
+                        <li>&#128222; +34 91 555 0123</li>
+                        <li>&#9993; info@tuspapeles2026.es</li>
+                        <li><a href="https://wa.me/34600000000">WhatsApp: +34 600 000 000</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <div>© 2026 tuspapeles2026.es - Un servicio de Pombo & Horowitz Abogados</div>
-                <div>Información oficial: <a href="https://www.inclusion.gob.es" style="color: var(--primary);">Ministerio de Inclusión</a></div>
+                <div>&copy; 2026 tuspapeles2026.es &mdash; tuspapeles2026 es una marca de Pombo, Horowitz &amp; Espinosa, S.L.</div>
+                <div>Informaci&oacute;n oficial: <a href="https://www.inclusion.gob.es">Ministerio de Inclusi&oacute;n</a></div>
             </div>
         </div>
     </footer>
 
+    <!-- Mobile CTA Bar -->
+    <div class="mobile-cta">
+        <a href="#verificar" class="btn btn-gold btn-lg">Verificar elegibilidad</a>
+    </div>
+
     <script>
-        // Countdown Timer
+        // Countdown Timer to deadline
         function updateCountdown() {
-            const deadline = new Date('2026-06-30T23:59:59+02:00').getTime();
-            const now = new Date().getTime();
-            const distance = deadline - now;
+            var deadline = new Date('2026-06-30T23:59:59+02:00').getTime();
+            var now = new Date().getTime();
+            var distance = deadline - now;
 
             if (distance > 0) {
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
                 document.getElementById('days').textContent = days;
                 document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
                 document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
                 document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
 
-                // Update progress bar (from April 1 to June 30)
-                const startDate = new Date('2026-04-01T00:00:00+02:00').getTime();
-                const totalDuration = deadline - startDate;
-                const elapsed = now - startDate;
-                
-                if (now >= startDate) {
-                    const progress = Math.min(100, (elapsed / totalDuration) * 100);
-                    document.getElementById('progress-fill').style.width = progress + '%';
-                }
+                var heroDays = document.getElementById('hero-days');
+                if (heroDays) heroDays.textContent = days;
             }
         }
-        
+
         updateCountdown();
         setInterval(updateCountdown, 1000);
 
         // FAQ Toggle
         function toggleFaq(element) {
-            const item = element.parentElement;
-            const wasActive = item.classList.contains('active');
-            
+            var item = element.parentElement;
+            var wasActive = item.classList.contains('active');
+
             // Close all
-            document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-            
+            var items = document.querySelectorAll('.faq-item');
+            for (var i = 0; i < items.length; i++) {
+                items[i].classList.remove('active');
+            }
+
             // Open clicked if it wasn't active
             if (!wasActive) {
                 item.classList.add('active');
             }
         }
 
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
+        // Smooth scroll for anchor links
+        var anchors = document.querySelectorAll('a[href^="#"]');
+        for (var i = 0; i < anchors.length; i++) {
+            anchors[i].addEventListener('click', function(e) {
+                var href = this.getAttribute('href');
                 if (href === '#') return;
-                
+
                 e.preventDefault();
-                const target = document.querySelector(href);
+                var target = document.querySelector(href);
                 if (target) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = target.offsetTop - headerHeight - 20;
+                    var headerHeight = document.querySelector('.header').offsetHeight;
+                    var targetPosition = target.offsetTop - headerHeight - 20;
                     window.scrollTo({ top: targetPosition, behavior: 'smooth' });
                 }
             });
+        }
+
+        // Header shadow on scroll
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('.header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
+            }
         });
     </script>
 </body>

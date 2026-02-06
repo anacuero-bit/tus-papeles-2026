@@ -5,21 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Caso | tuspapeles2026.es</title>
     <meta name="robots" content="noindex, nofollow">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --primary: #E85D04;
-            --primary-dark: #D35400;
-            --secondary: #0F1C2E;
-            --success: #10B981;
-            --warning: #F59E0B;
-            --danger: #EF4444;
-            --info: #3B82F6;
+            /* Brand Colors - PHE Palette */
+            --navy: #1E3A5F;
+            --navy-light: #2C4A6E;
+            --navy-dark: #152B48;
+            --gold: #E8D4A8;
+            --gold-dark: #D4C494;
+            --charcoal: #4D4D4D;
             --white: #FFFFFF;
+            --black: #1A1A1A;
+
+            /* Status Colors */
+            --success: #22C55E;
+            --warning: #F59E0B;
+            --error: #EF4444;
+            --info: #3B82F6;
+
+            /* Gray Scale */
             --gray-50: #F9FAFB;
             --gray-100: #F3F4F6;
             --gray-200: #E5E7EB;
@@ -32,17 +41,21 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             background: var(--gray-50);
-            color: var(--gray-800);
+            color: var(--charcoal);
             line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
         }
 
         /* Header */
         .header {
-            background: var(--secondary);
+            background: var(--navy-dark);
             color: white;
             padding: 15px 20px;
             display: flex;
@@ -51,13 +64,19 @@
         }
 
         .logo {
+            font-family: 'Inter', sans-serif;
             font-size: 1.3rem;
-            font-weight: 800;
+            font-weight: 700;
             color: white;
             text-decoration: none;
         }
 
-        .logo span { color: var(--primary); }
+        .logo span { color: var(--gold); }
+
+        .header-center {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
 
         .user-info {
             display: flex;
@@ -68,12 +87,14 @@
         .user-avatar {
             width: 40px;
             height: 40px;
-            background: var(--primary);
+            background: var(--gold);
+            color: var(--navy);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
+            font-size: 0.9rem;
         }
 
         .user-name {
@@ -94,20 +115,16 @@
             padding: 25px 0;
         }
 
-        .sidebar-menu {
-            list-style: none;
-        }
+        .sidebar-menu { list-style: none; }
 
-        .sidebar-item {
-            margin-bottom: 5px;
-        }
+        .sidebar-item { margin-bottom: 5px; }
 
         .sidebar-link {
             display: flex;
             align-items: center;
             gap: 12px;
             padding: 12px 25px;
-            color: var(--gray-600);
+            color: var(--charcoal);
             text-decoration: none;
             font-size: 0.95rem;
             font-weight: 500;
@@ -116,22 +133,21 @@
 
         .sidebar-link:hover {
             background: var(--gray-50);
-            color: var(--primary);
+            color: var(--navy);
         }
 
         .sidebar-link.active {
-            background: rgba(232, 93, 4, 0.1);
-            color: var(--primary);
-            border-right: 3px solid var(--primary);
+            background: rgba(30, 58, 95, 0.08);
+            color: var(--navy);
+            border-right: 3px solid var(--navy);
+            font-weight: 600;
         }
 
-        .sidebar-icon {
-            font-size: 1.2rem;
-        }
+        .sidebar-icon { font-size: 1.2rem; }
 
         .sidebar-badge {
             margin-left: auto;
-            background: var(--danger);
+            background: var(--error);
             color: white;
             font-size: 0.7rem;
             font-weight: 700;
@@ -145,6 +161,7 @@
         }
 
         .sidebar-section-title {
+            font-family: 'Inter', sans-serif;
             font-size: 0.7rem;
             font-weight: 700;
             text-transform: uppercase;
@@ -159,18 +176,17 @@
             max-width: 1200px;
         }
 
-        .page-header {
-            margin-bottom: 30px;
-        }
+        .page-header { margin-bottom: 30px; }
 
         .page-title {
             font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--secondary);
+            font-weight: 700;
+            color: var(--navy);
             margin-bottom: 5px;
         }
 
         .page-subtitle {
+            font-family: 'Inter', sans-serif;
             color: var(--gray-500);
         }
 
@@ -191,14 +207,13 @@
         }
 
         .card-title {
+            font-family: 'Inter', sans-serif;
             font-size: 1.1rem;
             font-weight: 700;
-            color: var(--secondary);
+            color: var(--navy);
         }
 
-        .card-body {
-            padding: 20px;
-        }
+        .card-body { padding: 20px; }
 
         /* Status Overview */
         .status-grid {
@@ -227,14 +242,15 @@
         }
 
         .status-icon.pending { background: rgba(245, 158, 11, 0.1); }
-        .status-icon.success { background: rgba(16, 185, 129, 0.1); }
+        .status-icon.success { background: rgba(34, 197, 94, 0.1); }
         .status-icon.danger { background: rgba(239, 68, 68, 0.1); }
         .status-icon.info { background: rgba(59, 130, 246, 0.1); }
 
         .status-value {
+            font-family: 'Inter', sans-serif;
             font-size: 1.75rem;
             font-weight: 800;
-            color: var(--secondary);
+            color: var(--navy);
         }
 
         .status-label {
@@ -276,6 +292,7 @@
             align-items: center;
             justify-content: center;
             font-weight: 700;
+            font-size: 0.85rem;
             color: var(--gray-500);
             position: relative;
             z-index: 1;
@@ -287,25 +304,34 @@
         }
 
         .step-dot.current {
-            background: var(--primary);
+            background: var(--navy);
             color: white;
-            box-shadow: 0 0 0 4px rgba(232, 93, 4, 0.2);
+            box-shadow: 0 0 0 4px rgba(30, 58, 95, 0.2);
         }
 
         .step-label {
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: var(--gray-500);
         }
 
         .step-label.active {
-            color: var(--secondary);
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        .step-price {
+            font-size: 0.7rem;
+            color: var(--gray-400);
+            margin-top: 2px;
+        }
+
+        .step-price.free {
+            color: var(--success);
             font-weight: 600;
         }
 
         /* Documents List */
-        .doc-list {
-            list-style: none;
-        }
+        .doc-list { list-style: none; }
 
         .doc-item {
             display: flex;
@@ -315,14 +341,12 @@
             gap: 15px;
         }
 
-        .doc-item:last-child {
-            border-bottom: none;
-        }
+        .doc-item:last-child { border-bottom: none; }
 
         .doc-icon {
             width: 45px;
             height: 45px;
-            background: var(--gray-100);
+            background: rgba(30, 58, 95, 0.06);
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -330,13 +354,11 @@
             font-size: 1.3rem;
         }
 
-        .doc-info {
-            flex: 1;
-        }
+        .doc-info { flex: 1; }
 
         .doc-name {
             font-weight: 600;
-            color: var(--secondary);
+            color: var(--navy);
             margin-bottom: 3px;
         }
 
@@ -352,25 +374,10 @@
             font-weight: 600;
         }
 
-        .doc-status.pending {
-            background: rgba(245, 158, 11, 0.1);
-            color: var(--warning);
-        }
-
-        .doc-status.uploaded {
-            background: rgba(59, 130, 246, 0.1);
-            color: var(--info);
-        }
-
-        .doc-status.approved {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--success);
-        }
-
-        .doc-status.rejected {
-            background: rgba(239, 68, 68, 0.1);
-            color: var(--danger);
-        }
+        .doc-status.pending { background: rgba(245, 158, 11, 0.1); color: var(--warning); }
+        .doc-status.uploaded { background: rgba(59, 130, 246, 0.1); color: var(--info); }
+        .doc-status.approved { background: rgba(34, 197, 94, 0.1); color: var(--success); }
+        .doc-status.rejected { background: rgba(239, 68, 68, 0.1); color: var(--error); }
 
         .doc-action {
             padding: 8px 16px;
@@ -380,21 +387,12 @@
             cursor: pointer;
             border: none;
             transition: all 0.2s;
+            font-family: 'Inter', sans-serif;
         }
 
-        .doc-action.upload {
-            background: var(--primary);
-            color: white;
-        }
-
-        .doc-action.upload:hover {
-            background: var(--primary-dark);
-        }
-
-        .doc-action.view {
-            background: var(--gray-100);
-            color: var(--gray-700);
-        }
+        .doc-action.upload { background: var(--navy); color: white; }
+        .doc-action.upload:hover { background: var(--navy-light); }
+        .doc-action.view { background: var(--gray-100); color: var(--charcoal); }
 
         /* Upload Zone */
         .upload-zone {
@@ -407,24 +405,13 @@
         }
 
         .upload-zone:hover {
-            border-color: var(--primary);
-            background: rgba(232, 93, 4, 0.02);
+            border-color: var(--navy);
+            background: rgba(30, 58, 95, 0.02);
         }
 
-        .upload-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .upload-text {
-            color: var(--gray-600);
-            margin-bottom: 10px;
-        }
-
-        .upload-hint {
-            font-size: 0.85rem;
-            color: var(--gray-400);
-        }
+        .upload-icon { font-size: 3rem; margin-bottom: 15px; }
+        .upload-text { color: var(--charcoal); margin-bottom: 10px; }
+        .upload-hint { font-size: 0.85rem; color: var(--gray-400); }
 
         /* Payment Section */
         .payment-summary {
@@ -440,14 +427,8 @@
             border-bottom: 1px solid var(--gray-100);
         }
 
-        .payment-label {
-            color: var(--gray-600);
-        }
-
-        .payment-value {
-            font-weight: 600;
-            color: var(--secondary);
-        }
+        .payment-label { color: var(--charcoal); }
+        .payment-value { font-weight: 600; color: var(--navy); }
 
         .payment-total {
             font-size: 1.2rem;
@@ -461,13 +442,8 @@
             text-align: center;
         }
 
-        .payment-status.paid {
-            background: rgba(16, 185, 129, 0.1);
-        }
-
-        .payment-status.pending {
-            background: rgba(245, 158, 11, 0.1);
-        }
+        .payment-status.paid { background: rgba(34, 197, 94, 0.08); }
+        .payment-status.pending-pay { background: rgba(245, 158, 11, 0.08); }
 
         /* Notifications */
         .notification {
@@ -478,45 +454,21 @@
             margin-bottom: 10px;
         }
 
-        .notification.info {
-            background: rgba(59, 130, 246, 0.1);
-        }
+        .notification.info { background: rgba(59, 130, 246, 0.08); }
+        .notification.warning { background: rgba(245, 158, 11, 0.08); }
+        .notification.success { background: rgba(34, 197, 94, 0.08); }
 
-        .notification.warning {
-            background: rgba(245, 158, 11, 0.1);
-        }
-
-        .notification.success {
-            background: rgba(16, 185, 129, 0.1);
-        }
-
-        .notification-icon {
-            font-size: 1.3rem;
-        }
-
-        .notification-content {
-            flex: 1;
-        }
-
-        .notification-title {
-            font-weight: 600;
-            margin-bottom: 3px;
-        }
-
-        .notification-text {
-            font-size: 0.9rem;
-            color: var(--gray-600);
-        }
-
-        .notification-time {
-            font-size: 0.75rem;
-            color: var(--gray-400);
-        }
+        .notification-icon { font-size: 1.3rem; }
+        .notification-content { flex: 1; }
+        .notification-title { font-weight: 600; margin-bottom: 3px; color: var(--navy); }
+        .notification-text { font-size: 0.9rem; color: var(--charcoal); }
+        .notification-time { font-size: 0.75rem; color: var(--gray-400); margin-top: 4px; }
 
         /* Buttons */
         .btn {
             padding: 10px 20px;
             border-radius: 8px;
+            font-family: 'Inter', sans-serif;
             font-weight: 600;
             font-size: 0.9rem;
             cursor: pointer;
@@ -528,36 +480,56 @@
             gap: 8px;
         }
 
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
+        .btn-primary { background: var(--navy); color: white; }
+        .btn-primary:hover { background: var(--navy-light); }
+        .btn-gold { background: var(--gold); color: var(--navy); font-weight: 700; }
+        .btn-gold:hover { background: var(--gold-dark); }
+        .btn-outline { background: transparent; border: 2px solid var(--gray-300); color: var(--charcoal); }
+        .btn-outline:hover { border-color: var(--navy); color: var(--navy); }
+        .btn-whatsapp { background: #25D366; color: white; }
 
-        .btn-primary:hover {
-            background: var(--primary-dark);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--gray-300);
-            color: var(--gray-700);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        /* Grid layouts */
         .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
+        }
+
+        /* Reservation Banner */
+        .reservation-banner {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            color: white;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .reservation-info h3 {
+            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+
+        .reservation-info p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .reservation-timer {
+            text-align: center;
+        }
+
+        .reservation-timer-value {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--gold);
+        }
+
+        .reservation-timer-label {
+            font-size: 0.75rem;
+            opacity: 0.7;
         }
 
         /* Help Widget */
@@ -582,39 +554,21 @@
             border: none;
             box-shadow: 0 4px 15px rgba(0,0,0,0.15);
             transition: transform 0.2s;
+            text-decoration: none;
         }
 
-        .help-btn:hover {
-            transform: scale(1.1);
-        }
-
-        .help-btn.whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .help-btn.telegram {
-            background: #0088cc;
-            color: white;
-        }
+        .help-btn:hover { transform: scale(1.1); }
+        .help-btn.whatsapp { background: #25D366; color: white; }
+        .help-btn.telegram { background: #0088cc; color: white; }
 
         /* Mobile */
         @media (max-width: 968px) {
-            .layout {
-                grid-template-columns: 1fr;
-            }
-            .sidebar {
-                display: none;
-            }
-            .status-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
-            .payment-summary {
-                grid-template-columns: 1fr;
-            }
+            .layout { grid-template-columns: 1fr; }
+            .sidebar { display: none; }
+            .status-grid { grid-template-columns: repeat(2, 1fr); }
+            .grid-2 { grid-template-columns: 1fr; }
+            .payment-summary { grid-template-columns: 1fr; }
+            .reservation-banner { flex-direction: column; text-align: center; gap: 15px; }
         }
     </style>
 </head>
@@ -622,9 +576,10 @@
     <!-- Header -->
     <header class="header">
         <a href="index.html" class="logo">tuspapeles<span>2026</span></a>
+        <div class="header-center">Un servicio de Pombo, Horowitz &amp; Espinosa</div>
         <div class="user-info">
             <div class="user-avatar">MC</div>
-            <div class="user-name">María C. | Caso #TP2026-0847</div>
+            <div class="user-name">Mar&iacute;a C. | Caso #TP2026-0847</div>
         </div>
     </header>
 
@@ -634,32 +589,32 @@
             <ul class="sidebar-menu">
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link active">
-                        <span class="sidebar-icon">📊</span>
+                        <span class="sidebar-icon">&#128202;</span>
                         Resumen
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
-                        <span class="sidebar-icon">📄</span>
+                        <span class="sidebar-icon">&#128196;</span>
                         Documentos
                         <span class="sidebar-badge">3</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
-                        <span class="sidebar-icon">📋</span>
+                        <span class="sidebar-icon">&#128203;</span>
                         Mi Expediente
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
-                        <span class="sidebar-icon">💳</span>
+                        <span class="sidebar-icon">&#128179;</span>
                         Pagos
                     </a>
                 </li>
                 <li class="sidebar-item">
                     <a href="#" class="sidebar-link">
-                        <span class="sidebar-icon">🔔</span>
+                        <span class="sidebar-icon">&#128276;</span>
                         Notificaciones
                         <span class="sidebar-badge">2</span>
                     </a>
@@ -671,19 +626,19 @@
                 <ul class="sidebar-menu">
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
-                            <span class="sidebar-icon">❓</span>
+                            <span class="sidebar-icon">&#10067;</span>
                             Preguntas Frecuentes
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a href="#" class="sidebar-link">
-                            <span class="sidebar-icon">💬</span>
+                        <a href="https://wa.me/34600000000" class="sidebar-link">
+                            <span class="sidebar-icon">&#128172;</span>
                             WhatsApp
                         </a>
                     </li>
                     <li class="sidebar-item">
                         <a href="#" class="sidebar-link">
-                            <span class="sidebar-icon">📞</span>
+                            <span class="sidebar-icon">&#128222;</span>
                             Llamar
                         </a>
                     </li>
@@ -694,30 +649,42 @@
         <!-- Main Content -->
         <main class="main">
             <div class="page-header">
-                <h1 class="page-title">¡Hola, María! 👋</h1>
-                <p class="page-subtitle">Aquí tienes el estado actual de tu solicitud de regularización</p>
+                <h1 class="page-title">Hola, Mar&iacute;a</h1>
+                <p class="page-subtitle">Aqu&iacute; tienes el estado actual de tu solicitud de regularizaci&oacute;n</p>
+            </div>
+
+            <!-- Reservation Banner -->
+            <div class="reservation-banner">
+                <div class="reservation-info">
+                    <h3>Tu plaza #847 est&aacute; reservada</h3>
+                    <p>Paga &euro;39 para asegurar tu plaza y comenzar la preparaci&oacute;n de documentos</p>
+                </div>
+                <div class="reservation-timer">
+                    <div class="reservation-timer-value">6d 14h</div>
+                    <div class="reservation-timer-label">tiempo restante</div>
+                </div>
             </div>
 
             <!-- Status Overview -->
             <div class="status-grid">
                 <div class="status-card">
-                    <div class="status-icon pending">📄</div>
+                    <div class="status-icon pending">&#128196;</div>
                     <div class="status-value">7/10</div>
                     <div class="status-label">Documentos subidos</div>
                 </div>
                 <div class="status-card">
-                    <div class="status-icon success">✅</div>
+                    <div class="status-icon success">&#9989;</div>
                     <div class="status-value">5</div>
                     <div class="status-label">Documentos aprobados</div>
                 </div>
                 <div class="status-card">
-                    <div class="status-icon danger">⚠️</div>
+                    <div class="status-icon danger">&#9888;</div>
                     <div class="status-value">3</div>
                     <div class="status-label">Pendientes de subir</div>
                 </div>
                 <div class="status-card">
-                    <div class="status-icon info">💳</div>
-                    <div class="status-value">€99</div>
+                    <div class="status-icon info">&#128179;</div>
+                    <div class="status-value">&euro;39</div>
                     <div class="status-label">Pagado</div>
                 </div>
             </div>
@@ -730,28 +697,24 @@
                 <div class="card-body">
                     <div class="progress-timeline">
                         <div class="progress-step">
-                            <div class="step-dot completed">✓</div>
-                            <div class="step-label active">Registro</div>
+                            <div class="step-dot completed">&#10003;</div>
+                            <div class="step-label active">Verificaci&oacute;n</div>
+                            <div class="step-price free">GRATIS</div>
                         </div>
                         <div class="progress-step">
-                            <div class="step-dot completed">✓</div>
-                            <div class="step-label active">Evaluación</div>
+                            <div class="step-dot current">2</div>
+                            <div class="step-label active">Preparaci&oacute;n</div>
+                            <div class="step-price">&euro;39</div>
                         </div>
                         <div class="progress-step">
-                            <div class="step-dot current">3</div>
-                            <div class="step-label active">Documentos</div>
+                            <div class="step-dot">3</div>
+                            <div class="step-label">Revisi&oacute;n Legal</div>
+                            <div class="step-price">&euro;150</div>
                         </div>
                         <div class="progress-step">
                             <div class="step-dot">4</div>
-                            <div class="step-label">Revisión</div>
-                        </div>
-                        <div class="progress-step">
-                            <div class="step-dot">5</div>
-                            <div class="step-label">Presentación</div>
-                        </div>
-                        <div class="progress-step">
-                            <div class="step-dot">6</div>
-                            <div class="step-label">Resolución</div>
+                            <div class="step-label">Presentaci&oacute;n</div>
+                            <div class="step-price">&euro;110</div>
                         </div>
                     </div>
                 </div>
@@ -761,13 +724,13 @@
                 <!-- Documents Section -->
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">📄 Documentos Requeridos</div>
+                        <div class="card-title">Documentos Requeridos</div>
                         <a href="#" class="btn btn-outline">Ver todos</a>
                     </div>
                     <div class="card-body">
                         <ul class="doc-list">
                             <li class="doc-item">
-                                <div class="doc-icon">🪪</div>
+                                <div class="doc-icon">&#128179;</div>
                                 <div class="doc-info">
                                     <div class="doc-name">Pasaporte</div>
                                     <div class="doc-meta">Subido 28/01/2026</div>
@@ -776,7 +739,7 @@
                                 <button class="doc-action view">Ver</button>
                             </li>
                             <li class="doc-item">
-                                <div class="doc-icon">📍</div>
+                                <div class="doc-icon">&#128205;</div>
                                 <div class="doc-info">
                                     <div class="doc-name">Empadronamiento</div>
                                     <div class="doc-meta">Subido 29/01/2026</div>
@@ -785,7 +748,7 @@
                                 <button class="doc-action view">Ver</button>
                             </li>
                             <li class="doc-item">
-                                <div class="doc-icon">📜</div>
+                                <div class="doc-icon">&#128220;</div>
                                 <div class="doc-info">
                                     <div class="doc-name">Antecedentes Penales</div>
                                     <div class="doc-meta">Pendiente de apostilla</div>
@@ -794,7 +757,7 @@
                                 <button class="doc-action upload">Subir</button>
                             </li>
                             <li class="doc-item">
-                                <div class="doc-icon">💡</div>
+                                <div class="doc-icon">&#128161;</div>
                                 <div class="doc-info">
                                     <div class="doc-name">Facturas de Servicios</div>
                                     <div class="doc-meta">Luz, agua o internet</div>
@@ -809,31 +772,31 @@
                 <!-- Notifications Section -->
                 <div class="card">
                     <div class="card-header">
-                        <div class="card-title">🔔 Notificaciones</div>
+                        <div class="card-title">Notificaciones</div>
                     </div>
                     <div class="card-body">
                         <div class="notification warning">
-                            <div class="notification-icon">⚠️</div>
+                            <div class="notification-icon">&#9888;</div>
                             <div class="notification-content">
                                 <div class="notification-title">Documento pendiente</div>
-                                <div class="notification-text">Tu certificado de antecedentes penales necesita estar apostillado. ¿Necesitas ayuda?</div>
+                                <div class="notification-text">Tu certificado de antecedentes penales necesita estar apostillado. &iquest;Necesitas ayuda?</div>
                                 <div class="notification-time">Hace 2 horas</div>
                             </div>
                         </div>
                         <div class="notification success">
-                            <div class="notification-icon">✅</div>
+                            <div class="notification-icon">&#9989;</div>
                             <div class="notification-content">
                                 <div class="notification-title">Documento aprobado</div>
                                 <div class="notification-text">Tu empadronamiento ha sido verificado correctamente.</div>
-                                <div class="notification-time">Hace 1 día</div>
+                                <div class="notification-time">Hace 1 d&iacute;a</div>
                             </div>
                         </div>
                         <div class="notification info">
-                            <div class="notification-icon">📰</div>
+                            <div class="notification-icon">&#128240;</div>
                             <div class="notification-content">
-                                <div class="notification-title">Nueva información</div>
+                                <div class="notification-title">Nueva informaci&oacute;n</div>
                                 <div class="notification-text">El gobierno ha publicado nuevas aclaraciones sobre el proceso.</div>
-                                <div class="notification-time">Hace 3 días</div>
+                                <div class="notification-time">Hace 3 d&iacute;as</div>
                             </div>
                         </div>
                     </div>
@@ -843,13 +806,13 @@
             <!-- Upload Zone -->
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">📤 Subir Documento</div>
+                    <div class="card-title">Subir Documento</div>
                 </div>
                 <div class="card-body">
                     <div class="upload-zone">
-                        <div class="upload-icon">📎</div>
-                        <div class="upload-text">Arrastra y suelta tu documento aquí</div>
-                        <div class="upload-hint">o haz clic para seleccionar archivo • PDF, JPG, PNG (máx. 10MB)</div>
+                        <div class="upload-icon">&#128206;</div>
+                        <div class="upload-text">Arrastra y suelta tu documento aqu&iacute;</div>
+                        <div class="upload-hint">o haz clic para seleccionar archivo &bull; PDF, JPG, PNG (m&aacute;x. 10MB)</div>
                     </div>
                 </div>
             </div>
@@ -857,39 +820,47 @@
             <!-- Payment Section -->
             <div class="card">
                 <div class="card-header">
-                    <div class="card-title">💳 Estado de Pagos</div>
+                    <div class="card-title">Estado de Pagos</div>
                 </div>
                 <div class="card-body">
                     <div class="payment-summary">
                         <div>
                             <div class="payment-item">
-                                <span class="payment-label">Evaluación inicial</span>
-                                <span class="payment-value">€99</span>
+                                <span class="payment-label">Fase 1: Verificaci&oacute;n</span>
+                                <span class="payment-value" style="color: var(--success);">GRATIS</span>
                             </div>
                             <div class="payment-item">
-                                <span class="payment-label">Gestión y presentación</span>
-                                <span class="payment-value">€199</span>
+                                <span class="payment-label">Fase 2: Preparaci&oacute;n</span>
+                                <span class="payment-value">&euro;39</span>
                             </div>
                             <div class="payment-item">
-                                <span class="payment-label">Tasa gobierno (a pagar al presentar)</span>
-                                <span class="payment-value">€38.28</span>
+                                <span class="payment-label">Fase 3: Revisi&oacute;n Legal</span>
+                                <span class="payment-value">&euro;150</span>
+                            </div>
+                            <div class="payment-item">
+                                <span class="payment-label">Fase 4: Presentaci&oacute;n</span>
+                                <span class="payment-value">&euro;110</span>
+                            </div>
+                            <div class="payment-item">
+                                <span class="payment-label">Tasa gobierno (aparte)</span>
+                                <span class="payment-value" style="color: var(--gray-400);">&euro;38.28</span>
                             </div>
                             <div class="payment-item payment-total">
-                                <span class="payment-label"><strong>Total</strong></span>
-                                <span class="payment-value">€336.28</span>
+                                <span class="payment-label"><strong>Total servicio</strong></span>
+                                <span class="payment-value"><strong>&euro;299</strong></span>
                             </div>
                         </div>
                         <div>
                             <div class="payment-status paid">
-                                <div style="font-size: 2rem; margin-bottom: 10px;">✅</div>
-                                <div style="font-weight: 700; color: var(--success); margin-bottom: 5px;">€99 Pagado</div>
-                                <div style="font-size: 0.85rem; color: var(--gray-500);">28/01/2026</div>
+                                <div style="font-size: 2rem; margin-bottom: 10px;">&#9989;</div>
+                                <div style="font-weight: 700; color: var(--success); margin-bottom: 5px;">&euro;39 Pagado</div>
+                                <div style="font-size: 0.85rem; color: var(--gray-500);">Fase 2 - 28/01/2026</div>
                             </div>
-                            <div class="payment-status pending" style="margin-top: 15px;">
-                                <div style="font-size: 2rem; margin-bottom: 10px;">⏳</div>
-                                <div style="font-weight: 700; color: var(--warning); margin-bottom: 5px;">€237.28 Pendiente</div>
-                                <div style="font-size: 0.85rem; color: var(--gray-500);">A pagar antes de presentación</div>
-                                <button class="btn btn-primary" style="margin-top: 15px;">Pagar Ahora</button>
+                            <div class="payment-status pending-pay" style="margin-top: 15px;">
+                                <div style="font-size: 2rem; margin-bottom: 10px;">&#9203;</div>
+                                <div style="font-weight: 700; color: var(--warning); margin-bottom: 5px;">&euro;260 Pendiente</div>
+                                <div style="font-size: 0.85rem; color: var(--gray-500);">Pr&oacute;ximo pago: &euro;150 (Revisi&oacute;n Legal)</div>
+                                <button class="btn btn-gold" style="margin-top: 15px;">Pagar Fase 3 - &euro;150</button>
                             </div>
                         </div>
                     </div>
@@ -900,8 +871,8 @@
 
     <!-- Help Widget -->
     <div class="help-widget">
-        <a href="https://wa.me/34600000000" class="help-btn whatsapp" title="WhatsApp">💬</a>
-        <a href="https://t.me/PHRegularizacionBot" class="help-btn telegram" title="Telegram">✈️</a>
+        <a href="https://wa.me/34600000000" class="help-btn whatsapp" title="WhatsApp">&#128172;</a>
+        <a href="https://t.me/PHRegularizacionBot" class="help-btn telegram" title="Telegram">&#9992;</a>
     </div>
 </body>
 </html>

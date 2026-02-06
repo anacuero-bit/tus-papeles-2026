@@ -133,7 +133,7 @@
     {
       "id": "faq-6",
       "question": "¿Cuánto cuesta el proceso?",
-      "answer": "La tasa oficial del gobierno es de €38.28 por persona. Nuestros honorarios profesionales son de €99 inicial + €199 al presentar la solicitud, incluyendo evaluación, preparación, presentación y seguimiento.",
+      "answer": "La tasa oficial del gobierno es de €38.28 por persona. Nuestro servicio profesional completo cuesta €299 (verificación gratuita + €39 preparación + €150 revisión legal + €110 presentación). Todo por menos de 300 euros.",
       "category": "costos"
     },
     {
@@ -167,10 +167,13 @@
     }
   ],
   "pricing": {
-    "initial_evaluation": 99,
-    "processing_fee": 199,
+    "phase_1_verification": 0,
+    "phase_2_preparation": 39,
+    "phase_3_legal_review": 150,
+    "phase_4_filing": 110,
+    "total_service": 299,
     "government_fee": 38.28,
-    "total": 336.28,
-    "currency": "EUR"
+    "currency": "EUR",
+    "anchor_copy": "Todo por menos de 300 euros"
   }
 }
