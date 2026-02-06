@@ -71,36 +71,66 @@
             padding: 0 20px;
         }
 
-        /* Trust Bar */
-        .trust-bar {
+        /* Ticker Bar */
+        .ticker-bar {
             background: var(--navy-dark);
             color: white;
-            padding: 10px 0;
+            padding: 0;
             font-size: 0.85rem;
+            overflow: hidden;
+            position: relative;
         }
 
-        .trust-bar-inner {
+        .ticker-track {
             display: flex;
-            justify-content: space-between;
+            animation: ticker-scroll 25s linear infinite;
+            white-space: nowrap;
+        }
+
+        .ticker-track:hover {
+            animation-play-state: paused;
+        }
+
+        .ticker-content {
+            display: flex;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 40px;
+            padding: 10px 20px;
+            flex-shrink: 0;
         }
 
-        .trust-badge {
-            background: var(--gold);
-            color: var(--navy);
-            padding: 4px 12px;
-            border-radius: 4px;
-            font-weight: 700;
-            font-size: 0.75rem;
-            letter-spacing: 0.5px;
-        }
-
-        .trust-item {
+        .ticker-item {
             display: flex;
             align-items: center;
             gap: 8px;
+            font-weight: 600;
+        }
+
+        .ticker-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--error);
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+        }
+
+        .ticker-separator {
+            color: var(--gold);
+            opacity: 0.4;
+        }
+
+        @keyframes ticker-scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Trust Attribution Bar */
+        .trust-attr {
+            background: var(--navy);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.8rem;
+            text-align: center;
             opacity: 0.9;
         }
 
@@ -260,18 +290,13 @@
             color: var(--navy);
         }
 
-        .btn-whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .btn-whatsapp:hover {
-            background: #128C7E;
-        }
-
         .btn-telegram {
             background: #0088cc;
             color: white;
+        }
+
+        .btn-telegram:hover {
+            background: #006699;
         }
 
         .btn-lg {
@@ -1287,6 +1312,147 @@
             justify-content: center;
         }
 
+        /* Floating Telegram Button */
+        .floating-telegram {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 98;
+        }
+
+        .floating-telegram a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: #0088cc;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.6rem;
+            box-shadow: 0 4px 20px rgba(0, 136, 204, 0.4);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .floating-telegram a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(0, 136, 204, 0.5);
+        }
+
+        .floating-telegram-label {
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            color: var(--navy);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            white-space: nowrap;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .floating-telegram:hover .floating-telegram-label {
+            opacity: 1;
+        }
+
+        /* Channel Selection */
+        .channel-select {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 550px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border: 1px solid var(--gray-200);
+        }
+
+        .channel-select-badge {
+            display: inline-block;
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--success);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .channel-select h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .channel-select > p {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            margin-bottom: 25px;
+        }
+
+        .channel-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .channel-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 25px;
+            border-radius: 12px;
+            border: 2px solid var(--gray-200);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .channel-option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .channel-option.primary {
+            border-color: var(--navy);
+            background: rgba(30, 58, 95, 0.03);
+        }
+
+        .channel-option-icon {
+            font-size: 2rem;
+        }
+
+        .channel-option-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .channel-option-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--gray-500);
+        }
+
+        .channel-option-badge {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 3px 10px;
+            border-radius: 10px;
+        }
+
         /* Responsive */
         @media (max-width: 1024px) {
             .hero-grid { grid-template-columns: 1fr; }
@@ -1321,6 +1487,10 @@
             .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
             .mobile-cta { display: block; }
             body { padding-bottom: 70px; }
+            .floating-telegram { bottom: 85px; right: 20px; }
+            .floating-telegram a { width: 50px; height: 50px; font-size: 1.3rem; }
+            .floating-telegram-label { display: none; }
+            .channel-options { grid-template-columns: 1fr; }
         }
 
         /* Animations */
@@ -1333,17 +1503,44 @@
     </style>
 </head>
 <body>
-    <!-- Trust Bar -->
-    <div class="trust-bar">
-        <div class="container">
-            <div class="trust-bar-inner">
-                <div class="trust-item">
-                    <span class="trust-badge">OFICIAL</span>
-                    <span>Proceso aprobado por el Gobierno de España - Real Decreto 27/01/2026</span>
-                </div>
-                <div class="trust-item">
-                    Un servicio de <strong>Pombo, Horowitz &amp; Espinosa</strong> &mdash; 25 a&ntilde;os de experiencia
-                </div>
+    <!-- Ticker Bar -->
+    <div class="ticker-bar">
+        <div class="ticker-track">
+            <div class="ticker-content">
+                <div class="ticker-item"><span class="ticker-dot"></span> <span id="ticker-slots">847 de 1,000 plazas</span></div>
+                <span class="ticker-separator">|</span>
+                <div class="ticker-item">&#9200; <span id="ticker-days">--</span> d&iacute;as restantes</div>
+                <span class="ticker-separator">|</span>
+                <div class="ticker-item">&#128200; <span id="ticker-signups">89</span> inscritos esta semana</div>
+                <span class="ticker-separator">|</span>
+                <div class="ticker-item">&#9878; Un servicio de <strong>Pombo, Horowitz &amp; Espinosa</strong></div>
+                <span class="ticker-separator">|</span>
+                <div class="ticker-item"><span class="ticker-dot"></span> <span>847 de 1,000 plazas</span></div>
+                <span class="ticker-separator">|</span>
+                <div class="ticker-item">&#9200; <span>-- d&iacute;as restantes</span></div>
+                <span class="ticker-separator">|</span>
+                <div class="ticker-item">&#128200; <span>89 inscritos esta semana</span></div>
+                <span class="ticker-separator">|</span>
+                <div class="ticker-item">&#9878; Un servicio de <strong>Pombo, Horowitz &amp; Espinosa</strong></div>
+                <span class="ticker-separator">|</span>
+            </div>
+            <div class="ticker-content" aria-hidden="true">
+                <div class="ticker-item"><span class="ticker-dot"></span> <span>847 de 1,000 plazas</span></div>
+                <span class="ticker-separator">|</span>
+                <div class="ticker-item">&#9200; <span>-- d&iacute;as restantes</span></div>
+                <span class="ticker-separator">|</span>
+                <div class="ticker-item">&#128200; <span>89 inscritos esta semana</span></div>
+                <span class="ticker-separator">|</span>
+                <div class="ticker-item">&#9878; Un servicio de <strong>Pombo, Horowitz &amp; Espinosa</strong></div>
+                <span class="ticker-separator">|</span>
+                <div class="ticker-item"><span class="ticker-dot"></span> <span>847 de 1,000 plazas</span></div>
+                <span class="ticker-separator">|</span>
+                <div class="ticker-item">&#9200; <span>-- d&iacute;as restantes</span></div>
+                <span class="ticker-separator">|</span>
+                <div class="ticker-item">&#128200; <span>89 inscritos esta semana</span></div>
+                <span class="ticker-separator">|</span>
+                <div class="ticker-item">&#9878; Un servicio de <strong>Pombo, Horowitz &amp; Espinosa</strong></div>
+                <span class="ticker-separator">|</span>
             </div>
         </div>
     </div>
@@ -1366,7 +1563,8 @@
                         <a href="#requisitos">Requisitos</a>
                         <a href="#documentos">Documentos</a>
                         <a href="#preguntas">FAQ</a>
-                        <a href="#verificar" class="btn btn-gold btn-sm">Verificar elegibilidad</a>
+                        <a href="https://t.me/PHRegularizacionBot" style="color: #0088cc;">Bot de Telegram</a>
+                        <a href="#verificar" class="btn btn-gold btn-sm">Verificar si califico</a>
                     </nav>
                 </div>
             </div>
@@ -1400,7 +1598,7 @@
                     </div>
 
                     <div class="hero-ctas">
-                        <a href="#verificar" class="btn btn-gold btn-lg">Verificar ahora &#8594;</a>
+                        <a href="#verificar" class="btn btn-gold btn-lg">Verificar si califico &#8594;</a>
                         <a href="#como-funciona" class="btn btn-outline-white">&iquest;C&oacute;mo funciona?</a>
                     </div>
                     <p class="hero-cta-note">Faltan <strong id="hero-days">--</strong> d&iacute;as para la fecha l&iacute;mite</p>
@@ -1633,7 +1831,7 @@
                             <div class="why-us-point-icon">&#128172;</div>
                             <div>
                                 <h4>Soporte continuo</h4>
-                                <p>Atenci&oacute;n por WhatsApp, email y tel&eacute;fono durante todo el proceso.</p>
+                                <p>Atenci&oacute;n por Telegram, email y tel&eacute;fono durante todo el proceso.</p>
                             </div>
                         </div>
                     </div>
@@ -1758,67 +1956,92 @@
         </div>
     </section>
 
-    <!-- Bot / Assistant Section -->
+    <!-- Verify / Channel Selection Section -->
     <section id="verificar" class="bot-section">
         <div class="container">
-            <div class="bot-grid">
-                <div class="bot-content">
-                    <h2>Tu asistente personal 24/7</h2>
-                    <p>Nuestro sistema automatizado te gu&iacute;a en todo el proceso. Verifica tu elegibilidad, sube documentos, consulta el estado de tu caso y resuelve dudas al instante.</p>
+            <div class="section-header">
+                <div class="section-badge">Empieza aqu&iacute;</div>
+                <h2>Verifica si calificas</h2>
+                <p>Responde 3 preguntas y descubre si puedes regularizar tu situaci&oacute;n. Gratis y sin compromiso.</p>
+            </div>
 
-                    <div class="bot-features">
-                        <div class="bot-feature">
-                            <div class="bot-feature-icon">&#128220;</div>
-                            <span>Verificar elegibilidad</span>
-                        </div>
-                        <div class="bot-feature">
-                            <div class="bot-feature-icon">&#128228;</div>
-                            <span>Subir documentos</span>
-                        </div>
-                        <div class="bot-feature">
-                            <div class="bot-feature-icon">&#128202;</div>
-                            <span>Ver estado del caso</span>
-                        </div>
-                        <div class="bot-feature">
-                            <div class="bot-feature-icon">&#128276;</div>
-                            <span>Recordatorios</span>
-                        </div>
-                        <div class="bot-feature">
-                            <div class="bot-feature-icon">&#128179;</div>
-                            <span>Estado de pagos</span>
-                        </div>
-                        <div class="bot-feature">
-                            <div class="bot-feature-icon">&#10067;</div>
-                            <span>Preguntas frecuentes</span>
-                        </div>
-                    </div>
+            <div class="channel-select">
+                <div class="channel-select-badge">&#10003; Verificaci&oacute;n r&aacute;pida y gratuita</div>
+                <h3>&iquest;C&oacute;mo quieres continuar?</h3>
+                <p>Elige el canal que prefieras. Ambos ofrecen el mismo servicio completo.</p>
 
-                    <div class="bot-buttons">
-                        <a href="https://wa.me/34600000000?text=Hola,%20quiero%20verificar%20mi%20elegibilidad%20para%20la%20regularizaci%C3%B3n%202026" class="btn btn-whatsapp btn-lg">
-                            WhatsApp
-                        </a>
-                        <a href="https://t.me/PHRegularizacionBot" class="btn btn-telegram btn-lg">
-                            Telegram
-                        </a>
-                    </div>
+                <div class="channel-options">
+                    <a href="/verificar" class="channel-option primary">
+                        <span class="channel-option-badge">Recomendado</span>
+                        <div class="channel-option-icon">&#128187;</div>
+                        <div class="channel-option-title">Continuar en la web</div>
+                        <div class="channel-option-desc">Formulario r&aacute;pido, panel de control, subida de documentos</div>
+                    </a>
+                    <a href="https://t.me/PHRegularizacionBot" class="channel-option">
+                        <div class="channel-option-icon">&#9992;</div>
+                        <div class="channel-option-title">Usar Bot de Telegram</div>
+                        <div class="channel-option-desc">Asistente conversacional 24/7, notificaciones instant&aacute;neas</div>
+                    </a>
                 </div>
+            </div>
 
-                <div class="bot-mockup">
-                    <div class="chat-message">
-                        <div class="chat-avatar">PHE</div>
-                        <div class="chat-bubble">
-                            <p>Hola, soy el asistente de tuspapeles2026. &iquest;Entraste a Espa&ntilde;a antes del 31 de diciembre de 2025?</p>
+            <div style="margin-top: 40px;">
+                <div class="bot-grid">
+                    <div class="bot-content">
+                        <h2>Tu asistente personal 24/7</h2>
+                        <p>Nuestro sistema te gu&iacute;a en todo el proceso. Verifica tu elegibilidad, sube documentos, consulta el estado de tu caso y resuelve dudas al instante.</p>
+
+                        <div class="bot-features">
+                            <div class="bot-feature">
+                                <div class="bot-feature-icon">&#128220;</div>
+                                <span>Verificar elegibilidad</span>
+                            </div>
+                            <div class="bot-feature">
+                                <div class="bot-feature-icon">&#128228;</div>
+                                <span>Subir documentos</span>
+                            </div>
+                            <div class="bot-feature">
+                                <div class="bot-feature-icon">&#128202;</div>
+                                <span>Ver estado del caso</span>
+                            </div>
+                            <div class="bot-feature">
+                                <div class="bot-feature-icon">&#128276;</div>
+                                <span>Recordatorios</span>
+                            </div>
+                            <div class="bot-feature">
+                                <div class="bot-feature-icon">&#128179;</div>
+                                <span>Estado de pagos</span>
+                            </div>
+                            <div class="bot-feature">
+                                <div class="bot-feature-icon">&#10067;</div>
+                                <span>Preguntas frecuentes</span>
+                            </div>
+                        </div>
+
+                        <div class="bot-buttons">
+                            <a href="https://t.me/PHRegularizacionBot" class="btn btn-telegram btn-lg">
+                                &#9992; Abrir Bot de Telegram
+                            </a>
                         </div>
                     </div>
-                    <div class="chat-message">
-                        <div class="chat-bubble user">
-                            <p>S&iacute;, llegu&eacute; en agosto de 2024</p>
+
+                    <div class="bot-mockup">
+                        <div class="chat-message">
+                            <div class="chat-avatar">PHE</div>
+                            <div class="chat-bubble">
+                                <p>Hola, soy el asistente de tuspapeles2026. &iquest;Entraste a Espa&ntilde;a antes del 31 de diciembre de 2025?</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="chat-message">
-                        <div class="chat-avatar">PHE</div>
-                        <div class="chat-bubble">
-                            <p>Perfecto. Eso significa que llevas m&aacute;s de 5 meses en Espa&ntilde;a. Cumples el primer requisito. Ahora te har&eacute; algunas preguntas m&aacute;s para evaluar tu caso...</p>
+                        <div class="chat-message">
+                            <div class="chat-bubble user">
+                                <p>S&iacute;, llegu&eacute; en agosto de 2024</p>
+                            </div>
+                        </div>
+                        <div class="chat-message">
+                            <div class="chat-avatar">PHE</div>
+                            <div class="chat-bubble">
+                                <p>Perfecto. Eso significa que llevas m&aacute;s de 5 meses en Espa&ntilde;a. Cumples el primer requisito. Ahora te har&eacute; algunas preguntas m&aacute;s para evaluar tu caso...</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1934,7 +2157,7 @@
 
             <div style="text-align: center; margin-top: 30px;">
                 <p style="color: var(--charcoal); margin-bottom: 15px;">&iquest;No encuentras tu respuesta?</p>
-                <a href="https://wa.me/34600000000?text=Hola,%20tengo%20una%20pregunta%20sobre%20la%20regularizaci%C3%B3n%202026" class="btn btn-whatsapp">Preg&uacute;ntanos por WhatsApp</a>
+                <a href="https://t.me/PHRegularizacionBot" class="btn btn-telegram">&#9992; Preg&uacute;ntanos por Telegram</a>
             </div>
         </div>
     </section>
@@ -1945,8 +2168,8 @@
             <h2>&iquest;Listo para empezar?</h2>
             <p>La verificaci&oacute;n es gratis y toma 2 minutos. No dejes pasar esta oportunidad hist&oacute;rica.</p>
             <div class="cta-buttons">
-                <a href="#verificar" class="btn btn-navy btn-lg">Verificar elegibilidad</a>
-                <a href="https://wa.me/34600000000" class="btn btn-outline btn-lg">Hablar por WhatsApp</a>
+                <a href="#verificar" class="btn btn-navy btn-lg">Verificar si califico</a>
+                <a href="https://t.me/PHRegularizacionBot" class="btn btn-outline btn-lg">&#9992; Usar Bot de Telegram</a>
             </div>
         </div>
     </section>
@@ -1984,23 +2207,29 @@
                 <div>
                     <h4>Contacto</h4>
                     <ul class="footer-links">
-                        <li>&#128205; Calle Serrano 45, Madrid</li>
-                        <li>&#128222; +34 91 555 0123</li>
+                        <li><a href="https://t.me/PHRegularizacionBot">&#9992; Telegram (principal)</a></li>
                         <li>&#9993; info@tuspapeles2026.es</li>
-                        <li><a href="https://wa.me/34600000000">WhatsApp: +34 600 000 000</a></li>
+                        <li>&#128222; +34 91 555 0123</li>
+                        <li>&#128205; Calle Serrano 45, Madrid</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <div>&copy; 2026 tuspapeles2026.es &mdash; tuspapeles2026 es una marca de Pombo, Horowitz &amp; Espinosa, S.L.</div>
+                <div>&copy; 2026 tuspapeles2026.es &mdash; tuspapeles2026 es una marca de Pombo, Horowitz &amp; Espinosa, S.L.P.</div>
                 <div>Informaci&oacute;n oficial: <a href="https://www.inclusion.gob.es">Ministerio de Inclusi&oacute;n</a></div>
             </div>
         </div>
     </footer>
 
+    <!-- Floating Telegram Button -->
+    <div class="floating-telegram">
+        <span class="floating-telegram-label">&#9992; Bot de Telegram</span>
+        <a href="https://t.me/PHRegularizacionBot" title="Abrir Bot de Telegram">&#9992;</a>
+    </div>
+
     <!-- Mobile CTA Bar -->
     <div class="mobile-cta">
-        <a href="#verificar" class="btn btn-gold btn-lg">Verificar elegibilidad</a>
+        <a href="#verificar" class="btn btn-gold btn-lg">Verificar si califico</a>
     </div>
 
     <script>
@@ -2023,6 +2252,9 @@
 
                 var heroDays = document.getElementById('hero-days');
                 if (heroDays) heroDays.textContent = days;
+
+                var tickerDays = document.getElementById('ticker-days');
+                if (tickerDays) tickerDays.textContent = days;
             }
         }
 
