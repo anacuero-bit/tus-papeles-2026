@@ -1535,140 +1535,9 @@
         }
 
         .pulse { animation: pulse 2s infinite; }
-
-        /* Referral Banner */
-        .referral-banner {
-            display: none;
-            background: linear-gradient(135deg, var(--gold), var(--gold-dark));
-            color: var(--navy);
-            padding: 12px 20px;
-            text-align: center;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 1001;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .referral-banner.visible { display: block; animation: bannerSlideDown 0.4s ease; }
-        @keyframes bannerSlideDown {
-            from { transform: translateY(-100%); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-        .referral-banner .gift-icon { font-size: 1.2em; margin-right: 8px; }
-        .referral-banner .referrer-name { font-weight: 700; }
-
-        /* Referral Section */
-        .referral-section {
-            background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);
-            padding: 80px 0;
-            text-align: center;
-        }
-        .referral-section h2 {
-            font-size: 2rem;
-            color: var(--navy);
-            margin-bottom: 10px;
-        }
-        .referral-section .section-subtitle {
-            font-family: 'Inter', sans-serif;
-            color: var(--gray-500);
-            font-size: 1.1rem;
-            margin-bottom: 40px;
-        }
-        .referral-steps {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-        .referral-step {
-            position: relative;
-            max-width: 180px;
-            padding: 20px;
-        }
-        .referral-step .step-number {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 28px;
-            height: 28px;
-            background: var(--navy);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-        .referral-step .step-icon { font-size: 3rem; margin-bottom: 15px; }
-        .referral-step h3 {
-            font-size: 1.1rem;
-            color: var(--navy);
-            margin-bottom: 8px;
-        }
-        .referral-step p {
-            font-family: 'Inter', sans-serif;
-            color: var(--gray-500);
-            font-size: 0.95rem;
-            line-height: 1.4;
-        }
-        .referral-summary {
-            background: white;
-            border-radius: 12px;
-            padding: 25px 30px;
-            max-width: 400px;
-            margin: 30px auto;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        .referral-summary .summary-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px solid var(--gray-200);
-            font-family: 'Inter', sans-serif;
-        }
-        .referral-summary .summary-row:last-child { border-bottom: none; }
-        .referral-summary .summary-row.highlight {
-            background: rgba(30, 58, 95, 0.04);
-            margin: 10px -15px -10px;
-            padding: 15px;
-            border-radius: 8px;
-        }
-        .referral-summary .summary-row span { color: var(--gray-500); }
-        .referral-summary .summary-row strong { color: var(--navy); }
-        .referral-terms-link {
-            margin-top: 25px;
-            font-family: 'Inter', sans-serif;
-        }
-        .referral-terms-link a {
-            color: var(--gray-500);
-            font-size: 0.9rem;
-            text-decoration: underline;
-        }
-
-        @media (max-width: 768px) {
-            .referral-banner { padding: 10px 15px; font-size: 0.95rem; }
-            .referral-section { padding: 50px 0; }
-            .referral-section h2 { font-size: 1.6rem; }
-            .referral-steps { flex-direction: column; align-items: center; gap: 25px; }
-            .referral-step { max-width: 250px; }
-            .referral-summary { margin: 20px 15px; padding: 20px; }
-            .referral-summary .summary-row { flex-direction: column; text-align: center; gap: 5px; }
-        }
     </style>
 </head>
 <body>
-    <!-- Referral Banner (hidden by default, shown by JS if code present) -->
-    <div id="referral-banner" class="referral-banner">
-        <span class="gift-icon">&#127873;</span>
-        <span class="referrer-name">Tu amigo</span> te regala <strong>&euro;25 de descuento</strong>
-    </div>
-
     <!-- Ticker Bar -->
     <div class="ticker-bar">
         <div class="ticker-track">
@@ -1780,60 +1649,6 @@
         </div>
     </section>
 
-    <!-- REFERRAL SECTION -->
-    <section id="referidos" class="referral-section">
-        <div class="container">
-            <h2>&#128227; Comparte y Gana</h2>
-            <p class="section-subtitle">Ayuda a tu comunidad &mdash; y gana t&uacute; tambi&eacute;n</p>
-
-            <div class="referral-steps">
-                <div class="referral-step">
-                    <div class="step-number">1</div>
-                    <div class="step-icon">&#9989;</div>
-                    <h3>Verifica gratis</h3>
-                    <p>Comprueba si calificas y recibe tu c&oacute;digo</p>
-                </div>
-
-                <div class="referral-step">
-                    <div class="step-number">2</div>
-                    <div class="step-icon">&#128179;</div>
-                    <h3>Paga &euro;39</h3>
-                    <p>Activa tu c&oacute;digo</p>
-                </div>
-
-                <div class="referral-step">
-                    <div class="step-number">3</div>
-                    <div class="step-icon">&#127873;</div>
-                    <h3>Gana &euro;25</h3>
-                    <p>Por cada amigo que pague</p>
-                </div>
-            </div>
-
-            <div class="referral-summary">
-                <div class="summary-row">
-                    <span>&#128100; Tu amigo recibe</span>
-                    <strong>&euro;25 de descuento</strong>
-                </div>
-                <div class="summary-row">
-                    <span>&#128176; T&uacute; recibes</span>
-                    <strong>&euro;25 de cr&eacute;dito</strong>
-                </div>
-                <div class="summary-row highlight">
-                    <span>&#127881; 12 amigos =</span>
-                    <strong>&iexcl;Servicio GRATIS!</strong>
-                </div>
-            </div>
-
-            <a href="https://t.me/TusPapeles2026Bot" class="btn btn-gold btn-lg" target="_blank" rel="noopener noreferrer">
-                Obtener mi c&oacute;digo &rarr;
-            </a>
-
-            <p class="referral-terms-link">
-                <a href="referidos-terminos.html">Ver t&eacute;rminos del programa</a>
-            </p>
-        </div>
-    </section>
-
     <!-- Trust Strip -->
     <div class="trust-strip">
         <div class="container">
@@ -1926,6 +1741,7 @@
             <div class="total-callout">
                 <h3>Todo por menos de 300 euros</h3>
                 <p>Servicio completo: verificaci&oacute;n + preparaci&oacute;n + revisi&oacute;n legal + presentaci&oacute;n = &euro;299</p>
+                <p style="font-size: 0.85rem; color: var(--gray-500); margin-top: 10px;">&iquest;Tienes c&oacute;digo de un amigo? Apl&iacute;calo en Telegram para &euro;25 de descuento</p>
             </div>
         </div>
     </section>
@@ -2406,7 +2222,6 @@
                         <li><a href="/terminos">T&eacute;rminos de servicio</a></li>
                         <li><a href="#">Aviso legal</a></li>
                         <li><a href="#">Cookies</a></li>
-                        <li><a href="referidos-terminos.html">Programa de Referidos</a></li>
                     </ul>
                 </div>
                 <div>
