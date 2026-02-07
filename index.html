@@ -1741,7 +1741,15 @@
             <div class="total-callout">
                 <h3>Todo por menos de 300 euros</h3>
                 <p>Servicio completo: verificaci&oacute;n + preparaci&oacute;n + revisi&oacute;n legal + presentaci&oacute;n = &euro;299</p>
-                <p style="font-size: 0.85rem; color: var(--gray-500); margin-top: 10px;">&iquest;Tienes c&oacute;digo de un amigo? Apl&iacute;calo en Telegram para &euro;25 de descuento</p>
+                <div class="referral-code-input" style="margin-top: 15px;">
+                    <p style="font-size: 0.85rem; color: var(--gray-500); margin-bottom: 8px;">&iquest;Tienes c&oacute;digo de amigo?</p>
+                    <div style="display: inline-flex; gap: 8px; align-items: center;">
+                        <input type="text" id="referral-code-field" placeholder="Ej: MARIA-7K2P" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; padding: 8px 14px; border: 1px solid var(--gray-300); border-radius: 6px; width: 160px; text-transform: uppercase;">
+                        <button onclick="applyReferralCode()" style="font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; padding: 8px 16px; background: var(--navy); color: white; border: none; border-radius: 6px; cursor: pointer;">Aplicar</button>
+                    </div>
+                    <p id="referral-code-msg" style="font-size: 0.8rem; color: var(--success); margin-top: 6px; display: none;"></p>
+                    <p style="font-size: 0.78rem; color: var(--gray-400); margin-top: 6px;">Se aplicar&aacute; en Telegram</p>
+                </div>
             </div>
         </div>
     </section>
@@ -2158,6 +2166,18 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        &iquest;C&oacute;mo funciona el programa de referidos?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Tus amigos pueden usar tu c&oacute;digo para &euro;25 de descuento. Cuando pagas tu primera fase (&euro;39), tu c&oacute;digo se activa y ganas &euro;25 de cr&eacute;dito por cada amigo que pague. M&aacute;ximo &euro;299 (servicio completo gratis). <a href="referidos-terminos.html">Ver t&eacute;rminos</a>.
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div style="text-align: center; margin-top: 30px;">
@@ -2222,6 +2242,7 @@
                         <li><a href="/terminos">T&eacute;rminos de servicio</a></li>
                         <li><a href="#">Aviso legal</a></li>
                         <li><a href="#">Cookies</a></li>
+                        <li><a href="referidos-terminos.html">Programa de Referidos</a></li>
                     </ul>
                 </div>
                 <div>
@@ -2385,5 +2406,24 @@
         })();
     </script>
     <script src="js/referral.js"></script>
+    <script>
+        function applyReferralCode() {
+            var input = document.getElementById('referral-code-field');
+            var msg = document.getElementById('referral-code-msg');
+            var code = (input.value || '').toUpperCase().trim();
+            if (!code) return;
+            if (window.TusPapelesReferral && window.TusPapelesReferral.storeCode(code)) {
+                window.TusPapelesReferral.updateLinks(code);
+                msg.textContent = '\u2713 C\u00f3digo ' + code + ' aplicado';
+                msg.style.display = 'block';
+                msg.style.color = 'var(--success)';
+                input.disabled = true;
+            } else {
+                msg.textContent = 'C\u00f3digo no v\u00e1lido. Formato: NOMBRE-XXXX';
+                msg.style.display = 'block';
+                msg.style.color = 'var(--error)';
+            }
+        }
+    </script>
 </body>
 </html>
