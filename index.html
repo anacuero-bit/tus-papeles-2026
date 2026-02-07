@@ -148,9 +148,8 @@
 
         .header-inner {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            position: relative;
         }
 
         .logo {
@@ -186,8 +185,6 @@
             display: flex;
             align-items: center;
             gap: 25px;
-            position: absolute;
-            right: 0;
         }
 
         .slot-counter {
@@ -444,38 +441,6 @@
             font-weight: 400;
             opacity: 0.8;
             margin-top: 4px;
-        }
-
-        /* Government Badge */
-        .govt-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.15);
-            padding: 10px 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .govt-logo {
-            height: 32px;
-            width: auto;
-            filter: brightness(0) invert(1);
-            opacity: 0.8;
-        }
-
-        .govt-text {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.75rem;
-            opacity: 0.7;
-            text-align: left;
-            line-height: 1.5;
-        }
-
-        .govt-text small {
-            opacity: 0.7;
-            font-size: 0.65rem;
         }
 
         /* Hero Slots Counter */
@@ -1525,10 +1490,8 @@
             .floating-telegram-label { display: none; }
             .channel-options { grid-template-columns: 1fr; }
             .hero-slots-counter { font-size: 0.8rem; padding: 8px 16px; }
-            .govt-badge { flex-direction: column; text-align: center; padding: 8px 14px; gap: 6px; }
-            .govt-text { text-align: center; }
-            .header-right { position: static; }
-            .header-inner { flex-wrap: wrap; gap: 8px; }
+            .header-inner { justify-content: center; }
+            .header-right { display: none; }
         }
 
         @media (max-width: 420px) {
@@ -1656,12 +1619,6 @@
             <div class="hero-content">
                 <h1>Regulariza tu situaci&oacute;n <span class="gold">en Espa&ntilde;a</span></h1>
                 <p class="hero-subheadline">Proceso oficial bajo el Real Decreto de Regularizaci&oacute;n 2026.<br>Verifica si calificas en 2 minutos. Gratis. Sin compromiso.</p>
-
-                <div class="govt-badge">
-                    <img src="https://www.inclusion.gob.es/o/inclusion-theme/images/logoMinisterio.png" alt="Ministerio de Inclusi&oacute;n" class="govt-logo" onerror="this.parentElement.querySelector('.govt-shield').style.display='inline';this.style.display='none';">
-                    <span class="govt-shield" style="display:none;font-size:1.4rem;">&#127475;&#127466;</span>
-                    <span class="govt-text">Informaci&oacute;n basada en el Real Decreto de Regularizaci&oacute;n 2026<br><small>No afiliado al gobierno</small></span>
-                </div>
 
                 <div class="hero-slots-counter">
                     <span class="hero-slot-dot"></span>
@@ -2013,24 +1970,23 @@
                 <p>Responde 3 preguntas y descubre si puedes regularizar tu situaci&oacute;n. Gratis y sin compromiso.</p>
             </div>
 
-            <div class="channel-select">
-                <div class="channel-select-badge">&#10003; Verificaci&oacute;n r&aacute;pida y gratuita</div>
-                <h3>&iquest;C&oacute;mo quieres continuar?</h3>
-                <p>Elige el canal que prefieras. Ambos ofrecen el mismo servicio completo.</p>
+            <div class="hero-cta-container" style="margin-bottom: 0;">
+                <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="hero-cta-button telegram">
+                    <span class="cta-badge">Recomendado</span>
+                    <img class="cta-icon" src="https://telegram.org/img/t_logo.svg" alt="Telegram">
+                    <span class="cta-main-text">Consigue tus papeles</span>
+                    <span class="cta-subtext">Comienza tu regularizaci&oacute;n ahora</span>
+                </a>
 
-                <div class="channel-options">
-                    <a href="verificar.html" class="channel-option primary">
-                        <span class="channel-option-badge">Recomendado</span>
-                        <div class="channel-option-icon">&#128187;</div>
-                        <div class="channel-option-title">Continuar en la web</div>
-                        <div class="channel-option-desc">Formulario r&aacute;pido, panel de control, subida de documentos</div>
-                    </a>
-                    <a href="https://t.me/TusPapeles2026Bot" class="channel-option">
-                        <div class="channel-option-icon">&#9992;</div>
-                        <div class="channel-option-title">Usar Bot de Telegram</div>
-                        <div class="channel-option-desc">Asistente conversacional 24/7, notificaciones instant&aacute;neas</div>
-                    </a>
-                </div>
+                <a href="verificar.html" class="hero-cta-button web">
+                    <svg class="cta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="2" y1="12" x2="22" y2="12"/>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
+                    <span class="cta-main-text">Verificar si califico</span>
+                    <span class="cta-subtext">3 preguntas, 2 minutos</span>
+                </a>
             </div>
 
             <div style="margin-top: 40px;">
@@ -2068,7 +2024,7 @@
 
                         <div class="bot-buttons">
                             <a href="https://t.me/TusPapeles2026Bot" class="btn btn-telegram btn-lg">
-                                &#9992; Abrir Bot de Telegram
+                                <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;"> Abrir Bot de Telegram
                             </a>
                         </div>
                     </div>
@@ -2205,7 +2161,7 @@
 
             <div style="text-align: center; margin-top: 30px;">
                 <p style="color: var(--charcoal); margin-bottom: 15px;">&iquest;No encuentras tu respuesta?</p>
-                <a href="https://t.me/TusPapeles2026Bot" class="btn btn-telegram">&#9992; Preg&uacute;ntanos por Telegram</a>
+                <a href="https://t.me/TusPapeles2026Bot" class="btn btn-telegram"><img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;filter:brightness(0) invert(1);"> Preg&uacute;ntanos por Telegram</a>
             </div>
         </div>
     </section>
@@ -2242,7 +2198,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="tp2026logo.svg" alt="tuspapeles2026" style="height:30px;width:auto;margin-bottom:15px;filter:brightness(0) invert(1);">
+                    <img src="tp2026logo.svg" alt="tuspapeles2026" style="height:30px;width:auto;margin-bottom:15px;filter:sepia(1) saturate(3) brightness(1.2) hue-rotate(5deg);">
                     <p>Servicio especializado en la regularizaci&oacute;n extraordinaria 2026. Te acompa&ntilde;amos en todo el proceso para que obtengas tu permiso de residencia y trabajo.</p>
                     <div class="footer-badge">
                         <span>Un servicio de profesionales del derecho especializados en extranjer&iacute;a</span>
@@ -2270,13 +2226,13 @@
                 <div>
                     <h4>Contacto</h4>
                     <ul class="footer-links">
-                        <li><a href="https://t.me/TusPapeles2026Bot">&#9992; Telegram (principal)</a></li>
+                        <li><a href="https://t.me/TusPapeles2026Bot"><img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:16px;height:16px;vertical-align:middle;margin-right:4px;filter:brightness(0) invert(1);"> Telegram (principal)</a></li>
                         <li>&#9993; info@tuspapeles2026.es</li>
                     </ul>
                 </div>
             </div>
             <div class="footer-disclaimer">
-                tuspapeles2026 es un servicio operado por profesionales del derecho debidamente habilitados para el ejercicio de la abogac&iacute;a en Espa&ntilde;a, en colaboraci&oacute;n con Pombo Horowitz De Irujo SAS. Este servicio facilita la gesti&oacute;n de tr&aacute;mites de extranjer&iacute;a conforme a la normativa vigente.
+                tuspapeles2026 es un servicio operado por profesionales del derecho debidamente habilitados para el ejercicio de la abogac&iacute;a en Espa&ntilde;a, respaldado por Pombo Horowitz &amp; Salazar. Este servicio facilita la gesti&oacute;n de tr&aacute;mites de extranjer&iacute;a conforme a la normativa vigente.
             </div>
             <div class="footer-bottom">
                 <div>&copy; 2026 tuspapeles2026.es</div>
