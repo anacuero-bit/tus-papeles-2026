@@ -1085,24 +1085,133 @@
             margin: 0 auto;
         }
 
+        .faq-search {
+            max-width: 500px;
+            margin: 0 auto 30px;
+            position: relative;
+        }
+
+        .faq-search input {
+            width: 100%;
+            padding: 14px 20px 14px 48px;
+            border: 2px solid var(--gray-200);
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: var(--charcoal);
+            background: white;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+
+        .faq-search input:focus {
+            outline: none;
+            border-color: var(--gold-dark);
+        }
+
+        .faq-search input::placeholder {
+            color: var(--gray-400);
+        }
+
+        .faq-search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-400);
+            font-size: 1.1rem;
+            pointer-events: none;
+        }
+
+        .faq-search-clear {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--gray-400);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: none;
+            padding: 4px;
+            line-height: 1;
+        }
+
+        .faq-search-clear:hover {
+            color: var(--charcoal);
+        }
+
+        .faq-category {
+            margin-bottom: 28px;
+        }
+
+        .faq-category-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .faq-category-icon {
+            font-size: 1.3rem;
+        }
+
+        .faq-category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .faq-category-count {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            margin-left: auto;
+        }
+
         .faq-item {
             background: white;
             border-radius: 12px;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             border: 1px solid var(--gray-200);
             overflow: hidden;
+            transition: opacity 0.2s, transform 0.2s;
+        }
+
+        .faq-item.hidden {
+            display: none;
+        }
+
+        .faq-category.hidden {
+            display: none;
+        }
+
+        .faq-no-results {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--gray-400);
+            font-family: 'Inter', sans-serif;
+            display: none;
+        }
+
+        .faq-no-results p {
+            margin-bottom: 5px;
         }
 
         .faq-question {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 25px;
+            padding: 18px 22px;
             cursor: pointer;
             font-family: 'Inter', sans-serif;
             font-weight: 600;
             color: var(--navy);
-            font-size: 1rem;
+            font-size: 0.95rem;
             transition: background 0.2s;
         }
 
@@ -1125,19 +1234,28 @@
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s;
+            transition: max-height 0.4s ease;
         }
 
         .faq-item.active .faq-answer {
-            max-height: 500px;
+            max-height: 600px;
         }
 
         .faq-answer-content {
-            padding: 0 25px 20px;
+            padding: 0 22px 18px;
             font-family: 'Inter', sans-serif;
             color: var(--charcoal);
             line-height: 1.8;
-            font-size: 0.95rem;
+            font-size: 0.92rem;
+        }
+
+        .faq-answer-content strong {
+            color: var(--navy);
+        }
+
+        .faq-answer-content a {
+            color: var(--gold-dark);
+            text-decoration: underline;
         }
 
         /* CTA Section */
@@ -1516,7 +1634,11 @@
             .bot-content h2 { font-size: 1.6rem; }
             .cta-section h2 { font-size: 1.6rem; }
             .cta-section > .container > p { font-size: 1rem; }
-            .faq-question { padding: 15px 18px; font-size: 0.9rem; }
+            .faq-question { padding: 14px 16px; font-size: 0.88rem; }
+            .faq-answer-content { padding: 0 16px 14px; font-size: 0.85rem; }
+            .faq-category-header { gap: 8px; }
+            .faq-category-title { font-size: 1.05rem; }
+            .faq-search input { padding: 12px 16px 12px 42px; font-size: 0.9rem; }
             .footer-grid { gap: 25px; }
             .footer-disclaimer { font-size: 0.7rem; }
             .btn { padding: 10px 18px; font-size: 0.9rem; }
@@ -2070,119 +2192,580 @@
                 <h2>Resolvemos tus dudas</h2>
             </div>
 
-            <div class="faq-container">
-                <div class="faq-item active">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        &iquest;Cu&aacute;ndo puedo presentar mi solicitud?
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Las solicitudes se pueden presentar desde el 1 de abril de 2026 hasta el 30 de junio de 2026. Es un plazo de 3 meses. Te recomendamos preparar todos los documentos con antelaci&oacute;n para no perder tiempo cuando se abra el plazo.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        &iquest;Necesito tener un contrato de trabajo?
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            No. Esta es una de las grandes ventajas de la regularizaci&oacute;n extraordinaria. No necesitas presentar un contrato de trabajo para solicitar el permiso. Una vez obtengas el permiso, tendr&aacute;s autorizaci&oacute;n para trabajar legalmente en cualquier sector y lugar de Espa&ntilde;a.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        &iquest;Qu&eacute; pasa si no tengo empadronamiento?
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            El empadronamiento es muy importante pero no es el &uacute;nico documento v&aacute;lido. Puedes acreditar tu estancia con otros documentos como facturas de servicios, citas m&eacute;dicas, extractos bancarios, justificantes de env&iacute;o de dinero, etc. Si no tienes empadronamiento, acude a tu ayuntamiento lo antes posible para registrarte.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        &iquest;Puedo trabajar mientras se tramita mi solicitud?
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            S&iacute;. Desde el momento en que tu solicitud es admitida a tr&aacute;mite (m&aacute;ximo 15 d&iacute;as desde la presentaci&oacute;n), obtienes una autorizaci&oacute;n provisional para trabajar legalmente en Espa&ntilde;a en cualquier sector. Esta es una ventaja muy importante del proceso.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        &iquest;Qu&eacute; pasa con mis hijos menores?
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Los hijos menores de edad que se encuentren en Espa&ntilde;a pueden regularizarse junto con sus padres de forma simult&aacute;nea. Adem&aacute;s, reciben un permiso de 5 a&ntilde;os (no solo 1 a&ntilde;o como los adultos), lo que les da mayor estabilidad para su educaci&oacute;n y desarrollo.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        &iquest;Cu&aacute;nto cuesta el proceso?
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            La tasa oficial del gobierno es de &euro;38.28 por persona. Nuestro servicio profesional completo cuesta &euro;299 (verificaci&oacute;n gratuita + &euro;39 preparaci&oacute;n + &euro;150 revisi&oacute;n legal + &euro;110 presentaci&oacute;n). Esto incluye todo: evaluaci&oacute;n personalizada, preparaci&oacute;n de documentos, revisi&oacute;n por abogado, presentaci&oacute;n y seguimiento hasta la resoluci&oacute;n. Todo por menos de 300 euros.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        &iquest;Qu&eacute; pasa si tengo una orden de expulsi&oacute;n?
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            La presentaci&oacute;n de la solicitud suspende los procedimientos de retorno y las &oacute;rdenes de expulsi&oacute;n por motivos administrativos. Esto significa que estar&aacute;s protegido mientras se tramita tu caso. Consulta tu situaci&oacute;n espec&iacute;fica con nosotros para una orientaci&oacute;n personalizada.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        &iquest;Tengo que ir personalmente a presentar la solicitud?
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            No necesariamente. Las solicitudes pueden presentarse de forma telem&aacute;tica o presencial en oficinas de extranjer&iacute;a y subdelegaciones del gobierno. Nosotros nos encargamos de todo el proceso de presentaci&oacute;n para que no tengas que preocuparte.
-                        </div>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        &iquest;C&oacute;mo funciona el programa de referidos?
-                        <span class="faq-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <div class="faq-answer-content">
-                            Tus amigos pueden usar tu c&oacute;digo para &euro;25 de descuento. Cuando pagas tu primera fase (&euro;39), tu c&oacute;digo se activa y ganas &euro;25 de cr&eacute;dito por cada amigo que pague. M&aacute;ximo &euro;299 (servicio completo gratis). <a href="referidos-terminos.html">Ver t&eacute;rminos</a>.
-                        </div>
-                    </div>
-                </div>
+            <div class="faq-search">
+                <span class="faq-search-icon">&#128269;</span>
+                <input type="text" id="faq-search-input" placeholder="Buscar pregunta..." oninput="filterFaq(this.value)">
+                <button class="faq-search-clear" id="faq-search-clear" onclick="clearFaqSearch()">&times;</button>
             </div>
 
-            <div style="text-align: center; margin-top: 30px;">
-                <p style="color: var(--charcoal); margin-bottom: 15px;">&iquest;No encuentras tu respuesta?</p>
-                <a href="https://t.me/TusPapeles2026Bot" class="btn btn-telegram" target="_blank" rel="noopener noreferrer"><img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:22px;height:22px;vertical-align:middle;margin-right:8px;"> Resuelve tu duda por Telegram</a>
+            <div class="faq-container" id="faq-container">
+
+                <!-- REQUISITOS BÁSICOS -->
+                <div class="faq-category" data-category="requisitos">
+                    <div class="faq-category-header">
+                        <span class="faq-category-icon">&#128203;</span>
+                        <span class="faq-category-title">Requisitos B&aacute;sicos</span>
+                        <span class="faq-category-count">8 preguntas</span>
+                    </div>
+
+                    <div class="faq-item active">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Cu&aacute;les son los requisitos para la regularizaci&oacute;n 2026?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Debes demostrar: <strong>(1)</strong> Estar en Espa&ntilde;a antes del 31 de diciembre de 2025, <strong>(2)</strong> Al menos 5 meses de permanencia continuada antes de presentar la solicitud, <strong>(3)</strong> No tener antecedentes penales graves en Espa&ntilde;a ni en tu pa&iacute;s de origen, <strong>(4)</strong> No representar una amenaza para el orden p&uacute;blico.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Necesito un contrato de trabajo para aplicar?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <strong>NO.</strong> A diferencia del proceso de 2005, este decreto incluye una &ldquo;cl&aacute;usula de vulnerabilidad&rdquo;. Se presume que cualquier persona en situaci&oacute;n irregular es vulnerable, por lo que no necesitas oferta de empleo ni contrato para aplicar.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Importa mi nacionalidad?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                No. El decreto aplica a todas las nacionalidades sin distinci&oacute;n. Aunque la mayor&iacute;a de beneficiarios ser&aacute;n latinoamericanos (~90%), cualquier persona que cumpla los requisitos puede aplicar.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Cu&aacute;nto tiempo debo llevar en Espa&ntilde;a?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Debes haber llegado a Espa&ntilde;a antes del 31 de diciembre de 2025 y demostrar al menos 5 meses de permanencia continuada al momento de presentar tu solicitud.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Puedo aplicar si entr&eacute; como turista y me qued&eacute;?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                S&iacute;. La forma de entrada no importa. Lo que importa es demostrar que estabas en Espa&ntilde;a antes del 31 de diciembre de 2025 y que has permanecido de forma continuada.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Puedo aplicar si ya me denegaron un permiso antes?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                S&iacute;, puedes aplicar. Una denegaci&oacute;n previa de arraigo u otro permiso no te descalifica autom&aacute;ticamente. Incluso puedes tener un arraigo en tr&aacute;mite y solicitar esta regularizaci&oacute;n en paralelo.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Puedo aplicar si tengo una orden de expulsi&oacute;n?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Depende. Si la orden est&aacute; en vigor y activa, probablemente no. Consulta tu caso espec&iacute;fico con un abogado antes de presentar.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Qu&eacute; pasa con los solicitantes de asilo?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Los solicitantes de protecci&oacute;n internacional que hayan presentado su solicitud antes del 31 de diciembre de 2025 tambi&eacute;n pueden acogerse a esta regularizaci&oacute;n, con requisitos espec&iacute;ficos.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ANTECEDENTES PENALES -->
+                <div class="faq-category" data-category="antecedentes">
+                    <div class="faq-category-header">
+                        <span class="faq-category-icon">&#128274;</span>
+                        <span class="faq-category-title">Antecedentes Penales</span>
+                        <span class="faq-category-count">4 preguntas</span>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Qu&eacute; pasa si tengo antecedentes penales?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Depende de la gravedad. Delitos menores generalmente no descalifican. Delitos graves (violencia, narcotr&aacute;fico, delitos sexuales) s&iacute; pueden descalificarte. Tambi&eacute;n se revisar&aacute; que no tengas problemas graves con la polic&iacute;a u otros cuerpos de seguridad.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Necesito certificado de antecedentes de mi pa&iacute;s?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                S&iacute;. Necesitas certificado de antecedentes penales de tu pa&iacute;s de origen, debidamente legalizado o apostillado y traducido si no est&aacute; en espa&ntilde;ol. Algunos pa&iacute;ses permiten solicitarlo online a trav&eacute;s del consulado.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Y si en mi pa&iacute;s es dif&iacute;cil obtener el certificado?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Solic&iacute;talo con anticipaci&oacute;n &mdash; los consulados se saturar&aacute;n cerca de abril. Si tras solicitarlo pasa m&aacute;s de un mes sin recibirlo, podr&aacute;s acreditarlo con el justificante de solicitud. Consulta con tu consulado las opciones disponibles.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Cu&aacute;nto tiempo de validez tienen los certificados de antecedentes?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Generalmente tienen validez de 3 meses. Recomendamos solicitarlos en marzo 2026 para que est&eacute;n vigentes al momento de presentar tu solicitud en abril-junio.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DOCUMENTOS NECESARIOS -->
+                <div class="faq-category" data-category="documentos">
+                    <div class="faq-category-header">
+                        <span class="faq-category-icon">&#128196;</span>
+                        <span class="faq-category-title">Documentos Necesarios</span>
+                        <span class="faq-category-count">8 preguntas</span>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Qu&eacute; documentos necesito para aplicar?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Documentos b&aacute;sicos: <strong>(1)</strong> Pasaporte vigente, <strong>(2)</strong> Certificado de antecedentes penales de tu pa&iacute;s (legalizado y traducido), <strong>(3)</strong> Pruebas de presencia en Espa&ntilde;a antes del 31/12/2025, <strong>(4)</strong> Pruebas de permanencia continuada de 5 meses.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;C&oacute;mo demuestro que estaba en Espa&ntilde;a antes del 31/12/2025?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                El primer documento es clave: pasaporte con sello de entrada, billete de avi&oacute;n, o cualquier factura/recibo con tu nombre y fecha anterior al 31 de diciembre de 2025.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;C&oacute;mo demuestro los 5 meses de permanencia continuada?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Cualquier documento con tu nombre, direcci&oacute;n en Espa&ntilde;a, y fecha sirve: facturas de luz/agua/internet, contratos de alquiler, empadronamiento, recibos de env&iacute;o de dinero, extractos bancarios, citas m&eacute;dicas, recibos de compras, recargas de abono transporte, recibos de paqueter&iacute;a (NACEX, SEUR, etc.), membres&iacute;as de gimnasio, y m&aacute;s de 40 tipos de documentos p&uacute;blicos o privados.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Qu&eacute; pasa si no tengo empadronamiento?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                No es obligatorio. Puedes demostrar residencia con otros documentos: facturas de suministros, contrato de alquiler, extractos bancarios con direcci&oacute;n, cartas oficiales, recibos de paqueter&iacute;a, informes m&eacute;dicos, etc.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Sirven los documentos a nombre de otra persona?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Parcialmente. Si vives con alguien y las facturas est&aacute;n a su nombre, necesitas documentos adicionales que te vinculen a esa direcci&oacute;n (contrato de subarrendamiento, declaraci&oacute;n del titular, documentos propios con esa direcci&oacute;n).
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Necesito traducir mis documentos?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Los documentos en espa&ntilde;ol no. Los documentos en otros idiomas (como el certificado de antecedentes de tu pa&iacute;s) deben traducirse por traductor jurado.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Mi pasaporte puede estar vencido?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <strong>NO.</strong> Tu pasaporte debe estar vigente. Si est&aacute; vencido o pr&oacute;ximo a vencer, renu&eacute;valo AHORA. Contacta tu consulado &mdash; no esperes a abril.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Qu&eacute; pasa si perd&iacute; mi pasaporte?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Solicita uno nuevo en tu consulado inmediatamente. Sin pasaporte vigente no podr&aacute;s completar la solicitud.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROCESO Y PLAZOS -->
+                <div class="faq-category" data-category="proceso">
+                    <div class="faq-category-header">
+                        <span class="faq-category-icon">&#128197;</span>
+                        <span class="faq-category-title">Proceso y Plazos</span>
+                        <span class="faq-category-count">8 preguntas</span>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Cu&aacute;ndo puedo presentar mi solicitud?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                El plazo abre a principios de abril de 2026 (fecha exacta por confirmar) y cierra el 30 de junio de 2026. Son aproximadamente 3 meses.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;C&oacute;mo se presenta la solicitud?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Se podr&aacute; presentar de forma telem&aacute;tica (online) o presencial. El gobierno recomienda la v&iacute;a telem&aacute;tica para evitar colas y retrasos.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Puedo presentar antes de abril?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                No. El sistema no aceptar&aacute; solicitudes hasta que abra el plazo oficial. Pero debes tener tu documentaci&oacute;n lista ANTES de abril.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Qu&eacute; pasa si no llego a presentar antes del 30 de junio?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Pierdes la oportunidad. Es un plazo cerrado e improrrogable. No esperes al &uacute;ltimo momento &mdash; prepara todo ahora.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Cu&aacute;nto tardan en responder?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                El plazo m&aacute;ximo de tramitaci&oacute;n es de 3 meses. Sin embargo, con la mera admisi&oacute;n a tr&aacute;mite (m&aacute;ximo 15 d&iacute;as), ya podr&aacute;s residir y trabajar provisionalmente.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Puedo trabajar mientras espero la resoluci&oacute;n?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <strong>S&Iacute;.</strong> Una de las grandes ventajas de esta regularizaci&oacute;n: desde que tu solicitud sea admitida a tr&aacute;mite (en un m&aacute;ximo de 15 d&iacute;as), podr&aacute;s trabajar legalmente en cualquier sector y en cualquier parte de Espa&ntilde;a.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Puedo salir de Espa&ntilde;a mientras espero la resoluci&oacute;n?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <strong>NO recomendado.</strong> Salir de Espa&ntilde;a podr&iacute;a interpretarse como abandono de tu solicitud o romper la continuidad de residencia. Espera hasta tener el permiso en mano.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Qu&eacute; pasa si me niegan la solicitud?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Puedes recurrir la decisi&oacute;n. Tendr&aacute;s un plazo para presentar alegaciones o recurso. Un abogado puede ayudarte con esto.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COSTOS Y PAGOS -->
+                <div class="faq-category" data-category="costos">
+                    <div class="faq-category-header">
+                        <span class="faq-category-icon">&#128176;</span>
+                        <span class="faq-category-title">Costos y Pagos</span>
+                        <span class="faq-category-count">4 preguntas</span>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Cu&aacute;nto cuesta la regularizaci&oacute;n?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Tasas gubernamentales: se deber&aacute; abonar la tasa administrativa correspondiente (modelo 790). Nuestro servicio de gesti&oacute;n completa: &euro;299 en fases.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Por qu&eacute; usar un servicio si el tr&aacute;mite es &ldquo;gratuito&rdquo;?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                El tr&aacute;mite ante el gobierno tiene tasas oficiales. Nuestro servicio cubre: verificaci&oacute;n de elegibilidad, revisi&oacute;n legal de todos tus documentos, preparaci&oacute;n profesional del expediente, presentaci&oacute;n telem&aacute;tica, y seguimiento hasta la resoluci&oacute;n. Un expediente mal preparado puede causar denegaci&oacute;n &mdash; en 2005, el 10-20% fueron denegados, muchos por errores evitables.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Puedo hacerlo yo solo sin abogado?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                T&eacute;cnicamente s&iacute;. Pero un solo d&iacute;a de &ldquo;vac&iacute;o&rdquo; en tu prueba de permanencia, un documento mal presentado, o un error en el formulario puede significar denegaci&oacute;n. Cada caso es distinto.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Qu&eacute; incluye cada fase de pago?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <strong>Fase 1 (GRATIS):</strong> Verificaci&oacute;n de elegibilidad + subir documentos. <strong>Fase 2 (&euro;39):</strong> Revisi&oacute;n legal completa. <strong>Fase 3 (&euro;150):</strong> Preparaci&oacute;n del expediente. <strong>Fase 4 (&euro;110):</strong> Presentaci&oacute;n y seguimiento.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DESPUÉS DE LA SOLICITUD -->
+                <div class="faq-category" data-category="despues">
+                    <div class="faq-category-header">
+                        <span class="faq-category-icon">&#127919;</span>
+                        <span class="faq-category-title">Despu&eacute;s de la Solicitud</span>
+                        <span class="faq-category-count">5 preguntas</span>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Qu&eacute; permiso voy a recibir?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Autorizaci&oacute;n de residencia temporal con una vigencia inicial de 1 a&ntilde;o. Despu&eacute;s podr&aacute;s renovarlo incorpor&aacute;ndote a las figuras ordinarias del Reglamento de Extranjer&iacute;a.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Podr&eacute; trabajar legalmente?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                S&iacute;. La autorizaci&oacute;n incluye permiso de trabajo desde el primer d&iacute;a, en cualquier sector y en cualquier parte de Espa&ntilde;a. Tambi&eacute;n podr&aacute;s darte de alta como aut&oacute;nomo.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Podr&eacute; viajar fuera de Espa&ntilde;a?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                S&iacute;, una vez tengas el permiso (tarjeta TIE) en mano. Durante el proceso de solicitud, no recomendamos salir del pa&iacute;s.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Podr&eacute; traer a mi familia?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Los hijos menores que est&eacute;n en Espa&ntilde;a podr&aacute;n regularizarse simult&aacute;neamente. Para otros familiares, una vez tengas el permiso podr&aacute;s solicitar reagrupaci&oacute;n familiar (proceso separado con requisitos adicionales).
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Este permiso me lleva a la nacionalidad espa&ntilde;ola?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                S&iacute;, eventualmente. Para ciudadanos de pa&iacute;ses iberoamericanos (Colombia, Venezuela, Per&uacute;, etc.), esta es la v&iacute;a m&aacute;s r&aacute;pida: tras 2 a&ntilde;os de residencia legal podr&aacute;s solicitar la nacionalidad. Para otras nacionalidades, generalmente son 10 a&ntilde;os.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MIEDOS COMUNES -->
+                <div class="faq-category" data-category="miedos">
+                    <div class="faq-category-header">
+                        <span class="faq-category-icon">&#128170;</span>
+                        <span class="faq-category-title">Miedos Comunes</span>
+                        <span class="faq-category-count">4 preguntas</span>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Es seguro dar mis datos? &iquest;Me pueden deportar si me rechazan?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                El proceso est&aacute; dise&ntilde;ado para proteger, no para perseguir. Una denegaci&oacute;n no activa autom&aacute;ticamente un proceso de expulsi&oacute;n. Miles de personas aplicaron en regularizaciones anteriores sin consecuencias negativas por intentar.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Esto es real o es una estafa?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Es 100% real. El Consejo de Ministros aprob&oacute; la tramitaci&oacute;n del Real Decreto el 27 de enero de 2026. Puedes verificarlo en lamoncloa.gob.es y en el BOE cuando se publique el texto definitivo.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Por qu&eacute; ahora y no antes?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Gobiernos de distintos colores pol&iacute;ticos han realizado regularizaciones desde 1986 hasta 2005. Esta iniciativa retoma el camino marcado por una iniciativa ciudadana respaldada por m&aacute;s de 700.000 firmas y apoyada por una amplia mayor&iacute;a del Congreso.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Qu&eacute; pasa si alguien me cobra por &ldquo;acelerar&rdquo; el tr&aacute;mite?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <strong>CUIDADO.</strong> No existe forma de &ldquo;acelerar&rdquo; el proceso oficial. Desconf&iacute;a de quien te ofrezca esto. Trabaja solo con profesionales registrados y verifica sus credenciales.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="faq-no-results" id="faq-no-results">
+                <p style="font-size: 1.2rem;">&#128269;</p>
+                <p>No encontramos resultados para tu b&uacute;squeda.</p>
+                <p style="font-size: 0.85rem;">Prueba con otras palabras o preg&uacute;ntanos directamente.</p>
+            </div>
+
+            <div style="text-align: center; margin-top: 35px;">
+                <p style="color: var(--charcoal); margin-bottom: 15px;">&iquest;No encuentras tu pregunta?</p>
+                <a href="https://t.me/TusPapeles2026Bot" class="btn btn-telegram" target="_blank" rel="noopener noreferrer"><img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:22px;height:22px;vertical-align:middle;margin-right:8px;"> Preg&uacute;ntanos en Telegram</a>
             </div>
         </div>
     </section>
@@ -2297,17 +2880,64 @@
         function toggleFaq(element) {
             var item = element.parentElement;
             var wasActive = item.classList.contains('active');
+            var category = item.closest('.faq-category');
 
-            // Close all
-            var items = document.querySelectorAll('.faq-item');
-            for (var i = 0; i < items.length; i++) {
-                items[i].classList.remove('active');
+            // Close all in same category
+            if (category) {
+                var items = category.querySelectorAll('.faq-item');
+                for (var i = 0; i < items.length; i++) {
+                    items[i].classList.remove('active');
+                }
             }
 
             // Open clicked if it wasn't active
             if (!wasActive) {
                 item.classList.add('active');
             }
+        }
+
+        function filterFaq(query) {
+            var clearBtn = document.getElementById('faq-search-clear');
+            var noResults = document.getElementById('faq-no-results');
+            var q = query.toLowerCase().trim();
+
+            clearBtn.style.display = q ? 'block' : 'none';
+
+            var categories = document.querySelectorAll('.faq-category');
+            var anyVisible = false;
+
+            for (var c = 0; c < categories.length; c++) {
+                var cat = categories[c];
+                var items = cat.querySelectorAll('.faq-item');
+                var catVisible = false;
+
+                for (var i = 0; i < items.length; i++) {
+                    var text = items[i].textContent.toLowerCase();
+                    if (!q || text.indexOf(q) !== -1) {
+                        items[i].classList.remove('hidden');
+                        catVisible = true;
+                    } else {
+                        items[i].classList.add('hidden');
+                        items[i].classList.remove('active');
+                    }
+                }
+
+                if (catVisible) {
+                    cat.classList.remove('hidden');
+                    anyVisible = true;
+                } else {
+                    cat.classList.add('hidden');
+                }
+            }
+
+            noResults.style.display = anyVisible ? 'none' : 'block';
+        }
+
+        function clearFaqSearch() {
+            var input = document.getElementById('faq-search-input');
+            input.value = '';
+            filterFaq('');
+            input.focus();
         }
 
         // Smooth scroll for anchor links
