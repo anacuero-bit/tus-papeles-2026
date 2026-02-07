@@ -857,54 +857,340 @@
             margin: 0 auto;
         }
 
-        .update-item {
+        /* Updates Section */
+        .updates-section {
+            background: linear-gradient(180deg, #f8f9fb 0%, #ffffff 100%);
+        }
+
+        .updates-header-row {
             display: flex;
-            gap: 20px;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
-            border: 1px solid var(--gray-200);
-            margin-bottom: 15px;
-            transition: all 0.2s;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 8px;
         }
 
-        .update-item:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .update-date {
+        .updates-last-updated {
             font-family: 'Inter', sans-serif;
-            min-width: 80px;
-            text-align: center;
-            padding: 10px;
+            font-size: 0.82rem;
+            color: var(--gray-400);
+        }
+
+        /* Status Indicator */
+        .status-indicator {
             background: var(--navy);
+            border-radius: 16px;
+            padding: 24px 28px;
+            margin-bottom: 35px;
             color: white;
-            border-radius: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px 32px;
+        }
+
+        .status-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .status-item .status-emoji {
+            font-size: 1.1rem;
             flex-shrink: 0;
         }
 
+        .status-item strong {
+            color: var(--gold);
+        }
+
+        .status-countdown {
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        /* Timeline */
+        .updates-timeline {
+            position: relative;
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .updates-timeline::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gray-200);
+        }
+
+        .update-item {
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            margin-bottom: 20px;
+            position: relative;
+            background: transparent;
+            border: none;
+            transition: none;
+        }
+
+        .update-item:hover {
+            box-shadow: none;
+        }
+
+        .update-date-badge {
+            font-family: 'Inter', sans-serif;
+            min-width: 80px;
+            width: 80px;
+            text-align: center;
+            padding: 10px 6px;
+            background: var(--navy);
+            color: white;
+            border-radius: 12px;
+            flex-shrink: 0;
+            z-index: 1;
+        }
+
         .update-date-day {
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 800;
             line-height: 1;
         }
 
         .update-date-month {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             opacity: 0.8;
             text-transform: uppercase;
+            margin-top: 2px;
         }
 
-        .update-content h4 {
+        .update-card {
+            flex: 1;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid var(--gray-200);
+            padding: 18px 22px;
+            transition: box-shadow 0.2s, border-color 0.2s;
+        }
+
+        .update-card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            border-color: var(--gold);
+        }
+
+        .update-card-top {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .update-tag {
+            display: inline-block;
             font-family: 'Inter', sans-serif;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 3px 10px;
+            border-radius: 50px;
+            white-space: nowrap;
+        }
+
+        .update-tag.hito { background: var(--gold); color: var(--navy); }
+        .update-tag.oficial { background: var(--info); color: white; }
+        .update-tag.tramitacion { background: var(--gray-light); color: var(--charcoal); }
+        .update-tag.beneficio { background: #dcfce7; color: #166534; }
+        .update-tag.politico { background: #ede9fe; color: #5b21b6; }
+        .update-tag.documento { background: #ffedd5; color: #9a3412; }
+        .update-tag.historia { background: #e8d4a8; color: #5c4a2a; }
+
+        .update-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: var(--navy);
+            font-size: 1rem;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .update-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .update-source {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.78rem;
+            color: var(--gold-dark);
+            margin-top: 8px;
+            text-decoration: none;
+        }
+
+        .update-source:hover {
+            text-decoration: underline;
+        }
+
+        .updates-show-more {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .updates-show-more button {
+            background: none;
+            border: 2px solid var(--gray-200);
+            border-radius: 50px;
+            padding: 10px 28px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
             font-weight: 600;
             color: var(--navy);
-            margin-bottom: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
         }
 
-        .update-content p {
-            font-size: 0.95rem;
+        .updates-show-more button:hover {
+            border-color: var(--gold);
+            background: var(--gold-light);
+        }
+
+        .update-item.update-hidden {
+            display: none;
+        }
+
+        /* Next Steps Process */
+        .next-steps {
+            max-width: 820px;
+            margin: 40px auto 0;
+        }
+
+        .next-steps h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--navy);
+            margin-bottom: 18px;
+        }
+
+        .steps-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px 16px;
+            border-left: 3px solid var(--gray-200);
+            margin-left: 14px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
             color: var(--charcoal);
+            position: relative;
+        }
+
+        .step-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--gray-200);
+            border: 2px solid white;
+        }
+
+        .step-item.done {
+            border-left-color: var(--success);
+        }
+
+        .step-item.done::before {
+            background: var(--success);
+        }
+
+        .step-item.current {
+            border-left-color: var(--warning);
+            background: #fffbeb;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .step-item.current::before {
+            background: var(--warning);
+            box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2);
+        }
+
+        .step-icon {
+            font-size: 1rem;
+            flex-shrink: 0;
+            width: 20px;
+            text-align: center;
+        }
+
+        .step-label {
+            flex: 1;
+        }
+
+        .step-date {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        /* Action Box */
+        .action-box {
+            max-width: 820px;
+            margin: 35px auto 0;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            border-radius: 16px;
+            padding: 28px 30px;
+            color: white;
+        }
+
+        .action-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: var(--gold);
+            margin-bottom: 18px;
+        }
+
+        .action-items {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .action-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .action-item .action-emoji {
+            flex-shrink: 0;
+            font-size: 1rem;
+            margin-top: 1px;
+        }
+
+        .action-item a {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+
+        .action-item a:hover {
+            color: var(--gold-light);
         }
 
         /* Articles */
@@ -1643,8 +1929,19 @@
             .footer-disclaimer { font-size: 0.7rem; }
             .btn { padding: 10px 18px; font-size: 0.9rem; }
             .btn-lg { padding: 12px 24px; font-size: 1rem; }
-            .update-item { flex-direction: column; gap: 12px; }
-            .update-date { min-width: unset; }
+            .status-indicator { grid-template-columns: 1fr; gap: 10px; padding: 18px 20px; }
+            .status-item { font-size: 0.82rem; }
+            .updates-timeline::before { left: 40px; }
+            .update-date-badge { min-width: 64px; width: 64px; padding: 8px 4px; }
+            .update-date-day { font-size: 1.2rem; }
+            .update-item { gap: 14px; }
+            .update-card { padding: 14px 16px; }
+            .update-card h4 { font-size: 0.92rem; }
+            .update-card p { font-size: 0.84rem; }
+            .step-item { font-size: 0.84rem; padding: 10px 14px; }
+            .action-box { padding: 22px 20px; }
+            .action-item { font-size: 0.84rem; }
+            .updates-header-row { flex-direction: column; align-items: flex-start; gap: 4px; }
             .article-header h3 { font-size: 1rem; }
             .channel-select { padding: 25px 20px; }
             .channel-option { padding: 18px; }
@@ -1794,6 +2091,248 @@
             </div>
         </div>
     </div>
+
+    <!-- Últimas Actualizaciones -->
+    <section id="actualizaciones" class="section updates-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">&#128226; Novedades</div>
+                <h2>&Uacute;ltimas Actualizaciones</h2>
+                <p>Seguimos cada novedad del proceso de regularizaci&oacute;n</p>
+            </div>
+
+            <div class="updates-header-row" style="max-width: 820px; margin: -10px auto 20px;">
+                <span class="updates-last-updated">&Uacute;ltima actualizaci&oacute;n: 7 de febrero de 2026</span>
+            </div>
+
+            <!-- Status Indicator -->
+            <div class="status-indicator" style="max-width: 820px; margin: 0 auto 35px;">
+                <div class="status-item">
+                    <span class="status-emoji">&#128993;</span>
+                    <span><strong>FASE ACTUAL:</strong> Tramitaci&oacute;n del Real Decreto</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-emoji">&#9203;</span>
+                    <span><strong>Pr&oacute;ximo paso:</strong> Informe del Consejo de Estado</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-emoji">&#128197;</span>
+                    <span><strong>Solicitudes:</strong> Abril &ndash; 30 Junio 2026</span>
+                </div>
+                <div class="status-item">
+                    <span class="status-emoji">&#9201;</span>
+                    <span>Faltan aprox. <strong class="status-countdown" id="days-countdown">52</strong> d&iacute;as para abrir solicitudes</span>
+                </div>
+            </div>
+
+            <!-- Timeline -->
+            <div class="updates-timeline" id="updates-timeline">
+
+                <!-- 7 FEB 2026 -->
+                <div class="update-item">
+                    <div class="update-date-badge">
+                        <div class="update-date-day">07</div>
+                        <div class="update-date-month">Feb 2026</div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-card-top">
+                            <span class="update-tag tramitacion">Tramitaci&oacute;n</span>
+                        </div>
+                        <h4>Finaliza el per&iacute;odo de audiencia p&uacute;blica</h4>
+                        <p>El plazo para presentar aportaciones ciudadanas al borrador cerr&oacute; el 6 de febrero. El texto ahora pasar&aacute; a revisi&oacute;n por el Consejo de Estado antes de su aprobaci&oacute;n definitiva.</p>
+                    </div>
+                </div>
+
+                <!-- 5 FEB 2026 -->
+                <div class="update-item">
+                    <div class="update-date-badge">
+                        <div class="update-date-day">05</div>
+                        <div class="update-date-month">Feb 2026</div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-card-top">
+                            <span class="update-tag oficial">Oficial</span>
+                        </div>
+                        <h4>El Gobierno pide calma: el plazo a&uacute;n no est&aacute; abierto</h4>
+                        <p>El Ministerio de Inclusi&oacute;n recuerda que las solicitudes comenzar&aacute;n &ldquo;en alrededor de dos meses&rdquo; (abril) y pide consultar solo fuentes oficiales. El texto actual no es definitivo y puede cambiar.</p>
+                        <span class="update-source">&#128279; La Moncloa</span>
+                    </div>
+                </div>
+
+                <!-- 4 FEB 2026 -->
+                <div class="update-item">
+                    <div class="update-date-badge">
+                        <div class="update-date-day">04</div>
+                        <div class="update-date-month">Feb 2026</div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-card-top">
+                            <span class="update-tag tramitacion">Tramitaci&oacute;n</span>
+                        </div>
+                        <h4>Texto en audiencia p&uacute;blica hasta el 6 de febrero</h4>
+                        <p>El borrador del Real Decreto est&aacute; disponible para consulta ciudadana. Se pueden enviar aportaciones hasta el 6 de febrero a trav&eacute;s del portal de participaci&oacute;n p&uacute;blica.</p>
+                        <span class="update-source">&#128279; Ministerio de Inclusi&oacute;n</span>
+                    </div>
+                </div>
+
+                <!-- 28 ENE 2026 -->
+                <div class="update-item">
+                    <div class="update-date-badge">
+                        <div class="update-date-day">28</div>
+                        <div class="update-date-month">Ene 2026</div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-card-top">
+                            <span class="update-tag documento">Documento</span>
+                        </div>
+                        <h4>Se publica el borrador del Real Decreto</h4>
+                        <p>El Ministerio publica el texto provisional que modifica el Reglamento de Extranjer&iacute;a. Incluye dos v&iacute;as: una para solicitantes de asilo y otra para personas en situaci&oacute;n irregular.</p>
+                    </div>
+                </div>
+
+                <!-- 27 ENE 2026 - HITO -->
+                <div class="update-item">
+                    <div class="update-date-badge">
+                        <div class="update-date-day">27</div>
+                        <div class="update-date-month">Ene 2026</div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-card-top">
+                            <span class="update-tag hito">Hito</span>
+                        </div>
+                        <h4>El Consejo de Ministros aprueba la tramitaci&oacute;n urgente</h4>
+                        <p>La ministra Elma Saiz anuncia la regularizaci&oacute;n extraordinaria. Beneficiar&aacute; a quienes estuvieran en Espa&ntilde;a antes del 31/12/2025 con al menos 5 meses de permanencia. No se requiere contrato de trabajo gracias a la cl&aacute;usula de vulnerabilidad.</p>
+                        <span class="update-source">&#128279; La Moncloa</span>
+                    </div>
+                </div>
+
+                <!-- Hidden older items -->
+                <!-- 27 ENE 2026 - BENEFICIO 1 -->
+                <div class="update-item update-hidden">
+                    <div class="update-date-badge">
+                        <div class="update-date-day">27</div>
+                        <div class="update-date-month">Ene 2026</div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-card-top">
+                            <span class="update-tag beneficio">Beneficio</span>
+                        </div>
+                        <h4>Permiso provisional al admitir a tr&aacute;mite</h4>
+                        <p>Gran novedad: desde la admisi&oacute;n a tr&aacute;mite (m&aacute;ximo 15 d&iacute;as), se podr&aacute; trabajar legalmente en cualquier sector y lugar de Espa&ntilde;a sin esperar la resoluci&oacute;n final.</p>
+                    </div>
+                </div>
+
+                <!-- 27 ENE 2026 - BENEFICIO 2 -->
+                <div class="update-item update-hidden">
+                    <div class="update-date-badge">
+                        <div class="update-date-day">27</div>
+                        <div class="update-date-month">Ene 2026</div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-card-top">
+                            <span class="update-tag beneficio">Beneficio</span>
+                        </div>
+                        <h4>Protecci&oacute;n familiar incluida</h4>
+                        <p>Los hijos menores de los solicitantes podr&aacute;n regularizarse simult&aacute;neamente con un permiso de 5 a&ntilde;os. La unidad familiar es un pilar del nuevo decreto.</p>
+                    </div>
+                </div>
+
+                <!-- 26 ENE 2026 -->
+                <div class="update-item update-hidden">
+                    <div class="update-date-badge">
+                        <div class="update-date-day">26</div>
+                        <div class="update-date-month">Ene 2026</div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-card-top">
+                            <span class="update-tag politico">Pol&iacute;tico</span>
+                        </div>
+                        <h4>Irene Montero adelanta el acuerdo</h4>
+                        <p>La eurodiputada de Podemos anuncia en un acto que el Gobierno ha acordado impulsar la regularizaci&oacute;n extraordinaria, retomando la ILP que consigui&oacute; m&aacute;s de 700.000 firmas.</p>
+                    </div>
+                </div>
+
+                <!-- CONTEXTO HISTÓRICO -->
+                <div class="update-item update-hidden">
+                    <div class="update-date-badge" style="background: #5c4a2a;">
+                        <div class="update-date-day" style="font-size: 0.8rem; font-weight: 700;">1986</div>
+                        <div class="update-date-month">2026</div>
+                    </div>
+                    <div class="update-card">
+                        <div class="update-card-top">
+                            <span class="update-tag historia">Historia</span>
+                        </div>
+                        <h4>S&eacute;ptima regularizaci&oacute;n desde 1986</h4>
+                        <p>Espa&ntilde;a ha realizado 6 regularizaciones extraordinarias previas (1986, 1991, 1996, 2000, 2001, 2005). La de 2005, con gobierno del PSOE, regulariz&oacute; a casi 600.000 personas. Los gobiernos del PP (Aznar) regularizaron a m&aacute;s de 500.000 en 2000-2001.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Show More Button -->
+            <div class="updates-show-more" id="updates-show-more">
+                <button onclick="toggleOlderUpdates()">Ver todas las actualizaciones <span id="updates-toggle-arrow">&#9660;</span></button>
+            </div>
+
+            <!-- Next Steps -->
+            <div class="next-steps">
+                <h3>&#128203; Pr&oacute;ximos Pasos del Proceso</h3>
+                <div class="steps-list">
+                    <div class="step-item done">
+                        <span class="step-icon">&#9989;</span>
+                        <span class="step-label"><span class="step-date">27 Ene</span> &mdash; Aprobaci&oacute;n en Consejo de Ministros</span>
+                    </div>
+                    <div class="step-item done">
+                        <span class="step-icon">&#9989;</span>
+                        <span class="step-label"><span class="step-date">28 Ene &ndash; 6 Feb</span> &mdash; Audiencia p&uacute;blica</span>
+                    </div>
+                    <div class="step-item current">
+                        <span class="step-icon">&#128260;</span>
+                        <span class="step-label"><span class="step-date">Feb &ndash; Mar</span> &mdash; Informe del Consejo de Estado</span>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-icon">&#9203;</span>
+                        <span class="step-label"><span class="step-date">Mar</span> &mdash; Aprobaci&oacute;n definitiva y publicaci&oacute;n en BOE</span>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-icon">&#9203;</span>
+                        <span class="step-label"><span class="step-date">Abril</span> &mdash; Apertura del plazo de solicitudes</span>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-icon">&#9203;</span>
+                        <span class="step-label"><span class="step-date">30 Jun</span> &mdash; Cierre del plazo (<strong>IMPRORROGABLE</strong>)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Box -->
+            <div class="action-box">
+                <h3>&#9889; Qu&eacute; Hacer Ahora</h3>
+                <div class="action-items">
+                    <div class="action-item">
+                        <span class="action-emoji">&#9989;</span>
+                        <span><a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer">Verifica tu elegibilidad</a> &mdash; es gratis y toma 2 minutos</span>
+                    </div>
+                    <div class="action-item">
+                        <span class="action-emoji">&#128196;</span>
+                        <span>Re&uacute;ne pruebas de presencia en Espa&ntilde;a antes del 31/12/2025</span>
+                    </div>
+                    <div class="action-item">
+                        <span class="action-emoji">&#128196;</span>
+                        <span>Solicita tu certificado de antecedentes de tu pa&iacute;s <strong>YA</strong> (los consulados se saturar&aacute;n)</span>
+                    </div>
+                    <div class="action-item">
+                        <span class="action-emoji">&#128196;</span>
+                        <span>Renueva tu pasaporte si est&aacute; vencido o pr&oacute;ximo a vencer</span>
+                    </div>
+                    <div class="action-item">
+                        <span class="action-emoji">&#128241;</span>
+                        <span><a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer">Suscr&iacute;bete a nuestras actualizaciones</a> para no perderte nada</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <!-- Requirements -->
     <section id="requisitos" class="section">
@@ -1989,50 +2528,6 @@
                     <div class="why-us-stat">
                         <div class="why-us-stat-number">&euro;299</div>
                         <div class="why-us-stat-label">Servicio completo</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Updates -->
-    <section id="actualizaciones" class="section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">Novedades</div>
-                <h2>&Uacute;ltimas actualizaciones</h2>
-                <p>Mantente informado sobre el proceso de regularizaci&oacute;n.</p>
-            </div>
-
-            <div class="updates-list">
-                <div class="update-item">
-                    <div class="update-date">
-                        <div class="update-date-day">03</div>
-                        <div class="update-date-month">Feb 2026</div>
-                    </div>
-                    <div class="update-content">
-                        <h4>Nuevas aclaraciones del Ministerio</h4>
-                        <p>El Ministerio ha publicado aclaraciones sobre documentos v&aacute;lidos para acreditar estancia.</p>
-                    </div>
-                </div>
-                <div class="update-item">
-                    <div class="update-date">
-                        <div class="update-date-day">28</div>
-                        <div class="update-date-month">Ene 2026</div>
-                    </div>
-                    <div class="update-content">
-                        <h4>Real Decreto aprobado</h4>
-                        <p>El Consejo de Ministros aprueba el inicio de la tramitaci&oacute;n del proceso de regularizaci&oacute;n.</p>
-                    </div>
-                </div>
-                <div class="update-item">
-                    <div class="update-date">
-                        <div class="update-date-day">27</div>
-                        <div class="update-date-month">Ene 2026</div>
-                    </div>
-                    <div class="update-content">
-                        <h4>Anuncio oficial</h4>
-                        <p>El Gobierno anuncia la regularizaci&oacute;n extraordinaria para m&aacute;s de 500.000 personas.</p>
                     </div>
                 </div>
             </div>
@@ -2939,6 +3434,36 @@
             filterFaq('');
             input.focus();
         }
+
+        // Updates: toggle older items
+        function toggleOlderUpdates() {
+            var hidden = document.querySelectorAll('.update-item.update-hidden');
+            var arrow = document.getElementById('updates-toggle-arrow');
+            var btn = document.querySelector('#updates-show-more button');
+            var expanded = hidden.length > 0 && hidden[0].style.display === 'flex';
+
+            for (var i = 0; i < hidden.length; i++) {
+                hidden[i].style.display = expanded ? 'none' : 'flex';
+            }
+
+            if (expanded) {
+                btn.innerHTML = 'Ver todas las actualizaciones <span id="updates-toggle-arrow">&#9660;</span>';
+            } else {
+                btn.innerHTML = 'Ocultar actualizaciones antiguas <span id="updates-toggle-arrow">&#9650;</span>';
+            }
+        }
+
+        // Updates: countdown to April 1, 2026
+        function updateCountdown() {
+            var target = new Date('2026-04-01T00:00:00+02:00');
+            var now = new Date();
+            var diff = target - now;
+            var days = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
+            var el = document.getElementById('days-countdown');
+            if (el) el.textContent = days;
+        }
+        updateCountdown();
+        setInterval(updateCountdown, 3600000);
 
         // Smooth scroll for anchor links
         var anchors = document.querySelectorAll('a[href^="#"]');
