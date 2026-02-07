@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tus Papeles 2026 | Regularización Extraordinaria España | Obtén tu Residencia</title>
-    <meta name="description" content="¿Llevas más de 5 meses en España? Puedes regularizar tu situación antes del 30 de junio de 2026. Verificación gratuita. Un servicio de Pombo, Horowitz & Espinosa — 25 años de experiencia en inmigración.">
+    <meta name="description" content="¿Llevas más de 5 meses en España? Puedes regularizar tu situación antes del 30 de junio de 2026. Verificación gratuita. Un servicio de abogados especializados en extranjería.">
     <meta name="keywords" content="regularización 2026, papeles españa, residencia españa, regularización extraordinaria, sin papeles españa, pombo horowitz espinosa">
 
     <meta property="og:title" content="Regularización 2026 - Obtén tus papeles en España">
@@ -781,10 +781,17 @@
         }
 
         .why-us-text {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             opacity: 0.9;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             line-height: 1.8;
+        }
+
+        .why-us-testimonial {
+            font-size: 1.05rem;
+            color: var(--gold);
+            font-style: italic;
+            margin: 18px 0 28px;
         }
 
         .why-us-points {
@@ -827,28 +834,56 @@
         .why-us-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
+            gap: 20px;
         }
 
         .why-us-stat {
             background: rgba(255,255,255,0.05);
             border: 1px solid rgba(255,255,255,0.1);
             border-radius: 16px;
-            padding: 30px;
+            padding: 28px;
             text-align: center;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .why-us-stat:hover {
+            transform: translateY(-2px);
+            border-color: rgba(232, 212, 168, 0.3);
+        }
+
+        .why-us-stat.highlight {
+            background: linear-gradient(135deg, #c9a962 0%, #8b7441 100%);
+            border-color: transparent;
+        }
+
+        .why-us-stat.highlight .why-us-stat-number {
+            color: var(--navy-dark);
+        }
+
+        .why-us-stat.highlight .why-us-stat-label {
+            color: var(--navy-dark);
+            opacity: 0.85;
         }
 
         .why-us-stat-number {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             font-weight: 700;
             color: var(--gold);
             margin-bottom: 5px;
         }
 
         .why-us-stat-label {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             opacity: 0.8;
+        }
+
+        .why-us-footnote {
+            font-size: 0.73rem;
+            color: rgba(255,255,255,0.5);
+            text-align: center;
+            margin-top: 16px;
+            font-style: italic;
         }
 
         /* Updates */
@@ -2485,11 +2520,12 @@
             <div class="why-us-grid">
                 <div>
                     <h2>No somos gestores. <span class="gold">Somos abogados.</span></h2>
-                    <p class="why-us-text">Pombo, Horowitz &amp; Espinosa lleva 25 a&ntilde;os dedicado exclusivamente a inmigraci&oacute;n. Participamos en la regularizaci&oacute;n de 2005 &mdash; sabemos c&oacute;mo funciona.</p>
+                    <p class="why-us-text">Los abogados del colectivo Pombo, Horowitz &amp; Espinosa suman m&aacute;s de 25 a&ntilde;os de experiencia conjunta en derecho de extranjer&iacute;a. Participamos en la regularizaci&oacute;n de 2005 con alt&iacute;simo porcentaje de &eacute;xito.</p>
+                    <p class="why-us-testimonial">Nuestros clientes nos avalan.</p>
 
                     <div class="why-us-points">
                         <div class="why-us-point">
-                            <div class="why-us-point-icon">&#9878;</div>
+                            <div class="why-us-point-icon">&#9878;&#65039;</div>
                             <div>
                                 <h4>Abogados colegiados</h4>
                                 <p>Abogados debidamente habilitados. Tu caso lo lleva un abogado, no un gestor.</p>
@@ -2506,29 +2542,32 @@
                             <div class="why-us-point-icon">&#128172;</div>
                             <div>
                                 <h4>Soporte continuo</h4>
-                                <p>Atenci&oacute;n por Telegram, email y tel&eacute;fono durante todo el proceso.</p>
+                                <p>Atenci&oacute;n por Telegram y email durante todo el proceso.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="why-us-stats">
-                    <div class="why-us-stat">
-                        <div class="why-us-stat-number">25</div>
-                        <div class="why-us-stat-label">A&ntilde;os de experiencia</div>
+                <div>
+                    <div class="why-us-stats">
+                        <div class="why-us-stat">
+                            <div class="why-us-stat-number">25+</div>
+                            <div class="why-us-stat-label">A&ntilde;os de experiencia conjunta</div>
+                        </div>
+                        <div class="why-us-stat highlight">
+                            <div class="why-us-stat-number">500.000</div>
+                            <div class="why-us-stat-label">Beneficiarios estimados*</div>
+                        </div>
+                        <div class="why-us-stat">
+                            <div class="why-us-stat-number">2005</div>
+                            <div class="why-us-stat-label">Regularizaci&oacute;n anterior</div>
+                        </div>
+                        <div class="why-us-stat">
+                            <div class="why-us-stat-number">&euro;299</div>
+                            <div class="why-us-stat-label">Servicio completo</div>
+                        </div>
                     </div>
-                    <div class="why-us-stat">
-                        <div class="why-us-stat-number">+10,000</div>
-                        <div class="why-us-stat-label">Casos resueltos</div>
-                    </div>
-                    <div class="why-us-stat">
-                        <div class="why-us-stat-number">2005</div>
-                        <div class="why-us-stat-label">Regularizaci&oacute;n anterior</div>
-                    </div>
-                    <div class="why-us-stat">
-                        <div class="why-us-stat-number">&euro;299</div>
-                        <div class="why-us-stat-label">Servicio completo</div>
-                    </div>
+                    <p class="why-us-footnote">*Estimaci&oacute;n oficial del Gobierno de Espa&ntilde;a (Ministerio de Inclusi&oacute;n, Seguridad Social y Migraciones, enero 2026)</p>
                 </div>
             </div>
         </div>
