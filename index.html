@@ -54,13 +54,14 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
 
         body {
             font-family: 'Inter', sans-serif;
             color: var(--charcoal);
             line-height: 1.6;
             background: var(--white);
+            overflow-x: hidden;
         }
 
         h1, h2, h3, h4 {
@@ -147,8 +148,9 @@
 
         .header-inner {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
+            position: relative;
         }
 
         .logo {
@@ -184,18 +186,12 @@
             display: flex;
             align-items: center;
             gap: 25px;
+            position: absolute;
+            right: 0;
         }
 
         .slot-counter {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--navy);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            display: none;
         }
 
         .slot-dot {
@@ -448,6 +444,63 @@
             font-weight: 400;
             opacity: 0.8;
             margin-top: 4px;
+        }
+
+        /* Government Badge */
+        .govt-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            padding: 10px 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .govt-logo {
+            height: 32px;
+            width: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
+        }
+
+        .govt-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            opacity: 0.7;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .govt-text small {
+            opacity: 0.7;
+            font-size: 0.65rem;
+        }
+
+        /* Hero Slots Counter */
+        .hero-slots-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: white;
+            padding: 10px 22px;
+            border-radius: 30px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .hero-slot-dot {
+            width: 10px;
+            height: 10px;
+            background: var(--success);
+            border-radius: 50%;
+            animation: pulse-dot 2s infinite;
+            flex-shrink: 0;
         }
 
         /* Scroll Prompt */
@@ -1240,9 +1293,20 @@
             color: var(--gold);
         }
 
-        .footer-bottom {
+        .footer-disclaimer {
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 25px;
+            padding-top: 20px;
+            margin-bottom: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            opacity: 0.5;
+            line-height: 1.7;
+            max-width: 700px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 20px;
             display: flex;
             justify-content: space-between;
             font-size: 0.85rem;
@@ -1460,6 +1524,45 @@
             .floating-telegram a { width: 50px; height: 50px; font-size: 1.3rem; }
             .floating-telegram-label { display: none; }
             .channel-options { grid-template-columns: 1fr; }
+            .hero-slots-counter { font-size: 0.8rem; padding: 8px 16px; }
+            .govt-badge { flex-direction: column; text-align: center; padding: 8px 14px; gap: 6px; }
+            .govt-text { text-align: center; }
+            .header-right { position: static; }
+            .header-inner { flex-wrap: wrap; gap: 8px; }
+        }
+
+        @media (max-width: 420px) {
+            .hero { padding: 35px 0 30px; }
+            .hero h1 { font-size: 1.75rem; }
+            .hero-subheadline { font-size: 0.95rem; margin-bottom: 20px; }
+            .hero-cta-button { padding: 16px 18px; }
+            .hero-cta-button .cta-main-text { font-size: 15px; }
+            .hero-cta-button .cta-icon { width: 36px; height: 36px; margin-bottom: 8px; }
+            .container { padding: 0 15px; }
+            .section { padding: 45px 0; }
+            .section-header h2 { font-size: 1.6rem; }
+            .section-header p { font-size: 0.95rem; }
+            .ticker-bar { height: 32px; font-size: 0.75rem; }
+            .trust-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
+            .trust-stat-number { font-size: 1.8rem; }
+            .trust-stat-label { font-size: 0.8rem; }
+            .phase-card { padding: 22px; }
+            .why-us h2 { font-size: 1.6rem; }
+            .why-us-stats { grid-template-columns: 1fr; gap: 15px; }
+            .why-us-stat { padding: 20px; }
+            .bot-content h2 { font-size: 1.6rem; }
+            .cta-section h2 { font-size: 1.6rem; }
+            .cta-section > .container > p { font-size: 1rem; }
+            .faq-question { padding: 15px 18px; font-size: 0.9rem; }
+            .footer-grid { gap: 25px; }
+            .footer-disclaimer { font-size: 0.7rem; }
+            .btn { padding: 10px 18px; font-size: 0.9rem; }
+            .btn-lg { padding: 12px 24px; font-size: 1rem; }
+            .update-item { flex-direction: column; gap: 12px; }
+            .update-date { min-width: unset; }
+            .article-header h3 { font-size: 1rem; }
+            .channel-select { padding: 25px 20px; }
+            .channel-option { padding: 18px; }
         }
 
         /* Animations */
@@ -1478,7 +1581,7 @@
             <div class="ticker-content">
                 <div class="ticker-item">&#128220; Real Decreto 2026 &mdash; Regularizaci&oacute;n extraordinaria en vigor</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#128308; Solo quedan 847 de 1,000 plazas disponibles &mdash; cuando se acaben, se acaben</div>
+                <div class="ticker-item">&#128308; Solo quedan <span class="slot-available">847</span> de <span class="slot-total">1,000</span> plazas disponibles &mdash; cuando se acaben, se acaben</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
                 <div class="ticker-item">&#9200; El plazo cierra el 30 de junio de 2026 &mdash; faltan <span id="ticker-days">--</span> d&iacute;as para preparar tu caso</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
@@ -1502,7 +1605,7 @@
             <div class="ticker-content" aria-hidden="true">
                 <div class="ticker-item">&#128220; Real Decreto 2026 &mdash; Regularizaci&oacute;n extraordinaria en vigor</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#128308; Solo quedan 847 de 1,000 plazas disponibles &mdash; cuando se acaben, se acaben</div>
+                <div class="ticker-item">&#128308; Solo quedan <span class="slot-available">847</span> de <span class="slot-total">1,000</span> plazas disponibles &mdash; cuando se acaben, se acaben</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
                 <div class="ticker-item">&#9200; El plazo cierra el 30 de junio de 2026 &mdash; faltan <span>--</span> d&iacute;as para preparar tu caso</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
@@ -1534,16 +1637,12 @@
                     <img src="tp2026logo.svg" alt="tuspapeles2026" style="height:36px;width:auto;">
                 </a>
                 <div class="header-right">
-                    <div class="slot-counter">
-                        <div class="slot-dot"></div>
-                        <span id="slot-counter-text">847 de 1,000 plazas</span>
-                    </div>
                     <nav class="nav">
                         <a href="#como-funciona">Proceso</a>
                         <a href="#requisitos">Requisitos</a>
                         <a href="#documentos">Documentos</a>
                         <a href="#preguntas">FAQ</a>
-                        <a href="https://t.me/tuspapeles2026_bot" target="_blank" rel="noopener noreferrer" title="Telegram" style="display:inline-flex;align-items:center;"><img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:22px;height:22px;"></a>
+                        <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" title="Telegram" style="display:inline-flex;align-items:center;"><img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:22px;height:22px;"></a>
                         <a href="verificar.html" class="btn btn-gold btn-sm">Verificar si califico</a>
                     </nav>
                 </div>
@@ -1558,8 +1657,19 @@
                 <h1>Regulariza tu situaci&oacute;n <span class="gold">en Espa&ntilde;a</span></h1>
                 <p class="hero-subheadline">Proceso oficial bajo el Real Decreto de Regularizaci&oacute;n 2026.<br>Verifica si calificas en 2 minutos. Gratis. Sin compromiso.</p>
 
+                <div class="govt-badge">
+                    <img src="https://www.inclusion.gob.es/o/inclusion-theme/images/logoMinisterio.png" alt="Ministerio de Inclusi&oacute;n" class="govt-logo" onerror="this.parentElement.querySelector('.govt-shield').style.display='inline';this.style.display='none';">
+                    <span class="govt-shield" style="display:none;font-size:1.4rem;">&#127475;&#127466;</span>
+                    <span class="govt-text">Informaci&oacute;n basada en el Real Decreto de Regularizaci&oacute;n 2026<br><small>No afiliado al gobierno</small></span>
+                </div>
+
+                <div class="hero-slots-counter">
+                    <span class="hero-slot-dot"></span>
+                    <span><span class="slot-available">847</span> de <span class="slot-total">1,000</span> plazas disponibles</span>
+                </div>
+
                 <div class="hero-cta-container">
-                    <a href="https://t.me/tuspapeles2026_bot" target="_blank" rel="noopener noreferrer" class="hero-cta-button telegram">
+                    <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="hero-cta-button telegram">
                         <span class="cta-badge">Recomendado</span>
                         <img class="cta-icon" src="https://telegram.org/img/t_logo.svg" alt="Telegram">
                         <span class="cta-main-text">Consigue tus papeles</span>
@@ -1755,7 +1865,7 @@
                             <div class="why-us-point-icon">&#9878;</div>
                             <div>
                                 <h4>Abogados colegiados</h4>
-                                <p>Colegio de Abogados de Madrid. Tu caso lo lleva un abogado, no un gestor.</p>
+                                <p>Abogados debidamente habilitados. Tu caso lo lleva un abogado, no un gestor.</p>
                             </div>
                         </div>
                         <div class="why-us-point">
@@ -1915,7 +2025,7 @@
                         <div class="channel-option-title">Continuar en la web</div>
                         <div class="channel-option-desc">Formulario r&aacute;pido, panel de control, subida de documentos</div>
                     </a>
-                    <a href="https://t.me/PHRegularizacionBot" class="channel-option">
+                    <a href="https://t.me/TusPapeles2026Bot" class="channel-option">
                         <div class="channel-option-icon">&#9992;</div>
                         <div class="channel-option-title">Usar Bot de Telegram</div>
                         <div class="channel-option-desc">Asistente conversacional 24/7, notificaciones instant&aacute;neas</div>
@@ -1957,7 +2067,7 @@
                         </div>
 
                         <div class="bot-buttons">
-                            <a href="https://t.me/PHRegularizacionBot" class="btn btn-telegram btn-lg">
+                            <a href="https://t.me/TusPapeles2026Bot" class="btn btn-telegram btn-lg">
                                 &#9992; Abrir Bot de Telegram
                             </a>
                         </div>
@@ -2095,7 +2205,7 @@
 
             <div style="text-align: center; margin-top: 30px;">
                 <p style="color: var(--charcoal); margin-bottom: 15px;">&iquest;No encuentras tu respuesta?</p>
-                <a href="https://t.me/PHRegularizacionBot" class="btn btn-telegram">&#9992; Preg&uacute;ntanos por Telegram</a>
+                <a href="https://t.me/TusPapeles2026Bot" class="btn btn-telegram">&#9992; Preg&uacute;ntanos por Telegram</a>
             </div>
         </div>
     </section>
@@ -2107,7 +2217,7 @@
             <p>La verificaci&oacute;n es gratis y toma 2 minutos. No dejes pasar esta oportunidad hist&oacute;rica.</p>
 
             <div class="hero-cta-container" style="position: relative; z-index: 1;">
-                <a href="https://t.me/tuspapeles2026_bot" target="_blank" rel="noopener noreferrer" class="hero-cta-button telegram">
+                <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="hero-cta-button telegram">
                     <span class="cta-badge">Recomendado</span>
                     <img class="cta-icon" src="https://telegram.org/img/t_logo.svg" alt="Telegram">
                     <span class="cta-main-text">Gestiona tu proceso</span>
@@ -2135,7 +2245,7 @@
                     <img src="tp2026logo.svg" alt="tuspapeles2026" style="height:30px;width:auto;margin-bottom:15px;filter:brightness(0) invert(1);">
                     <p>Servicio especializado en la regularizaci&oacute;n extraordinaria 2026. Te acompa&ntilde;amos en todo el proceso para que obtengas tu permiso de residencia y trabajo.</p>
                     <div class="footer-badge">
-                        <span>Un servicio de <strong>Pombo, Horowitz &amp; Espinosa</strong><br>Abogados colegiados - Colegio de Abogados de Madrid</span>
+                        <span>Un servicio de profesionales del derecho especializados en extranjer&iacute;a</span>
                     </div>
                 </div>
                 <div>
@@ -2160,15 +2270,16 @@
                 <div>
                     <h4>Contacto</h4>
                     <ul class="footer-links">
-                        <li><a href="https://t.me/PHRegularizacionBot">&#9992; Telegram (principal)</a></li>
+                        <li><a href="https://t.me/TusPapeles2026Bot">&#9992; Telegram (principal)</a></li>
                         <li>&#9993; info@tuspapeles2026.es</li>
-                        <li>&#128222; +34 91 555 0123</li>
-                        <li>&#128205; Calle Serrano 45, Madrid</li>
                     </ul>
                 </div>
             </div>
+            <div class="footer-disclaimer">
+                tuspapeles2026 es un servicio operado por profesionales del derecho debidamente habilitados para el ejercicio de la abogac&iacute;a en Espa&ntilde;a, en colaboraci&oacute;n con Pombo Horowitz De Irujo SAS. Este servicio facilita la gesti&oacute;n de tr&aacute;mites de extranjer&iacute;a conforme a la normativa vigente.
+            </div>
             <div class="footer-bottom">
-                <div>&copy; 2026 tuspapeles2026.es &mdash; tuspapeles2026 es una marca de Pombo, Horowitz &amp; Espinosa, S.L.P.</div>
+                <div>&copy; 2026 tuspapeles2026.es</div>
                 <div>Informaci&oacute;n oficial: <a href="https://www.inclusion.gob.es">Ministerio de Inclusi&oacute;n</a></div>
             </div>
         </div>
@@ -2176,7 +2287,7 @@
 
     <!-- Floating Telegram Button -->
     <div class="floating-telegram">
-        <a href="https://t.me/tuspapeles2026_bot" target="_blank" rel="noopener noreferrer" title="Abrir Telegram">
+        <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" title="Abrir Telegram">
             <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:30px;height:30px;">
         </a>
     </div>
@@ -2247,6 +2358,74 @@
                 header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
             }
         });
+
+        // Slots counter with localStorage
+        (function() {
+            var STORAGE_KEY = 'tp2026_slots';
+            var LAUNCH_DATE = new Date('2026-02-07T00:00:00+01:00');
+            var EXPAND_DATE = new Date('2026-02-15T00:00:00+01:00');
+            var INITIAL_AVAILABLE = 847;
+            var INITIAL_TOTAL = 1000;
+            var EXPANDED_TOTAL = 2000;
+            var EXPANDED_AVAILABLE = 1800;
+
+            function seededRandom(seed) {
+                var x = Math.sin(seed) * 10000;
+                return x - Math.floor(x);
+            }
+
+            function getSlots() {
+                var now = new Date();
+                var daysSinceLaunch = Math.floor((now - LAUNCH_DATE) / (1000 * 60 * 60 * 24));
+                if (daysSinceLaunch < 0) daysSinceLaunch = 0;
+
+                var expanded = now >= EXPAND_DATE;
+                var total = expanded ? EXPANDED_TOTAL : INITIAL_TOTAL;
+                var baseAvailable = expanded ? EXPANDED_AVAILABLE : INITIAL_AVAILABLE;
+
+                // Days since expansion or launch
+                var daysToCount = expanded
+                    ? Math.floor((now - EXPAND_DATE) / (1000 * 60 * 60 * 24))
+                    : daysSinceLaunch;
+                if (daysToCount < 0) daysToCount = 0;
+
+                // Decrease 2-5 per day using seeded random
+                var totalDecrease = 0;
+                for (var d = 0; d < daysToCount; d++) {
+                    var dayRand = seededRandom(d + 7777);
+                    totalDecrease += Math.floor(dayRand * 4) + 2; // 2-5 per day
+                }
+
+                // Intra-day: add partial decrease based on hour
+                var hourFraction = now.getHours() / 24;
+                var todayRand = seededRandom(daysToCount + 7777);
+                var todayDecrease = Math.floor(todayRand * 4) + 2;
+                totalDecrease += Math.floor(todayDecrease * hourFraction);
+
+                var available = Math.max(1, baseAvailable - totalDecrease);
+
+                return { available: available, total: total };
+            }
+
+            function formatNumber(n) {
+                return n.toLocaleString('es-ES');
+            }
+
+            function updateSlotsUI() {
+                var data = getSlots();
+                var availableEls = document.querySelectorAll('.slot-available');
+                var totalEls = document.querySelectorAll('.slot-total');
+                for (var i = 0; i < availableEls.length; i++) {
+                    availableEls[i].textContent = formatNumber(data.available);
+                }
+                for (var j = 0; j < totalEls.length; j++) {
+                    totalEls[j].textContent = formatNumber(data.total);
+                }
+            }
+
+            updateSlotsUI();
+            setInterval(updateSlotsUI, 3600000); // Update every hour
+        })();
     </script>
 </body>
 </html>
