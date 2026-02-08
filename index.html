@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tus Papeles 2026 | Regularización Extraordinaria España | Obtén tu Residencia</title>
-    <meta name="description" content="¿Llevas más de 5 meses en España? Puedes regularizar tu situación antes del 30 de junio de 2026. Verificación gratuita. Un servicio de abogados especializados en extranjería.">
-    <meta name="keywords" content="regularización 2026, papeles españa, residencia españa, regularización extraordinaria, sin papeles españa, pombo horowitz espinosa">
+    <title>Regularización 2026 España | Servicio Personalizado desde €254 | tuspapeles2026</title>
+    <meta name="description" content="Regularización extraordinaria 2026 con abogados expertos. Servicio personalizado desde €254. Participamos en 2005. Tecnología + experiencia = tu mejor expediente.">
+    <meta name="keywords" content="regularización 2026, regularización masiva España, papeles España, extranjería, arraigo, Pombo Horowitz, regularización extraordinaria">
 
-    <meta property="og:title" content="Regularización 2026 - Obtén tus papeles en España">
-    <meta property="og:description" content="Si llevas más de 5 meses en España, puedes obtener tu permiso de residencia y trabajo. Plazo hasta 30 de junio 2026. Todo por menos de 300 euros.">
+    <meta property="og:title" content="Regularización 2026 | Servicio Personalizado desde €254">
+    <meta property="og:description" content="Tu caso es único. Tu estrategia también. Abogados con experiencia 2005 + tecnología = expediente a medida.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
     <meta property="og:url" content="https://tuspapeles2026.es">
@@ -356,8 +356,116 @@
             font-family: 'Inter', sans-serif;
             font-size: 1.3rem;
             opacity: 0.9;
-            margin-bottom: 45px;
+            margin-bottom: 35px;
             line-height: 1.6;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            margin-bottom: 20px;
+            letter-spacing: 0.02em;
+        }
+
+        .hero-pricing {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .hero-price-option {
+            background: rgba(255,255,255,0.08);
+            padding: 18px 28px;
+            border-radius: 14px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero-price-option.recommended {
+            background: white;
+            color: var(--navy);
+            transform: scale(1.04);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+            border: none;
+        }
+
+        .hero-price-option .hp-label {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .hero-price-option .hp-old {
+            font-family: 'Inter', sans-serif;
+            text-decoration: line-through;
+            opacity: 0.5;
+            font-size: 1rem;
+        }
+
+        .hero-price-option .hp-main {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.6rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .hero-price-option .hp-savings {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+
+        .hero-price-option .hp-detail {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 4px;
+        }
+
+        .hero-price-divider {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            opacity: 0.4;
+        }
+
+        .hero-trust-row {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .hero-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            opacity: 0.85;
+        }
+
+        .hero-trust-item span:first-child {
+            font-size: 1rem;
         }
 
         /* Hero CTA Container */
@@ -986,6 +1094,211 @@
             color: var(--error);
         }
 
+        /* Standalone Add-ons Section */
+        .addons-section {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+
+        .addons-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .addon-card {
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            position: relative;
+            transition: box-shadow 0.2s;
+        }
+
+        .addon-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .addon-card.popular {
+            border: 2px solid var(--success);
+        }
+
+        .addon-badge {
+            position: absolute;
+            top: -11px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--success);
+            color: white;
+            padding: 3px 14px;
+            border-radius: 50px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .addon-icon {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .addon-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+
+        .addon-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--success);
+            margin-bottom: 8px;
+        }
+
+        .addon-price span {
+            font-size: 0.85rem;
+            font-weight: 400;
+            color: var(--gray-400);
+        }
+
+        .addon-card > p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .addon-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .addon-list li {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            padding: 4px 0;
+            color: var(--charcoal);
+        }
+
+        .addon-list li::before {
+            content: '\2713 ';
+            color: var(--success);
+            font-weight: 700;
+        }
+
+        /* Process Timeline (deep) */
+        .process-timeline {
+            max-width: 740px;
+            margin: 40px auto 0;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 28px;
+            padding-bottom: 35px;
+            margin-bottom: 35px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .process-step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .step-marker {
+            flex-shrink: 0;
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--navy);
+            color: white;
+            border-radius: 50%;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .step-marker.free {
+            background: var(--success);
+        }
+
+        .step-content h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .step-price {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--success);
+            margin-bottom: 14px;
+        }
+
+        .step-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 12px;
+        }
+
+        .step-content li {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            padding: 5px 0;
+            color: var(--charcoal);
+        }
+
+        .step-note {
+            margin-top: 12px;
+            padding: 14px;
+            background: var(--gray-50);
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--gray-400);
+            font-style: italic;
+        }
+
+        .step-sample {
+            margin-top: 14px;
+            padding: 16px;
+            background: #ebf8ff;
+            border-left: 4px solid var(--info);
+            border-radius: 0 10px 10px 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+        }
+
+        .step-sample strong {
+            color: var(--navy);
+        }
+
+        .step-sample ul {
+            margin: 10px 0 10px 18px;
+            padding: 0;
+            list-style: disc;
+        }
+
+        .step-sample li {
+            font-style: italic;
+            color: #2c5282;
+            font-size: 0.85rem;
+        }
+
         /* Documents */
         .documents-grid {
             display: grid;
@@ -1052,132 +1365,120 @@
 
         /* Why Us */
         .why-us {
-            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
-            color: white;
             padding: 80px 0;
-        }
-
-        .why-us-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
+            background: var(--gray-50);
         }
 
         .why-us h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: white;
-        }
-
-        .why-us h2 .gold {
-            color: var(--gold);
-        }
-
-        .why-us-text {
-            font-size: 1.05rem;
-            opacity: 0.9;
+            font-size: 2.2rem;
+            color: var(--navy);
             margin-bottom: 10px;
-            line-height: 1.8;
         }
 
-        .why-us-testimonial {
-            font-size: 1.05rem;
-            color: var(--gold);
-            font-style: italic;
-            margin: 18px 0 28px;
-        }
-
-        .why-us-points {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .why-us-point {
-            display: flex;
-            gap: 15px;
-            align-items: flex-start;
-        }
-
-        .why-us-point-icon {
-            width: 50px;
-            height: 50px;
-            background: rgba(232, 212, 168, 0.15);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.3rem;
-            flex-shrink: 0;
-        }
-
-        .why-us-point h4 {
+        .why-us .section-subtitle {
             font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-            color: var(--gold);
+            font-size: 1.05rem;
+            color: var(--charcoal);
+            line-height: 1.7;
+            max-width: 600px;
+            margin: 0 auto 40px;
         }
 
-        .why-us-point p {
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-
-        .why-us-stats {
+        .why-cards {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-bottom: 40px;
         }
 
-        .why-us-stat {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+        .why-card {
+            background: white;
+            padding: 30px;
             border-radius: 16px;
-            padding: 28px;
-            text-align: center;
-            transition: transform 0.2s, border-color 0.2s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border: 1px solid var(--gray-200);
         }
 
-        .why-us-stat:hover {
-            transform: translateY(-2px);
-            border-color: rgba(232, 212, 168, 0.3);
+        .why-card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 14px;
         }
 
-        .why-us-stat.highlight {
-            background: linear-gradient(135deg, #c9a962 0%, #8b7441 100%);
-            border-color: transparent;
-        }
-
-        .why-us-stat.highlight .why-us-stat-number {
-            color: var(--navy-dark);
-        }
-
-        .why-us-stat.highlight .why-us-stat-label {
-            color: var(--navy-dark);
-            opacity: 0.85;
-        }
-
-        .why-us-stat-number {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.3rem;
+        .why-card h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.15rem;
             font-weight: 700;
-            color: var(--gold);
-            margin-bottom: 5px;
+            color: var(--navy);
+            margin-bottom: 10px;
         }
 
-        .why-us-stat-label {
-            font-size: 0.85rem;
-            opacity: 0.8;
+        .why-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            line-height: 1.6;
         }
 
-        .why-us-footnote {
-            font-size: 0.73rem;
-            color: rgba(255,255,255,0.5);
-            text-align: center;
-            margin-top: 16px;
-            font-style: italic;
+        .why-card .why-result {
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid var(--gray-200);
+            color: var(--success);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+
+        /* Comparison Table */
+        .comparison-box {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            border: 1px solid var(--gray-200);
+            overflow-x: auto;
+        }
+
+        .comparison-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 20px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--gray-200);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .comparison-table th {
+            font-weight: 600;
+            color: var(--charcoal);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .comparison-table td:first-child {
+            font-weight: 600;
+            color: var(--navy);
+        }
+
+        .comparison-table .col-highlight {
+            background: #f0fff4;
+        }
+
+        .comparison-table .col-highlight strong {
+            color: #166534;
         }
 
         /* Updates */
@@ -2181,7 +2482,9 @@
             .phases-grid { grid-template-columns: repeat(2, 1fr); }
             .requirements-grid { grid-template-columns: 1fr; max-width: 500px; margin: 0 auto; }
             .documents-grid { grid-template-columns: 1fr; }
-            .why-us-grid { grid-template-columns: 1fr; }
+            .why-cards { grid-template-columns: 1fr; }
+            .addons-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-step { gap: 20px; }
             .bot-grid { grid-template-columns: 1fr; }
             .articles-grid { grid-template-columns: 1fr; }
             .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -2211,7 +2514,9 @@
             .pricing-dual { grid-template-columns: 1fr; gap: 16px; }
             .trust-grid { grid-template-columns: 1fr 1fr; }
             .why-us h2 { font-size: 2rem; }
-            .why-us-stats { grid-template-columns: 1fr 1fr; }
+            .hero-pricing { gap: 16px; }
+            .hero-price-option { padding: 14px 20px; }
+            .hero-price-option .hp-main { font-size: 2rem; }
             .bot-content h2 { font-size: 2rem; }
             .bot-features { grid-template-columns: 1fr; }
             .cta-section h2 { font-size: 2rem; }
@@ -2252,8 +2557,17 @@
             .extra-service-price { margin-left: 0; }
             .govt-fees-box { padding: 20px; }
             .why-us h2 { font-size: 1.6rem; }
-            .why-us-stats { grid-template-columns: 1fr; gap: 15px; }
-            .why-us-stat { padding: 20px; }
+            .why-cards { gap: 16px; }
+            .why-card { padding: 22px; }
+            .addons-grid { grid-template-columns: 1fr; }
+            .addon-card { padding: 22px; }
+            .comparison-table { font-size: 0.82rem; }
+            .comparison-table th, .comparison-table td { padding: 10px 12px; }
+            .process-step { flex-direction: column; gap: 16px; }
+            .step-marker { width: 56px; height: 56px; font-size: 0.62rem; }
+            .hero-pricing { flex-direction: column; gap: 12px; }
+            .hero-price-option .hp-main { font-size: 2.2rem; }
+            .hero-trust-row { gap: 18px; }
             .bot-content h2 { font-size: 1.6rem; }
             .cta-section h2 { font-size: 1.6rem; }
             .cta-section > .container > p { font-size: 1rem; }
@@ -2373,34 +2687,49 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Regulariza tu situaci&oacute;n <span class="gold">en Espa&ntilde;a</span></h1>
-                <p class="hero-subheadline">Proceso oficial bajo el Real Decreto de Regularizaci&oacute;n 2026.<br>Verifica si calificas en 2 minutos. Gratis. Sin compromiso.</p>
+                <p class="hero-badge">Una iniciativa de Pombo, Horowitz &amp; Espinosa</p>
+                <h1>Tu caso es &uacute;nico.<br><span class="gold">Tu estrategia tambi&eacute;n.</span></h1>
+                <p class="hero-subheadline">500.000 personas solicitar&aacute;n la regularizaci&oacute;n.<br>Ning&uacute;n caso es igual. Por eso no usamos plantillas.</p>
 
-                <div class="hero-slots-counter">
-                    <span class="hero-slot-dot"></span>
-                    <span><span class="slot-available">847</span> de <span class="slot-total">1,000</span> plazas disponibles</span>
+                <div class="hero-pricing">
+                    <div class="hero-price-option recommended">
+                        <span class="hp-label">Pago &uacute;nico</span>
+                        <span class="hp-old">&euro;299</span>
+                        <span class="hp-main">&euro;254</span>
+                        <span class="hp-savings">Ahorras &euro;45</span>
+                    </div>
+                    <span class="hero-price-divider">&oacute;</span>
+                    <div class="hero-price-option">
+                        <span class="hp-label">Por fases</span>
+                        <span class="hp-main">&euro;299</span>
+                        <span class="hp-detail">&euro;39 + &euro;150 + &euro;110</span>
+                    </div>
                 </div>
 
                 <div class="hero-cta-container">
                     <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="hero-cta-button telegram">
                         <span class="cta-badge">Recomendado</span>
                         <img class="cta-icon" src="https://telegram.org/img/t_logo.svg" alt="Telegram">
-                        <span class="cta-main-text">Consigue tus papeles</span>
-                        <span class="cta-subtext">Comienza tu regularizaci&oacute;n ahora</span>
+                        <span class="cta-main-text">Empezar en Telegram</span>
+                        <span class="cta-subtext">Fase 1 gratis, sin compromiso</span>
                     </a>
 
-                    <a href="verificar.html" class="hero-cta-button web">
+                    <a href="#como-funciona" class="hero-cta-button web">
                         <svg class="cta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"/>
                             <line x1="2" y1="12" x2="22" y2="12"/>
                             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                         </svg>
-                        <span class="cta-main-text">Verificar si califico</span>
-                        <span class="cta-subtext">3 preguntas, 2 minutos</span>
+                        <span class="cta-main-text">Ver c&oacute;mo funciona</span>
+                        <span class="cta-subtext">Proceso en 4 fases</span>
                     </a>
                 </div>
 
-                <a href="#como-funciona" class="scroll-prompt">&iquest;C&oacute;mo funciona? &darr;</a>
+                <div class="hero-trust-row">
+                    <div class="hero-trust-item"><span>&#9878;&#65039;</span><span>25+ a&ntilde;os experiencia</span></div>
+                    <div class="hero-trust-item"><span>&#127963;&#65039;</span><span>Participamos en 2005</span></div>
+                    <div class="hero-trust-item"><span>&#129302;</span><span>Tecnolog&iacute;a + personalizaci&oacute;n</span></div>
+                </div>
             </div>
         </div>
     </section>
@@ -2700,13 +3029,13 @@
         </div>
     </section>
 
-    <!-- Process: 4 Phases + Pricing -->
-    <section id="como-funciona" class="section section-gray">
+    <!-- Process: Detailed Phases -->
+    <section id="como-funciona" class="section">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge">Precios Transparentes</div>
-                <h2>Tu proceso en 4 pasos</h2>
-                <p>Te acompa&ntilde;amos desde la verificaci&oacute;n inicial hasta que tengas tu permiso en mano.</p>
+                <div class="section-badge">C&oacute;mo funciona</div>
+                <h2>Un proceso dise&ntilde;ado para TU caso</h2>
+                <p>No somos una f&aacute;brica de expedientes. Cada fase profundiza en tu situaci&oacute;n espec&iacute;fica.</p>
             </div>
 
             <!-- Dual Pricing Cards -->
@@ -2728,31 +3057,78 @@
                 </div>
             </div>
 
-            <!-- Phase Breakdown -->
-            <div class="phases-grid">
-                <div class="phase-card">
-                    <div class="phase-number">1</div>
-                    <h3>Verificaci&oacute;n</h3>
-                    <div class="phase-price free">GRATIS</div>
-                    <p>Responde 3 preguntas para saber si calificas. Recibe tu hoja de ruta personalizada.</p>
+            <!-- Detailed Process Timeline -->
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-marker free">GRATIS</div>
+                    <div class="step-content">
+                        <h3>Fase 1: Conocernos</h3>
+                        <div class="step-price">&euro;0</div>
+                        <ul>
+                            <li>&#9989; Verificamos tu elegibilidad (3 preguntas)</li>
+                            <li>&#9989; Subes tus documentos sin compromiso</li>
+                            <li>&#9989; Te familiarizas con la plataforma</li>
+                            <li>&#9989; Vemos qu&eacute; tienes antes de hablar de estrategia</li>
+                        </ul>
+                        <div class="step-note">Otros te cobran &euro;39 antes de ver nada. Nosotros preferimos conocer tu caso primero.</div>
+                    </div>
                 </div>
-                <div class="phase-card">
-                    <div class="phase-number">2</div>
-                    <h3>Preparaci&oacute;n</h3>
-                    <div class="phase-price">&euro;39</div>
-                    <p>Sube tus documentos y recibe tu checklist personalizado. Verificaci&oacute;n autom&aacute;tica incluida.</p>
+
+                <div class="process-step">
+                    <div class="step-marker">FASE 2</div>
+                    <div class="step-content">
+                        <h3>Auditor&iacute;a Personalizada</h3>
+                        <div class="step-price">&euro;39</div>
+                        <ul>
+                            <li>&#128203; Cuestionario profundo (20+ preguntas)</li>
+                            <li>&#128196; An&aacute;lisis documento por documento</li>
+                            <li>&#9989; Identificamos fortalezas de tu caso</li>
+                            <li>&#9888;&#65039; Detectamos debilidades y c&oacute;mo solucionarlas</li>
+                            <li>&#127919; Estrategia personalizada solo para ti</li>
+                        </ul>
+                        <div class="step-sample">
+                            <strong>Ejemplo de preguntas que hacemos:</strong>
+                            <ul>
+                                <li>&ldquo;&iquest;Has salido de Espa&ntilde;a desde que llegaste?&rdquo;</li>
+                                <li>&ldquo;&iquest;Tienes hijos menores aqu&iacute;? &iquest;Nacieron en Espa&ntilde;a?&rdquo;</li>
+                                <li>&ldquo;&iquest;Has tenido alg&uacute;n problema legal, aunque sea menor?&rdquo;</li>
+                                <li>&ldquo;&iquest;Trabajas actualmente? &iquest;Con o sin contrato?&rdquo;</li>
+                            </ul>
+                            <em>Cada respuesta moldea TU estrategia.</em>
+                        </div>
+                    </div>
                 </div>
-                <div class="phase-card featured">
-                    <div class="phase-number">3</div>
-                    <h3>Revisi&oacute;n Legal</h3>
-                    <div class="phase-price">&euro;150</div>
-                    <p>Un abogado colegiado revisa todo, solicita correcciones y prepara tu expediente legal completo.</p>
+
+                <div class="process-step">
+                    <div class="step-marker">FASE 3</div>
+                    <div class="step-content">
+                        <h3>Expediente a Medida</h3>
+                        <div class="step-price">&euro;150</div>
+                        <ul>
+                            <li>&#128221; Segundo cuestionario (datos para formularios)</li>
+                            <li>&#128193; Organizamos tus documentos estrat&eacute;gicamente</li>
+                            <li>&#128196; Rellenamos TODOS los formularios oficiales</li>
+                            <li>&#9997;&#65039; Creamos una memoria personalizada de tu caso</li>
+                            <li>&#128269; Revisi&oacute;n final conjunta antes de presentar</li>
+                        </ul>
+                        <div class="step-note">Tu expediente cuenta TU historia de la forma m&aacute;s convincente.</div>
+                    </div>
                 </div>
-                <div class="phase-card">
-                    <div class="phase-number">4</div>
-                    <h3>Presentaci&oacute;n</h3>
-                    <div class="phase-price">&euro;110</div>
-                    <p>Presentamos tu solicitud y te acompa&ntilde;amos hasta la resoluci&oacute;n. Soporte prioritario incluido.</p>
+
+                <div class="process-step">
+                    <div class="step-marker">FASE 4</div>
+                    <div class="step-content">
+                        <h3>Presentaci&oacute;n y Seguimiento</h3>
+                        <div class="step-price">&euro;110</div>
+                        <ul>
+                            <li>&#128228; Presentaci&oacute;n telem&aacute;tica oficial</li>
+                            <li>&#128200; Seguimiento diario de tu expediente</li>
+                            <li>&#128233; Respuesta a requerimientos</li>
+                            <li>&#9878;&#65039; Recurso incluido si es necesario</li>
+                            <li>&#127881; Acompa&ntilde;amiento hasta la resoluci&oacute;n</li>
+                        </ul>
+                        <div class="step-note">Desde la admisi&oacute;n a tr&aacute;mite, ya puedes trabajar legalmente.</div>
+                    </div>
                 </div>
             </div>
 
@@ -2771,74 +3147,92 @@
                 </div>
             </div>
 
-            <!-- Extra Services -->
-            <div class="extra-services">
-                <h4>&#128230; Servicios Adicionales</h4>
-                <p>Opcionales. Simplifican el proceso.</p>
-
-                <div class="extra-service-item">
-                    <div class="extra-service-info">
-                        <span class="service-name">&#127758; Antecedentes penales completo</span>
-                        <p>Nos encargamos de solicitar, apostillar y traducir tu certificado de antecedentes del pa&iacute;s de origen. As&iacute; te aseguras de que est&aacute; bien hecho.</p>
-                    </div>
-                    <span class="extra-service-price">+&euro;49</span>
-                </div>
-
-                <div class="extra-service-item">
-                    <div class="extra-service-info">
-                        <span class="service-name">&#127963; Gesti&oacute;n de tasas gubernamentales</span>
-                        <p>Pagamos y gestionamos las tasas 790 por ti. Te enviamos los justificantes listos.</p>
-                    </div>
-                    <span class="extra-service-price">+&euro;29</span>
-                </div>
-
-                <div class="extra-service-item">
-                    <div class="extra-service-info">
-                        <span class="service-name">&#128196; Traducci&oacute;n jurada</span>
-                        <p>Por documento</p>
-                    </div>
-                    <span class="extra-service-price">+&euro;35</span>
-                </div>
-
-                <p class="extra-note">Puedes a&ntilde;adir estos servicios en cualquier momento del proceso.</p>
-            </div>
-
-            <!-- Government Fees -->
-            <div class="govt-fees-box">
-                <h4>&#127963; Tasas del Gobierno</h4>
-                <p>Adem&aacute;s de nuestro servicio, el gobierno espa&ntilde;ol cobra tasas administrativas:</p>
-
-                <div class="govt-fee-line">
-                    <span>Tasa 790-052 (tramitaci&oacute;n)</span>
-                    <span>~&euro;16-20</span>
-                </div>
-                <div class="govt-fee-line">
-                    <span>Tasa 790-012 (TIE)</span>
-                    <span>~&euro;16-21</span>
-                </div>
-                <div class="govt-fee-line">
-                    <span>Certificado antecedentes Espa&ntilde;a</span>
-                    <span>~&euro;3.86</span>
-                </div>
-                <div class="govt-fee-line govt-fee-total">
-                    <span>Total tasas gobierno</span>
-                    <span>~&euro;40-50</span>
-                </div>
-
-                <div class="govt-fees-upsell">
-                    &#128161; <strong>&iquest;Prefieres que nos encarguemos?</strong><br>
-                    Por &euro;29 adicionales, gestionamos y pagamos las tasas gubernamentales por ti.
-                </div>
-            </div>
-
-            <!-- Important Warning -->
-            <div class="pricing-warning">
-                &#9888;&#65039; <strong>Importante:</strong> En la regularizaci&oacute;n de 2005, entre el 10% y el 20% de las solicitudes fueron denegadas, muchas por errores evitables en la documentaci&oacute;n. Un expediente bien preparado marca la diferencia.
-            </div>
-
             <!-- CTA -->
-            <div style="text-align: center; margin-top: 10px;">
-                <a href="https://t.me/TusPapeles2026Bot" class="btn btn-telegram" target="_blank" rel="noopener noreferrer" style="font-size: 1rem; padding: 14px 32px;"><img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:22px;height:22px;vertical-align:middle;margin-right:8px;"> Comienza tu proceso ahora</a>
+            <div style="text-align: center; margin-top: 25px;">
+                <a href="https://t.me/TusPapeles2026Bot" class="btn btn-telegram" target="_blank" rel="noopener noreferrer" style="font-size: 1rem; padding: 14px 32px;"><img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:22px;height:22px;vertical-align:middle;margin-right:8px;"> Empezar gratis &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add-on Services -->
+    <section id="servicios-adicionales" class="addons-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Servicios Adicionales</div>
+                <h2>Simplificamos lo complicado</h2>
+                <p>Opcionales, para quien los necesite.</p>
+            </div>
+
+            <div class="addons-grid">
+                <div class="addon-card">
+                    <div class="addon-icon">&#127466;&#127480;</div>
+                    <h3>Antecedentes Espa&ntilde;a</h3>
+                    <div class="addon-price">&euro;15</div>
+                    <p>Lo tramitamos en tu nombre. Sin Cl@ve, sin colas.</p>
+                    <ul class="addon-list">
+                        <li>Solicitud al Ministerio</li>
+                        <li>Descarga y verificaci&oacute;n</li>
+                        <li>Entrega en 24-48h</li>
+                    </ul>
+                </div>
+
+                <div class="addon-card popular">
+                    <div class="addon-badge">M&aacute;s solicitado</div>
+                    <div class="addon-icon">&#127758;</div>
+                    <h3>Antecedentes Pa&iacute;s de Origen</h3>
+                    <div class="addon-price">&euro;49</div>
+                    <p>Gestionamos TODO: solicitud, apostilla, traducci&oacute;n.</p>
+                    <ul class="addon-list">
+                        <li>Investigamos el proceso de tu pa&iacute;s</li>
+                        <li>Solicitamos el certificado</li>
+                        <li>Apostilla/legalizaci&oacute;n</li>
+                        <li>Traducci&oacute;n jurada incluida</li>
+                        <li>Tiempo: 2-4 semanas</li>
+                    </ul>
+                </div>
+
+                <div class="addon-card">
+                    <div class="addon-icon">&#127963;&#65039;</div>
+                    <h3>Gesti&oacute;n de Tasas</h3>
+                    <div class="addon-price">&euro;29</div>
+                    <p>Pagamos las tasas gubernamentales por ti.</p>
+                    <ul class="addon-list">
+                        <li>Rellenamos formularios 790</li>
+                        <li>Pagamos tasas (~&euro;40-50)</li>
+                        <li>Te enviamos justificantes</li>
+                        <li>Sin l&iacute;os con Hacienda</li>
+                    </ul>
+                </div>
+
+                <div class="addon-card">
+                    <div class="addon-icon">&#128289;</div>
+                    <h3>Traducci&oacute;n Jurada</h3>
+                    <div class="addon-price">&euro;35 <span>/documento</span></div>
+                    <p>Traducci&oacute;n oficial v&aacute;lida para el proceso.</p>
+                    <ul class="addon-list">
+                        <li>Traductor jurado certificado</li>
+                        <li>V&aacute;lida para extranjer&iacute;a</li>
+                        <li>Entrega en 48-72h</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Government Fees -->
+    <section class="section">
+        <div class="container">
+            <div class="govt-fees-box" style="max-width: 680px; margin: 0 auto;">
+                <h4>&#127963;&#65039; Tasas del Gobierno</h4>
+                <p>Adem&aacute;s de nuestro servicio, el gobierno espa&ntilde;ol cobra tasas administrativas:</p>
+                <div class="govt-fee-line"><span>Tasa 790-052 (tramitaci&oacute;n)</span><span>~&euro;16-20</span></div>
+                <div class="govt-fee-line"><span>Tasa 790-012 (TIE)</span><span>~&euro;16-21</span></div>
+                <div class="govt-fee-line"><span>Certificado antecedentes Espa&ntilde;a</span><span>~&euro;3.86</span></div>
+                <div class="govt-fee-line govt-fee-total"><span>Total tasas gobierno</span><span>~&euro;40-50</span></div>
+                <div class="govt-fees-upsell">&#128161; <strong>&iquest;Prefieres que nos encarguemos?</strong><br>Por &euro;29 adicionales, gestionamos y pagamos las tasas gubernamentales por ti.</div>
+            </div>
+            <div class="pricing-warning" style="max-width: 680px; margin: 25px auto 0;">
+                &#9888;&#65039; <strong>Importante:</strong> En la regularizaci&oacute;n de 2005, entre el 10% y el 20% de las solicitudes fueron denegadas, muchas por errores evitables en la documentaci&oacute;n. Un expediente bien preparado marca la diferencia.
             </div>
         </div>
     </section>
@@ -2908,60 +3302,72 @@
     </section>
 
     <!-- Why Us -->
-    <section class="why-us">
+    <section id="por-que-nosotros" class="why-us">
         <div class="container">
-            <div class="why-us-grid">
-                <div>
-                    <h2>No somos gestores. <span class="gold">Somos abogados.</span></h2>
-                    <p class="why-us-text">Los abogados del colectivo Pombo, Horowitz &amp; Espinosa suman m&aacute;s de 25 a&ntilde;os de experiencia conjunta en derecho de extranjer&iacute;a. Participamos en la regularizaci&oacute;n de 2005 con alt&iacute;simo porcentaje de &eacute;xito.</p>
-                    <p class="why-us-testimonial">Nuestros clientes nos avalan.</p>
+            <div class="section-header">
+                <h2>&iquest;Por qu&eacute; somos m&aacute;s baratos Y mejores?</h2>
+                <p class="section-subtitle">Otros despachos cobran &euro;389-450. Nosotros &euro;254-299.<br>Y personalizamos m&aacute;s. &iquest;C&oacute;mo es posible?</p>
+            </div>
 
-                    <div class="why-us-points">
-                        <div class="why-us-point">
-                            <div class="why-us-point-icon">&#9878;&#65039;</div>
-                            <div>
-                                <h4>Abogados colegiados</h4>
-                                <p>Abogados debidamente habilitados. Tu caso lo lleva un abogado, no un gestor.</p>
-                            </div>
-                        </div>
-                        <div class="why-us-point">
-                            <div class="why-us-point-icon">&#128200;</div>
-                            <div>
-                                <h4>Experiencia en regularizaciones</h4>
-                                <p>Nuestro equipo incluye abogados que trabajaron en el proceso de 2005.</p>
-                            </div>
-                        </div>
-                        <div class="why-us-point">
-                            <div class="why-us-point-icon">&#128172;</div>
-                            <div>
-                                <h4>Soporte continuo</h4>
-                                <p>Atenci&oacute;n por Telegram y email durante todo el proceso.</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="why-cards">
+                <div class="why-card">
+                    <div class="why-card-icon">&#129302;</div>
+                    <h3>Tecnolog&iacute;a</h3>
+                    <p>Automatizamos lo repetitivo: organizaci&oacute;n de documentos, verificaci&oacute;n de datos, seguimiento de expedientes.</p>
+                    <p class="why-result"><strong>Resultado:</strong> Menos trabajo manual = menos coste para ti.</p>
                 </div>
+                <div class="why-card">
+                    <div class="why-card-icon">&#128220;</div>
+                    <h3>Experiencia 2005</h3>
+                    <p>Participamos en la &uacute;ltima regularizaci&oacute;n masiva hace 20 a&ntilde;os. Sabemos exactamente qu&eacute; buscan los revisores.</p>
+                    <p class="why-result"><strong>Resultado:</strong> Sin ensayo y error. Vamos directo a lo que funciona.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-icon">&#127919;</div>
+                    <h3>Personalizaci&oacute;n</h3>
+                    <p>No usamos plantillas. Cada caso tiene su cuestionario profundo, su estrategia espec&iacute;fica, su expediente a medida.</p>
+                    <p class="why-result"><strong>Resultado:</strong> Tu expediente refleja TU historia, no una plantilla.</p>
+                </div>
+            </div>
 
-                <div>
-                    <div class="why-us-stats">
-                        <div class="why-us-stat">
-                            <div class="why-us-stat-number">25+</div>
-                            <div class="why-us-stat-label">A&ntilde;os de experiencia conjunta</div>
-                        </div>
-                        <div class="why-us-stat highlight">
-                            <div class="why-us-stat-number">500.000</div>
-                            <div class="why-us-stat-label">Beneficiarios estimados*</div>
-                        </div>
-                        <div class="why-us-stat">
-                            <div class="why-us-stat-number">2005</div>
-                            <div class="why-us-stat-label">Regularizaci&oacute;n anterior</div>
-                        </div>
-                        <div class="why-us-stat">
-                            <div class="why-us-stat-number">&euro;254</div>
-                            <div class="why-us-stat-label">Servicio completo</div>
-                        </div>
-                    </div>
-                    <p class="why-us-footnote">*Estimaci&oacute;n oficial del Gobierno de Espa&ntilde;a (Ministerio de Inclusi&oacute;n, Seguridad Social y Migraciones, enero 2026)</p>
-                </div>
+            <div class="comparison-box">
+                <h3>Comparativa honesta</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Otros despachos</th>
+                            <th class="col-highlight">tuspapeles2026</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Precio total</td>
+                            <td>&euro;389-450</td>
+                            <td class="col-highlight"><strong>&euro;254-299</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Fase inicial</td>
+                            <td>&euro;39 (antes de ver tus docs)</td>
+                            <td class="col-highlight"><strong>GRATIS</strong> (sube docs primero)</td>
+                        </tr>
+                        <tr>
+                            <td>Preguntas sobre tu caso</td>
+                            <td>5-10 b&aacute;sicas</td>
+                            <td class="col-highlight"><strong>40+ profundas</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Checklist</td>
+                            <td>Gen&eacute;rico</td>
+                            <td class="col-highlight"><strong>Personalizado</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Expediente</td>
+                            <td>Plantilla rellenada</td>
+                            <td class="col-highlight"><strong>Construido para ti</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
@@ -3500,6 +3906,63 @@
                 </div>
 
                 <!-- COSTOS Y PAGOS -->
+                <!-- NUESTRO SERVICIO -->
+                <div class="faq-category" data-category="servicio">
+                    <div class="faq-category-header">
+                        <span class="faq-category-icon">&#129302;</span>
+                        <span class="faq-category-title">Nuestro Servicio</span>
+                        <span class="faq-category-count">4 preguntas</span>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Por qu&eacute; sois m&aacute;s baratos que otros despachos?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Tres razones: <strong>(1) Tecnolog&iacute;a:</strong> automatizamos tareas repetitivas (organizaci&oacute;n de docs, verificaci&oacute;n, seguimiento). Menos trabajo manual = menos coste. <strong>(2) Experiencia:</strong> participamos en la regularizaci&oacute;n de 2005 &mdash; sabemos qu&eacute; funciona sin ensayo y error. <strong>(3) Volumen:</strong> nuestro sistema nos permite atender m&aacute;s casos con el mismo equipo. Cobramos menos, personalizamos m&aacute;s.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Por qu&eacute; la Fase 1 es gratis?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Porque queremos conocer tu caso ANTES de hablarte de dinero. Otros te cobran &euro;39 antes de ver un solo documento. Nosotros preferimos que subas tus docs, te familiarices con la plataforma, y veas que esto es serio. Cuando pagas la auditor&iacute;a (&euro;39), ya tenemos contexto real de tu situaci&oacute;n. El an&aacute;lisis es personalizado, no gen&eacute;rico.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Por qu&eacute; hac&eacute;is tantas preguntas?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                Porque tu caso no es igual al de nadie. El que lleg&oacute; hace 10 a&ntilde;os tiene pruebas diferentes al que lleg&oacute; hace 8 meses. El que tiene hijos necesita estrategia diferente al que est&aacute; solo. Cada pregunta nos ayuda a construir TU estrategia. Las preguntas pueden ser inc&oacute;modas. Un expediente rechazado es peor.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Necesito empadronamiento?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <strong>NO.</strong> El empadronamiento es la prueba m&aacute;s conocida, pero NO es obligatoria. El decreto acepta CUALQUIER documento que pruebe tu presencia: facturas, citas m&eacute;dicas, extractos bancarios, recibos de Western Union, abono transporte, registros de Glovo... Tenemos una lista de 40+ documentos v&aacute;lidos. Probablemente tienes m&aacute;s pruebas de las que crees.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="faq-category" data-category="costos">
                     <div class="faq-category-header">
                         <span class="faq-category-icon">&#128176;</span>
@@ -3736,27 +4199,29 @@
     <!-- Final CTA -->
     <section class="cta-section">
         <div class="container">
-            <h2>&iquest;Listo para conseguir tus papeles?</h2>
-            <p>La verificaci&oacute;n es gratis y toma 2 minutos. No dejes pasar esta oportunidad hist&oacute;rica.</p>
+            <h2>&iquest;Listo para empezar?</h2>
+            <p>El plazo es corto: abril a junio 2026. Prepara tu expediente ahora.</p>
 
             <div class="hero-cta-container" style="position: relative; z-index: 1;">
                 <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="hero-cta-button telegram">
                     <span class="cta-badge">Recomendado</span>
                     <img class="cta-icon" src="https://telegram.org/img/t_logo.svg" alt="Telegram">
-                    <span class="cta-main-text">Gestiona tu proceso</span>
-                    <span class="cta-subtext">Todo 100% online, 24/7</span>
+                    <span class="cta-main-text">Empezar en Telegram</span>
+                    <span class="cta-subtext">Fase 1 gratis, sin compromiso</span>
                 </a>
 
-                <a href="verificar.html" class="hero-cta-button web">
+                <a href="#como-funciona" class="hero-cta-button web">
                     <svg class="cta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="10"/>
                         <line x1="2" y1="12" x2="22" y2="12"/>
                         <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                     </svg>
-                    <span class="cta-main-text">Verificar si califico</span>
-                    <span class="cta-subtext">3 preguntas, 2 minutos</span>
+                    <span class="cta-main-text">Ver c&oacute;mo funciona</span>
+                    <span class="cta-subtext">Proceso en 4 fases</span>
                 </a>
             </div>
+
+            <p style="margin-top: 20px; font-family: 'Inter', sans-serif; font-size: 0.85rem; opacity: 0.6;">Fase 1 gratis. Sin compromiso. Sube tus documentos y conoce el proceso.</p>
         </div>
     </section>
 
