@@ -371,29 +371,25 @@
             letter-spacing: 0.02em;
         }
 
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
         .hero-subtitle {
             font-family: 'Inter', sans-serif;
             font-size: 1.15rem;
             opacity: 0.9;
             line-height: 1.7;
-            margin-bottom: 35px;
+            margin-bottom: 12px;
         }
 
-        .hero-cta {
-            text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .hero-cta .btn-large {
-            font-size: 1.1rem;
-            padding: 16px 36px;
-        }
-
-        .cta-note {
+        .hero-tagline {
             font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
-            opacity: 0.7;
-            margin-top: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            opacity: 0.95;
+            margin-bottom: 35px;
         }
 
         .hero-trust-row {
@@ -2704,14 +2700,26 @@
         <div class="container">
             <div class="hero-content">
                 <p class="hero-badge">Una iniciativa de Pombo, Horowitz &amp; Espinosa</p>
-                <h1>Tu caso es &uacute;nico.<br><span class="gold">Tu estrategia tambi&eacute;n.</span></h1>
-                <p class="hero-subtitle">Regularizaci&oacute;n 2026 con abogados que participaron en 2005.<br>Tecnolog&iacute;a + experiencia = tu mejor expediente.</p>
+                <h1>Regulariza tu situaci&oacute;n <em>en Espa&ntilde;a</em></h1>
+                <p class="hero-subtitle">Proceso oficial bajo el Real Decreto de Regularizaci&oacute;n 2026.<br>Tu caso es &uacute;nico. Tu estrategia tambi&eacute;n.</p>
+                <p class="hero-tagline">Verifica si calificas en 2 minutos. Gratis. Sin compromiso.</p>
 
-                <div class="hero-cta">
-                    <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-large">
-                        <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:22px;height:22px;vertical-align:middle;margin-right:8px;"> Empezar gratis
+                <div class="hero-cta-container">
+                    <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="hero-cta-button telegram">
+                        <img class="cta-icon" src="https://telegram.org/img/t_logo.svg" alt="Telegram">
+                        <span class="cta-main-text">Consigue tus papeles</span>
+                        <span class="cta-subtext">Comienza tu regularizaci&oacute;n ahora</span>
                     </a>
-                    <p class="cta-note">Sube tus documentos sin compromiso</p>
+
+                    <a href="#verificar" class="hero-cta-button web">
+                        <svg class="cta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <line x1="2" y1="12" x2="22" y2="12"/>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                        <span class="cta-main-text">Verificar si califico</span>
+                        <span class="cta-subtext">3 preguntas, 2 minutos</span>
+                    </a>
                 </div>
 
                 <div class="hero-trust-row">
