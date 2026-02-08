@@ -87,7 +87,7 @@
 
         .ticker-track {
             display: flex;
-            animation: ticker-scroll 12s linear infinite;
+            animation: ticker-scroll 25s linear infinite;
             white-space: nowrap;
             height: 100%;
         }
@@ -556,6 +556,35 @@
         .trust-stat-label {
             font-family: 'Inter', sans-serif;
             font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 30px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+        }
+
+        .stat-item .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .stat-item .stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
             opacity: 0.8;
         }
 
@@ -2566,6 +2595,8 @@
             .trust-grid { grid-template-columns: 1fr 1fr; gap: 15px; }
             .trust-stat-number { font-size: 1.8rem; }
             .trust-stat-label { font-size: 0.8rem; }
+            .stats-row { flex-direction: column; gap: 12px; align-items: center; }
+            .stat-item .stat-number { font-size: 1.3rem; }
             .phase-card { padding: 22px; }
             .govt-fees-box { padding: 20px; }
             .why-us h2 { font-size: 1.6rem; }
@@ -2624,51 +2655,23 @@
     <div class="ticker-bar">
         <div class="ticker-track">
             <div class="ticker-content">
-                <div class="ticker-item">&#127466;&#127480; Real Decreto 2026 &mdash; Regularizaci&oacute;n extraordinaria en vigor</div>
+                <div class="ticker-item">&#128308; Primera ronda de 500 plazas COMPLETA</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#128308; Solo quedan <span class="slot-available">847</span> de <span class="slot-total">1,000</span> plazas disponibles &mdash; cuando se acaben, se acaben</div>
+                <div class="ticker-item">&#9203; Lista de espera abierta &mdash; Te avisamos cuando haya hueco</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#9200; El plazo cierra el 30 de junio de 2026 &mdash; faltan <span id="ticker-days">--</span> d&iacute;as para preparar tu caso</div>
+                <div class="ticker-item">&#128202; <span id="waitlist-count">147</span> personas en lista de espera</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#9989; Esta semana 89 personas han empezado su proceso de regularizaci&oacute;n con nosotros</div>
-                <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#127466;&#127480; Este decreto NO requiere contrato de trabajo &mdash; tu situaci&oacute;n irregular ya te califica</div>
-                <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#128241; Todo el proceso es 100% online &mdash; sin citas, sin colas, sin ir a ninguna oficina</div>
-                <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#9878; Cada expediente es revisado por abogados colegiados con 25 a&ntilde;os de experiencia</div>
-                <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#128176; El servicio completo cuesta menos de 300 euros &mdash; y pagas en fases, no todo de golpe</div>
-                <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#127939; Los primeros en presentar su solicitud ser&aacute;n los primeros en recibir respuesta</div>
-                <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#127466;&#127480; La &uacute;ltima regularizaci&oacute;n extraordinaria fue en 2005 &mdash; hace m&aacute;s de 20 a&ntilde;os</div>
-                <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#127466;&#127480; El 80-90% de las solicitudes en 2005 fueron aprobadas &mdash; este decreto es a&uacute;n m&aacute;s flexible</div>
+                <div class="ticker-item">&#11088; &iquest;No quieres esperar? Reserva tu plaza por &euro;254</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
             </div>
             <div class="ticker-content" aria-hidden="true">
-                <div class="ticker-item">&#127466;&#127480; Real Decreto 2026 &mdash; Regularizaci&oacute;n extraordinaria en vigor</div>
+                <div class="ticker-item">&#128308; Primera ronda de 500 plazas COMPLETA</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#128308; Solo quedan <span class="slot-available">847</span> de <span class="slot-total">1,000</span> plazas disponibles &mdash; cuando se acaben, se acaben</div>
+                <div class="ticker-item">&#9203; Lista de espera abierta &mdash; Te avisamos cuando haya hueco</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#9200; El plazo cierra el 30 de junio de 2026 &mdash; faltan <span>--</span> d&iacute;as para preparar tu caso</div>
+                <div class="ticker-item">&#128202; <span>147</span> personas en lista de espera</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#9989; Esta semana 89 personas han empezado su proceso de regularizaci&oacute;n con nosotros</div>
-                <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#127466;&#127480; Este decreto NO requiere contrato de trabajo &mdash; tu situaci&oacute;n irregular ya te califica</div>
-                <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#128241; Todo el proceso es 100% online &mdash; sin citas, sin colas, sin ir a ninguna oficina</div>
-                <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#9878; Cada expediente es revisado por abogados colegiados con 25 a&ntilde;os de experiencia</div>
-                <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#128176; El servicio completo cuesta menos de 300 euros &mdash; y pagas en fases, no todo de golpe</div>
-                <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#127939; Los primeros en presentar su solicitud ser&aacute;n los primeros en recibir respuesta</div>
-                <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#127466;&#127480; La &uacute;ltima regularizaci&oacute;n extraordinaria fue en 2005 &mdash; hace m&aacute;s de 20 a&ntilde;os</div>
-                <span class="ticker-separator">&bull;&bull;&bull;</span>
-                <div class="ticker-item">&#127466;&#127480; El 80-90% de las solicitudes en 2005 fueron aprobadas &mdash; este decreto es a&uacute;n m&aacute;s flexible</div>
+                <div class="ticker-item">&#11088; &iquest;No quieres esperar? Reserva tu plaza por &euro;254</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
             </div>
         </div>
@@ -2750,6 +2753,16 @@
                 <div class="trust-stat">
                     <div class="trust-stat-number">&euro;254</div>
                     <div class="trust-stat-label">Servicio completo (pago &uacute;nico)</div>
+                </div>
+            </div>
+            <div class="stats-row">
+                <div class="stat-item">
+                    <span class="stat-number">89</span>
+                    <span class="stat-label">se unieron esta semana</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" id="waitlist-count-strip">147</span>
+                    <span class="stat-label">en lista de espera</span>
                 </div>
             </div>
         </div>
