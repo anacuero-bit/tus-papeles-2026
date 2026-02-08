@@ -675,10 +675,11 @@
 
         .total-callout {
             text-align: center;
-            padding: 30px;
+            padding: 35px 30px;
             background: var(--navy);
             color: white;
             border-radius: 16px;
+            margin-bottom: 30px;
         }
 
         .total-callout h3 {
@@ -690,6 +691,299 @@
         .total-callout p {
             font-family: 'Inter', sans-serif;
             opacity: 0.8;
+        }
+
+        /* Dual Pricing Cards */
+        .pricing-dual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 680px;
+            margin: 0 auto 35px;
+        }
+
+        .pricing-option {
+            border-radius: 16px;
+            padding: 30px 24px;
+            text-align: center;
+            border: 2px solid var(--gray-200);
+            background: white;
+            position: relative;
+            transition: box-shadow 0.2s;
+        }
+
+        .pricing-option:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .pricing-option.recommended {
+            border-color: var(--navy);
+            box-shadow: 0 8px 24px rgba(30, 58, 95, 0.12);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--navy);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 50px;
+            white-space: nowrap;
+            letter-spacing: 0.03em;
+        }
+
+        .pricing-option .price-old {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: var(--gray-400);
+            text-decoration: line-through;
+            margin-bottom: 2px;
+        }
+
+        .pricing-option .price-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--navy);
+            line-height: 1.1;
+        }
+
+        .pricing-option.recommended .price-main {
+            color: var(--navy);
+        }
+
+        .pricing-option .price-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            margin-top: 4px;
+        }
+
+        .pricing-option .price-savings {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--success);
+            margin-top: 4px;
+        }
+
+        .pricing-option .price-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            margin-top: 12px;
+            line-height: 1.5;
+        }
+
+        .pricing-option .pricing-cta {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .pricing-option.recommended .pricing-cta {
+            background: var(--navy);
+            color: white;
+        }
+
+        .pricing-option.recommended .pricing-cta:hover {
+            background: var(--navy-light);
+        }
+
+        .pricing-option:not(.recommended) .pricing-cta {
+            border: 2px solid var(--gray-200);
+            color: var(--charcoal);
+            background: white;
+        }
+
+        .pricing-option:not(.recommended) .pricing-cta:hover {
+            border-color: var(--navy);
+            color: var(--navy);
+        }
+
+        .pricing-or {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--gray-400);
+        }
+
+        /* Extra Services */
+        .extra-services {
+            max-width: 680px;
+            margin: 0 auto 25px;
+            background: white;
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            padding: 28px;
+        }
+
+        .extra-services h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .extra-services > p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--gray-400);
+            margin-bottom: 18px;
+        }
+
+        .extra-service-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 16px;
+            background: var(--gray-50);
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .extra-service-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .extra-service-info {
+            flex: 1;
+        }
+
+        .extra-service-info .service-name {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: var(--navy);
+        }
+
+        .extra-service-info p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.82rem;
+            color: var(--charcoal);
+            margin-top: 4px;
+            line-height: 1.5;
+        }
+
+        .extra-service-price {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1.05rem;
+            color: var(--navy);
+            white-space: nowrap;
+            margin-left: 16px;
+            flex-shrink: 0;
+        }
+
+        .extra-services .extra-note {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            text-align: center;
+            margin-top: 14px;
+        }
+
+        /* Government Fees Box */
+        .govt-fees-box {
+            max-width: 680px;
+            margin: 0 auto 25px;
+            background: #fffbeb;
+            border: 1px solid #fcd34d;
+            border-radius: 16px;
+            padding: 28px;
+        }
+
+        .govt-fees-box h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .govt-fees-box > p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            margin-bottom: 16px;
+        }
+
+        .govt-fee-line {
+            display: flex;
+            justify-content: space-between;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            padding: 5px 0;
+        }
+
+        .govt-fee-line span:first-child {
+            color: var(--charcoal);
+        }
+
+        .govt-fee-line span:last-child {
+            font-weight: 600;
+        }
+
+        .govt-fee-total {
+            border-top: 1px solid #fcd34d;
+            padding-top: 10px;
+            margin-top: 10px;
+        }
+
+        .govt-fee-total span:first-child {
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .govt-fee-total span:last-child {
+            font-weight: 700;
+        }
+
+        .govt-fees-upsell {
+            margin-top: 16px;
+            padding: 14px;
+            background: white;
+            border: 1px solid #fde68a;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: var(--charcoal);
+            line-height: 1.5;
+        }
+
+        .govt-fees-upsell strong {
+            color: var(--navy);
+        }
+
+        /* Important Warning */
+        .pricing-warning {
+            max-width: 680px;
+            margin: 0 auto 25px;
+            background: #fef2f2;
+            border: 1px solid #fca5a5;
+            border-radius: 16px;
+            padding: 22px 28px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.88rem;
+            color: var(--charcoal);
+            line-height: 1.6;
+        }
+
+        .pricing-warning strong {
+            color: var(--error);
         }
 
         /* Documents */
@@ -1914,6 +2208,7 @@
             .section { padding: 60px 0; }
             .section-header h2 { font-size: 2rem; }
             .phases-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto 40px; }
+            .pricing-dual { grid-template-columns: 1fr; gap: 16px; }
             .trust-grid { grid-template-columns: 1fr 1fr; }
             .why-us h2 { font-size: 2rem; }
             .why-us-stats { grid-template-columns: 1fr 1fr; }
@@ -1949,6 +2244,13 @@
             .trust-stat-number { font-size: 1.8rem; }
             .trust-stat-label { font-size: 0.8rem; }
             .phase-card { padding: 22px; }
+            .pricing-dual { grid-template-columns: 1fr; gap: 16px; }
+            .pricing-option .price-main { font-size: 2.4rem; }
+            .pricing-option { padding: 22px 18px; }
+            .extra-services { padding: 20px; }
+            .extra-service-item { flex-direction: column; gap: 6px; }
+            .extra-service-price { margin-left: 0; }
+            .govt-fees-box { padding: 20px; }
             .why-us h2 { font-size: 1.6rem; }
             .why-us-stats { grid-template-columns: 1fr; gap: 15px; }
             .why-us-stat { padding: 20px; }
@@ -2120,8 +2422,8 @@
                     <div class="trust-stat-label">Para admisi&oacute;n a tr&aacute;mite</div>
                 </div>
                 <div class="trust-stat">
-                    <div class="trust-stat-number">&euro;38.28</div>
-                    <div class="trust-stat-label">Tasa oficial del gobierno</div>
+                    <div class="trust-stat-number">&euro;254</div>
+                    <div class="trust-stat-label">Servicio completo (pago &uacute;nico)</div>
                 </div>
             </div>
         </div>
@@ -2398,15 +2700,35 @@
         </div>
     </section>
 
-    <!-- Process: 4 Phases -->
+    <!-- Process: 4 Phases + Pricing -->
     <section id="como-funciona" class="section section-gray">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge">C&oacute;mo funciona</div>
+                <div class="section-badge">Precios Transparentes</div>
                 <h2>Tu proceso en 4 pasos</h2>
                 <p>Te acompa&ntilde;amos desde la verificaci&oacute;n inicial hasta que tengas tu permiso en mano.</p>
             </div>
 
+            <!-- Dual Pricing Cards -->
+            <div class="pricing-dual">
+                <div class="pricing-option recommended">
+                    <div class="pricing-badge">&#11088; RECOMENDADO</div>
+                    <div class="price-old">&euro;299</div>
+                    <div class="price-main">&euro;254</div>
+                    <div class="price-savings">Ahorras &euro;45 (15%)</div>
+                    <p class="price-desc">Pago &uacute;nico. Todo incluido hasta resoluci&oacute;n.</p>
+                    <a href="https://t.me/TusPapeles2026Bot" class="pricing-cta" target="_blank" rel="noopener noreferrer">Elegir pago &uacute;nico</a>
+                </div>
+                <div class="pricing-option">
+                    <div class="price-label" style="color: var(--gray-400); font-size: 0.9rem;">Pago por fases</div>
+                    <div class="price-main" style="color: var(--charcoal);">&euro;299</div>
+                    <div class="price-label" style="color: var(--gray-400);">total</div>
+                    <p class="price-desc">&euro;39 + &euro;150 + &euro;110. Paga cuando est&eacute;s listo.</p>
+                    <a href="https://t.me/TusPapeles2026Bot" class="pricing-cta" target="_blank" rel="noopener noreferrer">Elegir por fases</a>
+                </div>
+            </div>
+
+            <!-- Phase Breakdown -->
             <div class="phases-grid">
                 <div class="phase-card">
                     <div class="phase-number">1</div>
@@ -2434,18 +2756,89 @@
                 </div>
             </div>
 
+            <!-- Discounts -->
             <div class="total-callout">
-                <h3>Todo por menos de 300 euros</h3>
-                <p>Servicio completo: verificaci&oacute;n + preparaci&oacute;n + revisi&oacute;n legal + presentaci&oacute;n = &euro;299</p>
+                <h3>Descuentos disponibles</h3>
+                <p>Pago &uacute;nico: &euro;254 (ahorras &euro;45) &middot; C&oacute;digo de amigo: &euro;25 de descuento &middot; M&aacute;ximo acumulable: &euro;299 (servicio gratis)</p>
                 <div class="referral-code-input" style="margin-top: 15px;">
-                    <p style="font-size: 0.85rem; color: var(--gray-500); margin-bottom: 8px;">&iquest;Tienes c&oacute;digo de amigo?</p>
+                    <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 8px;">&iquest;Tienes c&oacute;digo de amigo?</p>
                     <div style="display: inline-flex; gap: 8px; align-items: center;">
-                        <input type="text" id="referral-code-field" placeholder="Ej: MARIA-7K2P" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; padding: 8px 14px; border: 1px solid var(--gray-300); border-radius: 6px; width: 160px; text-transform: uppercase;">
-                        <button onclick="applyReferralCode()" style="font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; padding: 8px 16px; background: var(--navy); color: white; border: none; border-radius: 6px; cursor: pointer;">Aplicar</button>
+                        <input type="text" id="referral-code-field" placeholder="Ej: MARIA-7K2P" style="font-family: 'Inter', sans-serif; font-size: 0.9rem; padding: 8px 14px; border: 1px solid rgba(255,255,255,0.3); border-radius: 6px; width: 160px; text-transform: uppercase; background: rgba(255,255,255,0.1); color: white;">
+                        <button onclick="applyReferralCode()" style="font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 600; padding: 8px 16px; background: var(--gold); color: var(--navy); border: none; border-radius: 6px; cursor: pointer;">Aplicar</button>
                     </div>
                     <p id="referral-code-msg" style="font-size: 0.8rem; color: var(--success); margin-top: 6px; display: none;"></p>
-                    <p style="font-size: 0.78rem; color: var(--gray-400); margin-top: 6px;">Se aplicar&aacute; en Telegram</p>
+                    <p style="font-size: 0.78rem; color: rgba(255,255,255,0.5); margin-top: 6px;">Se aplicar&aacute; en Telegram</p>
                 </div>
+            </div>
+
+            <!-- Extra Services -->
+            <div class="extra-services">
+                <h4>&#128230; Servicios Adicionales</h4>
+                <p>Opcionales. Simplifican el proceso.</p>
+
+                <div class="extra-service-item">
+                    <div class="extra-service-info">
+                        <span class="service-name">&#127758; Antecedentes penales completo</span>
+                        <p>Nos encargamos de solicitar, apostillar y traducir tu certificado de antecedentes del pa&iacute;s de origen. As&iacute; te aseguras de que est&aacute; bien hecho.</p>
+                    </div>
+                    <span class="extra-service-price">+&euro;49</span>
+                </div>
+
+                <div class="extra-service-item">
+                    <div class="extra-service-info">
+                        <span class="service-name">&#127963; Gesti&oacute;n de tasas gubernamentales</span>
+                        <p>Pagamos y gestionamos las tasas 790 por ti. Te enviamos los justificantes listos.</p>
+                    </div>
+                    <span class="extra-service-price">+&euro;29</span>
+                </div>
+
+                <div class="extra-service-item">
+                    <div class="extra-service-info">
+                        <span class="service-name">&#128196; Traducci&oacute;n jurada</span>
+                        <p>Por documento</p>
+                    </div>
+                    <span class="extra-service-price">+&euro;35</span>
+                </div>
+
+                <p class="extra-note">Puedes a&ntilde;adir estos servicios en cualquier momento del proceso.</p>
+            </div>
+
+            <!-- Government Fees -->
+            <div class="govt-fees-box">
+                <h4>&#127963; Tasas del Gobierno</h4>
+                <p>Adem&aacute;s de nuestro servicio, el gobierno espa&ntilde;ol cobra tasas administrativas:</p>
+
+                <div class="govt-fee-line">
+                    <span>Tasa 790-052 (tramitaci&oacute;n)</span>
+                    <span>~&euro;16-20</span>
+                </div>
+                <div class="govt-fee-line">
+                    <span>Tasa 790-012 (TIE)</span>
+                    <span>~&euro;16-21</span>
+                </div>
+                <div class="govt-fee-line">
+                    <span>Certificado antecedentes Espa&ntilde;a</span>
+                    <span>~&euro;3.86</span>
+                </div>
+                <div class="govt-fee-line govt-fee-total">
+                    <span>Total tasas gobierno</span>
+                    <span>~&euro;40-50</span>
+                </div>
+
+                <div class="govt-fees-upsell">
+                    &#128161; <strong>&iquest;Prefieres que nos encarguemos?</strong><br>
+                    Por &euro;29 adicionales, gestionamos y pagamos las tasas gubernamentales por ti.
+                </div>
+            </div>
+
+            <!-- Important Warning -->
+            <div class="pricing-warning">
+                &#9888;&#65039; <strong>Importante:</strong> En la regularizaci&oacute;n de 2005, entre el 10% y el 20% de las solicitudes fueron denegadas, muchas por errores evitables en la documentaci&oacute;n. Un expediente bien preparado marca la diferencia.
+            </div>
+
+            <!-- CTA -->
+            <div style="text-align: center; margin-top: 10px;">
+                <a href="https://t.me/TusPapeles2026Bot" class="btn btn-telegram" target="_blank" rel="noopener noreferrer" style="font-size: 1rem; padding: 14px 32px;"><img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:22px;height:22px;vertical-align:middle;margin-right:8px;"> Comienza tu proceso ahora</a>
             </div>
         </div>
     </section>
@@ -3111,7 +3504,7 @@
                     <div class="faq-category-header">
                         <span class="faq-category-icon">&#128176;</span>
                         <span class="faq-category-title">Costos y Pagos</span>
-                        <span class="faq-category-count">4 preguntas</span>
+                        <span class="faq-category-count">7 preguntas</span>
                     </div>
 
                     <div class="faq-item">
@@ -3121,7 +3514,19 @@
                         </div>
                         <div class="faq-answer">
                             <div class="faq-answer-content">
-                                Tasas gubernamentales: se deber&aacute; abonar la tasa administrativa correspondiente (modelo 790). Nuestro servicio de gesti&oacute;n completa: &euro;299 en fases.
+                                Tasas gubernamentales: ~&euro;40-50 (modelos 790). Nuestro servicio de gesti&oacute;n completa: <strong>&euro;254 en pago &uacute;nico</strong> (ahorras &euro;45) o <strong>&euro;299 en fases</strong>.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Puedo pagar todo de una vez?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                S&iacute;. Ofrecemos dos opciones: <strong>Pago &uacute;nico: &euro;254</strong> &mdash; ahorras &euro;45 (15% descuento). <strong>Por fases: &euro;299 total</strong> &mdash; paga cada fase cuando est&eacute;s listo (&euro;39 + &euro;150 + &euro;110). Ambas opciones incluyen exactamente el mismo servicio completo.
                             </div>
                         </div>
                     </div>
@@ -3158,6 +3563,30 @@
                         <div class="faq-answer">
                             <div class="faq-answer-content">
                                 <strong>Fase 1 (GRATIS):</strong> Verificaci&oacute;n de elegibilidad + subir documentos. <strong>Fase 2 (&euro;39):</strong> Revisi&oacute;n legal completa. <strong>Fase 3 (&euro;150):</strong> Preparaci&oacute;n del expediente. <strong>Fase 4 (&euro;110):</strong> Presentaci&oacute;n y seguimiento.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Pueden gestionar mis antecedentes penales?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                S&iacute;. Por <strong>&euro;49</strong> adicionales nos encargamos de: solicitar el certificado en tu pa&iacute;s de origen, gestionar la apostilla o legalizaci&oacute;n, traducci&oacute;n jurada si es necesario, y entreg&aacute;rtelo listo para presentar. Es opcional &mdash; tambi&eacute;n te damos instrucciones para hacerlo t&uacute; mismo gratis.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">
+                            &iquest;Pueden pagar las tasas del gobierno por m&iacute;?
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                S&iacute;. Por <strong>&euro;29</strong> adicionales gestionamos y pagamos las tasas gubernamentales (790-052 y 790-012) por ti. Te enviamos los justificantes de pago. Las tasas en s&iacute; (~&euro;40-50) las pagas aparte &mdash; nosotros cobramos &euro;29 por el servicio de gesti&oacute;n.
                             </div>
                         </div>
                     </div>
