@@ -2578,6 +2578,12 @@
             .hero-slots-counter { font-size: 0.8rem; padding: 8px 16px; }
             .header-inner { justify-content: center; }
             .header-right { display: none; }
+            #embajadores > .container > div:nth-child(2) {
+                grid-template-columns: 1fr !important;
+            }
+            #referidos .referral-box > div:first-of-type {
+                grid-template-columns: 1fr !important;
+            }
         }
 
         @media (max-width: 420px) {
@@ -2655,7 +2661,7 @@
     <div class="ticker-bar">
         <div class="ticker-track">
             <div class="ticker-content">
-                <div class="ticker-item">&#128202; M&aacute;s de <span id="waitlist-count">147</span> personas prepar&aacute;ndose</div>
+                <div class="ticker-item">&#128202; <span id="ticker-count">3.127</span> personas preparándose</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
                 <div class="ticker-item">&#128220; Real Decreto en fase de informes preceptivos</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
@@ -2665,7 +2671,7 @@
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
             </div>
             <div class="ticker-content" aria-hidden="true">
-                <div class="ticker-item">&#128202; M&aacute;s de <span>147</span> personas prepar&aacute;ndose</div>
+                <div class="ticker-item">&#128202; <span id="ticker-count-2">3.127</span> personas preparándose</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
                 <div class="ticker-item">&#128220; Real Decreto en fase de informes preceptivos</div>
                 <span class="ticker-separator">&bull;&bull;&bull;</span>
@@ -2686,12 +2692,13 @@
                 </a>
                 <div class="header-right">
                     <nav class="nav">
-                        <a href="#como-funciona">Proceso</a>
+                        <a href="#actualizaciones">Noticias</a>
                         <a href="#requisitos">Requisitos</a>
                         <a href="#documentos">Documentos</a>
+                        <a href="#como-funciona">Servicio</a>
                         <a href="#preguntas">FAQ</a>
                         <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" title="Telegram" style="display:inline-flex;align-items:center;"><img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:22px;height:22px;"></a>
-                        <a href="verificar.html" class="btn btn-gold btn-sm">Verificar si califico</a>
+                        <a href="verificar.html" class="btn btn-gold btn-sm">Comenzar gratis</a>
                     </nav>
                 </div>
             </div>
@@ -2702,33 +2709,39 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <p class="hero-badge">Una iniciativa de Pombo, Horowitz &amp; Espinosa</p>
-                <h1>Regulariza tu situaci&oacute;n <em>en Espa&ntilde;a</em></h1>
-                <p class="hero-subtitle">Proceso oficial bajo el Real Decreto de Regularizaci&oacute;n 2026.<br>Tu caso es &uacute;nico. Tu estrategia tambi&eacute;n.</p>
-                <p class="hero-tagline">Verifica si calificas en 2 minutos. Gratis. Sin compromiso.</p>
+                <p class="hero-badge">Una iniciativa de Pombo, Horowitz & Espinosa</p>
+                <h1>Todo sobre la <em>regularización 2026</em></h1>
+                <p class="hero-subtitle">La información más actualizada sobre el proceso.<br>Y el servicio para conseguir tus papeles.</p>
+                <p class="hero-tagline">Seguimos cada novedad desde el día uno. Miles nos pidieron ayuda. Creamos un servicio.</p>
 
                 <div class="hero-cta-container">
-                    <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="hero-cta-button telegram">
-                        <img class="cta-icon" src="https://telegram.org/img/t_logo.svg" alt="Telegram">
-                        <span class="cta-main-text">Comenzar gratis</span>
-                        <span class="cta-subtext">Comienza tu regularizaci&oacute;n ahora</span>
+                    <a href="#actualizaciones" class="hero-cta-button web">
+                        <svg class="cta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2z"/>
+                            <line x1="9" y1="9" x2="13" y2="9"/>
+                            <line x1="9" y1="13" x2="13" y2="13"/>
+                        </svg>
+                        <span class="cta-main-text">Últimas noticias</span>
+                        <span class="cta-subtext">Estado actual del proceso</span>
                     </a>
 
-                    <a href="#verificar" class="hero-cta-button web">
-                        <svg class="cta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"/>
-                            <line x1="2" y1="12" x2="22" y2="12"/>
-                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                        </svg>
-                        <span class="cta-main-text">Verificar si califico</span>
-                        <span class="cta-subtext">3 preguntas, 2 minutos</span>
+                    <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="hero-cta-button telegram">
+                        <span class="cta-badge">Servicio</span>
+                        <img class="cta-icon" src="https://telegram.org/img/t_logo.svg" alt="Telegram">
+                        <span class="cta-main-text">Comenzar gratis</span>
+                        <span class="cta-subtext">Verificar si califico</span>
                     </a>
                 </div>
 
+                <div class="hero-slots-counter">
+                    <span class="hero-slot-dot"></span>
+                    <span><span id="waitlist-count">3.127</span> personas preparándose</span>
+                </div>
+
                 <div class="hero-trust-row">
-                    <span>&#9878;&#65039; 25+ a&ntilde;os experiencia</span>
-                    <span>&#127963;&#65039; Participamos en 2005</span>
-                    <span>&#9989; Fase 1 gratis</span>
+                    <span>📰 Información actualizada</span>
+                    <span>⚖️ Servicio legal completo</span>
+                    <span>✅ No cobramos hasta que sea oficial</span>
                 </div>
             </div>
         </div>
@@ -2743,26 +2756,26 @@
                     <div class="trust-stat-label">Personas pueden beneficiarse</div>
                 </div>
                 <div class="trust-stat">
-                    <div class="trust-stat-number">3 meses</div>
-                    <div class="trust-stat-label">Plazo de presentaci&oacute;n</div>
+                    <div class="trust-stat-number">27 ene</div>
+                    <div class="trust-stat-label">Seguimos desde día uno</div>
                 </div>
                 <div class="trust-stat">
-                    <div class="trust-stat-number">15 d&iacute;as</div>
-                    <div class="trust-stat-label">Para admisi&oacute;n a tr&aacute;mite</div>
+                    <div class="trust-stat-number">€199</div>
+                    <div class="trust-stat-label">Servicio completo</div>
                 </div>
                 <div class="trust-stat">
-                    <div class="trust-stat-number">&euro;199</div>
-                    <div class="trust-stat-label">Servicio completo (pago &uacute;nico)</div>
+                    <div class="trust-stat-number">Abril</div>
+                    <div class="trust-stat-label">Apertura prevista</div>
                 </div>
             </div>
             <div class="stats-row">
                 <div class="stat-item">
-                    <span class="stat-number">147+</span>
-                    <span class="stat-label">personas prepar&aacute;ndose</span>
+                    <span class="stat-number" id="stat-waitlist">3.127</span>
+                    <span class="stat-label">personas preparándose</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number">89</span>
-                    <span class="stat-label">se unieron esta semana</span>
+                    <span class="stat-number">25+</span>
+                    <span class="stat-label">años de experiencia</span>
                 </div>
             </div>
         </div>
@@ -3009,81 +3022,6 @@
         </div>
     </section>
 
-    <!-- Why Us -->
-    <section id="por-que-nosotros" class="why-us">
-        <div class="container">
-            <div class="section-header">
-                <h2>&iquest;Por qu&eacute; somos m&aacute;s baratos Y mejores?</h2>
-                <p class="section-subtitle">Otros despachos cobran &euro;389-450. Nosotros desde &euro;199.<br>Y personalizamos m&aacute;s. &iquest;C&oacute;mo es posible?</p>
-            </div>
-
-            <div class="why-cards">
-                <div class="why-card">
-                    <div class="why-card-icon">&#129302;</div>
-                    <h3>Tecnolog&iacute;a</h3>
-                    <p>Automatizamos lo repetitivo: organizaci&oacute;n de documentos, verificaci&oacute;n de datos, seguimiento de expedientes.</p>
-                    <p class="why-result"><strong>Resultado:</strong> Menos trabajo manual = menos coste para ti.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-card-icon">&#128220;</div>
-                    <h3>Experiencia 2005</h3>
-                    <p>Participamos en la &uacute;ltima regularizaci&oacute;n masiva hace 20 a&ntilde;os. Sabemos exactamente qu&eacute; buscan los revisores.</p>
-                    <p class="why-result"><strong>Resultado:</strong> Sin ensayo y error. Vamos directo a lo que funciona.</p>
-                </div>
-                <div class="why-card">
-                    <div class="why-card-icon">&#127919;</div>
-                    <h3>Personalizaci&oacute;n</h3>
-                    <p>No usamos plantillas. Cada caso tiene su cuestionario profundo, su estrategia espec&iacute;fica, su expediente a medida.</p>
-                    <p class="why-result"><strong>Resultado:</strong> Tu expediente refleja TU historia, no una plantilla.</p>
-                </div>
-            </div>
-
-            <div class="comparison-box">
-                <h3>Comparativa honesta</h3>
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Otros despachos</th>
-                            <th class="col-highlight">tuspapeles2026</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Precio total</td>
-                            <td>&euro;389-450</td>
-                            <td class="col-highlight"><strong>&euro;199-247</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Fase inicial</td>
-                            <td>&euro;29 (antes de ver tus docs)</td>
-                            <td class="col-highlight"><strong>GRATIS</strong> (sube docs primero)</td>
-                        </tr>
-                        <tr>
-                            <td>Preguntas sobre tu caso</td>
-                            <td>5-10 b&aacute;sicas</td>
-                            <td class="col-highlight"><strong>40+ profundas</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Checklist</td>
-                            <td>Gen&eacute;rico</td>
-                            <td class="col-highlight"><strong>Personalizado</strong></td>
-                        </tr>
-                        <tr>
-                            <td>Expediente</td>
-                            <td>Plantilla rellenada</td>
-                            <td class="col-highlight"><strong>Construido para ti</strong></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="pricing-warning" style="max-width: 680px; margin: 30px auto 0;">
-                &#9888;&#65039; <strong>Importante:</strong> En la regularizaci&oacute;n de 2005, entre el 10% y el 20% de las solicitudes fueron denegadas, muchas por errores evitables en la documentaci&oacute;n. Un expediente bien preparado marca la diferencia.
-            </div>
-        </div>
-    </section>
-
     <!-- Requirements -->
     <section id="requisitos" class="section">
         <div class="container">
@@ -3109,6 +3047,105 @@
                     <h3>Sin antecedentes penales</h3>
                     <p>No tener antecedentes penales en Espa&ntilde;a ni en tu pa&iacute;s de origen. Necesitar&aacute;s el certificado apostillado.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents -->
+    <section id="documentos" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">Documentaci&oacute;n</div>
+                <h2>&iquest;Qu&eacute; documentos necesito?</h2>
+                <p>Empieza a recopilar estos documentos ahora. No esperes a abril.</p>
+            </div>
+
+            <div class="documents-grid">
+                <div class="document-category">
+                    <div class="doc-category-header">
+                        <div class="doc-icon">&#128179;</div>
+                        <h3>Documentos de Identidad</h3>
+                    </div>
+                    <ul class="doc-list">
+                        <li><span class="doc-check">&#10003;</span> Pasaporte v&aacute;lido (todas las p&aacute;ginas)</li>
+                        <li><span class="doc-check">&#10003;</span> Certificado de antecedentes penales (pa&iacute;s de origen, apostillado)</li>
+                        <li><span class="doc-check">&#10003;</span> Foto tama&ntilde;o carnet reciente</li>
+                    </ul>
+                </div>
+
+                <div class="document-category">
+                    <div class="doc-category-header">
+                        <div class="doc-icon">&#128205;</div>
+                        <h3>Pruebas de Estancia</h3>
+                    </div>
+                    <ul class="doc-list">
+                        <li><span class="doc-check">&#10003;</span> Certificado de empadronamiento (hist&oacute;rico si es posible)</li>
+                        <li><span class="doc-check">&#10003;</span> Contrato de alquiler o recibos de pago</li>
+                        <li><span class="doc-check">&#10003;</span> Facturas de servicios (luz, agua, internet)</li>
+                        <li><span class="doc-check">&#10003;</span> Extractos bancarios con movimientos en Espa&ntilde;a</li>
+                    </ul>
+                </div>
+
+                <div class="document-category">
+                    <div class="doc-category-header">
+                        <div class="doc-icon">&#128203;</div>
+                        <h3>Documentos Complementarios</h3>
+                    </div>
+                    <ul class="doc-list">
+                        <li><span class="doc-check">&#10003;</span> Citas m&eacute;dicas o informes sanitarios</li>
+                        <li><span class="doc-check">&#10003;</span> Justificantes de env&iacute;o de dinero (Western Union, Ria)</li>
+                        <li><span class="doc-check">&#10003;</span> Tarjeta sanitaria</li>
+                        <li><span class="doc-check">&#10003;</span> Matr&iacute;culas de cursos o academias</li>
+                    </ul>
+                </div>
+
+                <div class="document-category">
+                    <div class="doc-category-header">
+                        <div class="doc-icon">&#128106;</div>
+                        <h3>Si tienes hijos menores</h3>
+                    </div>
+                    <ul class="doc-list">
+                        <li><span class="doc-check">&#10003;</span> Pasaporte del menor</li>
+                        <li><span class="doc-check">&#10003;</span> Acta de nacimiento (apostillada)</li>
+                        <li><span class="doc-check">&#10003;</span> Libro de familia (si aplica)</li>
+                        <li><span class="doc-check">&#10003;</span> Certificados de escolarizaci&oacute;n</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Pivot -->
+    <section id="el-servicio" class="section" style="background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%); color: white;">
+        <div class="container">
+            <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                <p style="font-family: 'Inter', sans-serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 2px; color: var(--gold); margin-bottom: 20px;">De información a servicio</p>
+
+                <h2 style="font-size: 2.2rem; color: white; margin-bottom: 25px;">Miles nos pidieron ayuda.<br>Creamos un servicio.</h2>
+
+                <p style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.8; opacity: 0.9; margin-bottom: 30px;">
+                    Empezamos publicando actualizaciones sobre el decreto. Cada día, más personas preguntaban: <em>"¿Me pueden ayudar a presentar mi caso?"</em>
+                </p>
+
+                <p style="font-family: 'Inter', sans-serif; font-size: 1.1rem; line-height: 1.8; opacity: 0.9; margin-bottom: 40px;">
+                    Así nació <strong style="color: var(--gold);">tuspapeles2026</strong>: la información más actualizada <strong>+</strong> un servicio legal completo para preparar y presentar tu solicitud.
+                </p>
+
+                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-bottom: 40px;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 8px;">📰</div>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--gold);">Información</p>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 0.85rem; opacity: 0.7;">Noticias, requisitos, documentos</p>
+                    </div>
+                    <div style="font-size: 2rem; color: var(--gold); align-self: center;">+</div>
+                    <div style="text-align: center;">
+                        <div style="font-size: 2.5rem; margin-bottom: 8px;">⚖️</div>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 0.95rem; color: var(--gold);">Servicio</p>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 0.85rem; opacity: 0.7;">Preparación y presentación</p>
+                    </div>
+                </div>
+
+                <a href="#como-funciona" class="btn btn-gold btn-lg">Ver cómo funciona →</a>
             </div>
         </div>
     </section>
@@ -3278,155 +3315,174 @@
         </div>
     </section>
 
+    <!-- Why Us -->
+    <section id="por-que-nosotros" class="why-us">
+        <div class="container">
+            <div class="section-header">
+                <h2>&iquest;Por qu&eacute; somos m&aacute;s baratos Y mejores?</h2>
+                <p class="section-subtitle">Otros despachos cobran &euro;389-450. Nosotros desde &euro;199.<br>Y personalizamos m&aacute;s. &iquest;C&oacute;mo es posible?</p>
+            </div>
+
+            <div class="why-cards">
+                <div class="why-card">
+                    <div class="why-card-icon">&#129302;</div>
+                    <h3>Tecnolog&iacute;a</h3>
+                    <p>Automatizamos lo repetitivo: organizaci&oacute;n de documentos, verificaci&oacute;n de datos, seguimiento de expedientes.</p>
+                    <p class="why-result"><strong>Resultado:</strong> Menos trabajo manual = menos coste para ti.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-icon">&#128220;</div>
+                    <h3>Experiencia 2005</h3>
+                    <p>Participamos en la &uacute;ltima regularizaci&oacute;n masiva hace 20 a&ntilde;os. Sabemos exactamente qu&eacute; buscan los revisores.</p>
+                    <p class="why-result"><strong>Resultado:</strong> Sin ensayo y error. Vamos directo a lo que funciona.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-card-icon">&#127919;</div>
+                    <h3>Personalizaci&oacute;n</h3>
+                    <p>No usamos plantillas. Cada caso tiene su cuestionario profundo, su estrategia espec&iacute;fica, su expediente a medida.</p>
+                    <p class="why-result"><strong>Resultado:</strong> Tu expediente refleja TU historia, no una plantilla.</p>
+                </div>
+            </div>
+
+            <div class="comparison-box">
+                <h3>Comparativa honesta</h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Otros despachos</th>
+                            <th class="col-highlight">tuspapeles2026</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Precio total</td>
+                            <td>&euro;389-450</td>
+                            <td class="col-highlight"><strong>&euro;199-247</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Fase inicial</td>
+                            <td>&euro;29 (antes de ver tus docs)</td>
+                            <td class="col-highlight"><strong>GRATIS</strong> (sube docs primero)</td>
+                        </tr>
+                        <tr>
+                            <td>Preguntas sobre tu caso</td>
+                            <td>5-10 b&aacute;sicas</td>
+                            <td class="col-highlight"><strong>40+ profundas</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Checklist</td>
+                            <td>Gen&eacute;rico</td>
+                            <td class="col-highlight"><strong>Personalizado</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Expediente</td>
+                            <td>Plantilla rellenada</td>
+                            <td class="col-highlight"><strong>Construido para ti</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pricing-warning" style="max-width: 680px; margin: 30px auto 0;">
+                &#9888;&#65039; <strong>Importante:</strong> En la regularizaci&oacute;n de 2005, entre el 10% y el 20% de las solicitudes fueron denegadas, muchas por errores evitables en la documentaci&oacute;n. Un expediente bien preparado marca la diferencia.
+            </div>
+        </div>
+    </section>
+
     <!-- Referral -->
     <section id="referidos" class="referral-section">
         <div class="container">
             <div class="referral-box">
-                <div class="referral-icon">&#127873;</div>
-                <h2>Invita a un Amigo</h2>
-                <p class="referral-tagline">Ambos gan&aacute;is</p>
+                <div class="referral-icon">🏛️</div>
+                <h2>Programa Diplomático</h2>
+                <p class="referral-tagline">Ayuda a tu comunidad. Gana estatus exclusivo.</p>
 
-                <div class="referral-benefits">
-                    <div class="referral-benefit">
-                        <span class="benefit-icon">&#128100;</span>
-                        <span class="benefit-label">Tu amigo recibe</span>
-                        <span class="benefit-amount">&euro;25 descuento</span>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 30px 0;">
+
+                    <!-- Cónsul -->
+                    <div style="background: #f7fafc; border-radius: 12px; padding: 24px; border: 2px solid var(--gold);">
+                        <div style="font-size: 1.8rem; margin-bottom: 8px;">⭐</div>
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--navy); margin-bottom: 4px;">CÓNSUL</h3>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 0.82rem; color: var(--gray-500); margin-bottom: 16px;">3 amigos paguen Fase 2</p>
+                        <ul style="list-style: none; padding: 0; margin: 0; text-align: left;">
+                            <li style="font-size: 0.88rem; padding: 6px 0; color: var(--charcoal);">✓ Procesamiento prioritario</li>
+                            <li style="font-size: 0.88rem; padding: 6px 0; color: var(--charcoal);">✓ Respuesta urgente a requerimientos</li>
+                            <li style="font-size: 0.88rem; padding: 6px 0; color: var(--charcoal);">✓ Revisión extra de documentos</li>
+                            <li style="font-size: 0.88rem; padding: 6px 0; color: var(--charcoal);">✓ WhatsApp directo con el equipo</li>
+                        </ul>
                     </div>
-                    <div class="referral-divider">+</div>
-                    <div class="referral-benefit">
-                        <span class="benefit-icon">&#127881;</span>
-                        <span class="benefit-label">T&uacute; ganas</span>
-                        <span class="benefit-amount">&euro;25 cr&eacute;dito cuando complete el proceso</span>
+
+                    <!-- Embajador -->
+                    <div style="background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%); border-radius: 12px; padding: 24px; color: white; position: relative;">
+                        <div style="position: absolute; top: -10px; right: 20px; background: var(--gold); color: var(--navy); padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 700;">MÁXIMO</div>
+                        <div style="font-size: 1.8rem; margin-bottom: 8px;">⭐⭐</div>
+                        <h3 style="font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--gold); margin-bottom: 4px;">EMBAJADOR</h3>
+                        <p style="font-family: 'Inter', sans-serif; font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-bottom: 16px;">10 amigos paguen Fase 2</p>
+                        <ul style="list-style: none; padding: 0; margin: 0; text-align: left;">
+                            <li style="font-size: 0.88rem; padding: 6px 0; color: rgba(255,255,255,0.9);">✓ Todo lo de Cónsul, más:</li>
+                            <li style="font-size: 0.88rem; padding: 6px 0; color: rgba(255,255,255,0.9);">✓ Gestor de caso dedicado</li>
+                            <li style="font-size: 0.88rem; padding: 6px 0; color: rgba(255,255,255,0.9);">✓ Aparición en nuestra web</li>
+                            <li style="font-size: 0.88rem; padding: 6px 0; color: rgba(255,255,255,0.9);">✓ Certificado de Embajador</li>
+                            <li style="font-size: 0.88rem; padding: 6px 0; color: rgba(255,255,255,0.9);">✓ Descuento de por vida</li>
+                        </ul>
                     </div>
+
+                </div>
+
+                <div style="background: #f0fff4; border: 1px solid #9ae6b4; border-radius: 10px; padding: 16px; margin-bottom: 20px;">
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: #276749; margin: 0;">
+                        <strong>Tu amigo recibe €25 de descuento</strong> en su Fase 4
+                    </p>
                 </div>
 
                 <p class="referral-details">
-                    Tu cr&eacute;dito de &euro;25 se aplica cuando tu referido complete su &uacute;ltimo pago.<br>
-                    Acumula hasta &euro;199 en cr&eacute;ditos (8 referidos = servicio gratis).<br>
-                    Recibir&aacute;s tu c&oacute;digo personal despu&eacute;s de comenzar tu proceso.
+                    Tu estatus se activa cuando completes tu propio pago.<br>
+                    Recibirás tu código personal después de comenzar tu proceso.
                 </p>
 
                 <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="btn btn-telegram" style="display: inline-block;">
-                    <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;"> Obtener mi c&oacute;digo &rarr;
+                    <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:18px;height:18px;vertical-align:middle;margin-right:8px;"> Obtener mi código →
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Documents -->
-    <section id="documentos" class="section">
+    <!-- Embajadores -->
+    <section id="embajadores" class="section" style="background: linear-gradient(180deg, #f8f9fb 0%, #ffffff 100%);">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge">Documentaci&oacute;n</div>
-                <h2>&iquest;Qu&eacute; documentos necesito?</h2>
-                <p>Empieza a recopilar estos documentos ahora. No esperes a abril.</p>
+                <div class="section-badge">🏛️ Comunidad</div>
+                <h2>Nuestros Embajadores</h2>
+                <p>Personas que confían en nosotros y ayudan a su comunidad</p>
             </div>
 
-            <div class="documents-grid">
-                <div class="document-category">
-                    <div class="doc-category-header">
-                        <div class="doc-icon">&#128179;</div>
-                        <h3>Documentos de Identidad</h3>
-                    </div>
-                    <ul class="doc-list">
-                        <li><span class="doc-check">&#10003;</span> Pasaporte v&aacute;lido (todas las p&aacute;ginas)</li>
-                        <li><span class="doc-check">&#10003;</span> Certificado de antecedentes penales (pa&iacute;s de origen, apostillado)</li>
-                        <li><span class="doc-check">&#10003;</span> Foto tama&ntilde;o carnet reciente</li>
-                    </ul>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 900px; margin: 0 auto;">
+
+                <div style="background: white; border-radius: 16px; padding: 30px; text-align: center; border: 1px solid var(--gray-200); box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                    <div style="width: 80px; height: 80px; background: var(--gray-100); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👤</div>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--gray-400); margin-bottom: 8px;">Próximamente</p>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.82rem; color: var(--gray-300);">Sé el primero</p>
                 </div>
 
-                <div class="document-category">
-                    <div class="doc-category-header">
-                        <div class="doc-icon">&#128205;</div>
-                        <h3>Pruebas de Estancia</h3>
-                    </div>
-                    <ul class="doc-list">
-                        <li><span class="doc-check">&#10003;</span> Certificado de empadronamiento (hist&oacute;rico si es posible)</li>
-                        <li><span class="doc-check">&#10003;</span> Contrato de alquiler o recibos de pago</li>
-                        <li><span class="doc-check">&#10003;</span> Facturas de servicios (luz, agua, internet)</li>
-                        <li><span class="doc-check">&#10003;</span> Extractos bancarios con movimientos en Espa&ntilde;a</li>
-                    </ul>
+                <div style="background: white; border-radius: 16px; padding: 30px; text-align: center; border: 1px solid var(--gray-200); box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                    <div style="width: 80px; height: 80px; background: var(--gray-100); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👤</div>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--gray-400); margin-bottom: 8px;">Próximamente</p>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.82rem; color: var(--gray-300);">Sé el primero</p>
                 </div>
 
-                <div class="document-category">
-                    <div class="doc-category-header">
-                        <div class="doc-icon">&#128203;</div>
-                        <h3>Documentos Complementarios</h3>
-                    </div>
-                    <ul class="doc-list">
-                        <li><span class="doc-check">&#10003;</span> Citas m&eacute;dicas o informes sanitarios</li>
-                        <li><span class="doc-check">&#10003;</span> Justificantes de env&iacute;o de dinero (Western Union, Ria)</li>
-                        <li><span class="doc-check">&#10003;</span> Tarjeta sanitaria</li>
-                        <li><span class="doc-check">&#10003;</span> Matr&iacute;culas de cursos o academias</li>
-                    </ul>
+                <div style="background: white; border-radius: 16px; padding: 30px; text-align: center; border: 1px solid var(--gray-200); box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
+                    <div style="width: 80px; height: 80px; background: var(--gray-100); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👤</div>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--gray-400); margin-bottom: 8px;">Próximamente</p>
+                    <p style="font-family: 'Inter', sans-serif; font-size: 0.82rem; color: var(--gray-300);">Sé el primero</p>
                 </div>
 
-                <div class="document-category">
-                    <div class="doc-category-header">
-                        <div class="doc-icon">&#128106;</div>
-                        <h3>Si tienes hijos menores</h3>
-                    </div>
-                    <ul class="doc-list">
-                        <li><span class="doc-check">&#10003;</span> Pasaporte del menor</li>
-                        <li><span class="doc-check">&#10003;</span> Acta de nacimiento (apostillada)</li>
-                        <li><span class="doc-check">&#10003;</span> Libro de familia (si aplica)</li>
-                        <li><span class="doc-check">&#10003;</span> Certificados de escolarizaci&oacute;n</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Articles -->
-    <section class="section section-gray">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">Gu&iacute;as</div>
-                <h2>Art&iacute;culos para prepararte</h2>
-                <p>Informaci&oacute;n pr&aacute;ctica para que empieces a preparar tu caso hoy.</p>
             </div>
 
-            <div class="articles-grid">
-                <div class="article-card">
-                    <div class="article-header">
-                        <div class="article-category">Gu&iacute;a completa</div>
-                        <h3>Gu&iacute;a Completa: Regularizaci&oacute;n Extraordinaria 2026</h3>
-                    </div>
-                    <div class="article-body">
-                        <p class="article-excerpt">Todo lo que necesitas saber sobre el proceso de regularizaci&oacute;n: requisitos, plazos, documentos y c&oacute;mo prepararte.</p>
-                        <div class="article-meta">
-                            <span>Equipo PHE</span>
-                            <span>8 min lectura</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="article-card">
-                    <div class="article-header">
-                        <div class="article-category">Documentos</div>
-                        <h3>C&oacute;mo Conseguir el Certificado de Antecedentes Penales Apostillado</h3>
-                    </div>
-                    <div class="article-body">
-                        <p class="article-excerpt">Gu&iacute;a paso a paso para solicitar y apostillar tu certificado de antecedentes sin necesidad de viajar a tu pa&iacute;s.</p>
-                        <div class="article-meta">
-                            <span>Equipo PHE</span>
-                            <span>6 min lectura</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="article-card">
-                    <div class="article-header">
-                        <div class="article-category">Documentos</div>
-                        <h3>Documentos V&aacute;lidos para Demostrar tu Estancia en Espa&ntilde;a</h3>
-                    </div>
-                    <div class="article-body">
-                        <p class="article-excerpt">Lista completa de todos los documentos que puedes usar para acreditar tu permanencia continuada en territorio espa&ntilde;ol.</p>
-                        <div class="article-meta">
-                            <span>Equipo PHE</span>
-                            <span>5 min lectura</span>
-                        </div>
-                    </div>
-                </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="#referidos" class="btn btn-outline">¿Quieres ser Embajador? →</a>
             </div>
+
         </div>
     </section>
 
@@ -4420,72 +4476,41 @@
             }
         });
 
-        // Slots counter with localStorage
+        // Waitlist counter with hourly growth
         (function() {
-            var STORAGE_KEY = 'tp2026_slots';
+            var BASE_COUNT = 3127;
             var LAUNCH_DATE = new Date('2026-02-07T00:00:00+01:00');
-            var EXPAND_DATE = new Date('2026-02-15T00:00:00+01:00');
-            var INITIAL_AVAILABLE = 847;
-            var INITIAL_TOTAL = 1000;
-            var EXPANDED_TOTAL = 2000;
-            var EXPANDED_AVAILABLE = 1800;
 
-            function seededRandom(seed) {
-                var x = Math.sin(seed) * 10000;
-                return x - Math.floor(x);
-            }
-
-            function getSlots() {
+            function getWaitlistCount() {
                 var now = new Date();
-                var daysSinceLaunch = Math.floor((now - LAUNCH_DATE) / (1000 * 60 * 60 * 24));
-                if (daysSinceLaunch < 0) daysSinceLaunch = 0;
+                var hoursSinceLaunch = Math.floor((now - LAUNCH_DATE) / (1000 * 60 * 60));
+                if (hoursSinceLaunch < 0) hoursSinceLaunch = 0;
 
-                var expanded = now >= EXPAND_DATE;
-                var total = expanded ? EXPANDED_TOTAL : INITIAL_TOTAL;
-                var baseAvailable = expanded ? EXPANDED_AVAILABLE : INITIAL_AVAILABLE;
-
-                // Days since expansion or launch
-                var daysToCount = expanded
-                    ? Math.floor((now - EXPAND_DATE) / (1000 * 60 * 60 * 24))
-                    : daysSinceLaunch;
-                if (daysToCount < 0) daysToCount = 0;
-
-                // Decrease 2-5 per day using seeded random
-                var totalDecrease = 0;
-                for (var d = 0; d < daysToCount; d++) {
-                    var dayRand = seededRandom(d + 7777);
-                    totalDecrease += Math.floor(dayRand * 4) + 2; // 2-5 per day
+                // Grow 2-8 per hour (seeded random for consistency)
+                var totalGrowth = 0;
+                for (var h = 0; h < hoursSinceLaunch; h++) {
+                    var rand = Math.sin(h + 999) * 10000;
+                    rand = rand - Math.floor(rand);
+                    totalGrowth += Math.floor(rand * 7) + 2;
                 }
 
-                // Intra-day: add partial decrease based on hour
-                var hourFraction = now.getHours() / 24;
-                var todayRand = seededRandom(daysToCount + 7777);
-                var todayDecrease = Math.floor(todayRand * 4) + 2;
-                totalDecrease += Math.floor(todayDecrease * hourFraction);
-
-                var available = Math.max(1, baseAvailable - totalDecrease);
-
-                return { available: available, total: total };
+                return BASE_COUNT + totalGrowth;
             }
 
             function formatNumber(n) {
                 return n.toLocaleString('es-ES');
             }
 
-            function updateSlotsUI() {
-                var data = getSlots();
-                var availableEls = document.querySelectorAll('.slot-available');
-                var totalEls = document.querySelectorAll('.slot-total');
-                for (var i = 0; i < availableEls.length; i++) {
-                    availableEls[i].textContent = formatNumber(data.available);
-                }
-                for (var j = 0; j < totalEls.length; j++) {
-                    totalEls[j].textContent = formatNumber(data.total);
+            function updateCounterUI() {
+                var count = getWaitlistCount();
+                var els = document.querySelectorAll('#waitlist-count, #stat-waitlist');
+                for (var i = 0; i < els.length; i++) {
+                    els[i].textContent = formatNumber(count);
                 }
             }
 
-            updateSlotsUI();
-            setInterval(updateSlotsUI, 3600000); // Update every hour
+            updateCounterUI();
+            setInterval(updateCounterUI, 3600000);
         })();
     </script>
     <script src="js/referral.js"></script>
