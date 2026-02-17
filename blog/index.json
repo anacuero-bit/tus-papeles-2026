@@ -1,0 +1,14 @@
+{
+  "_comment": "Content Bot pushes here. Each article needs: slug, title, meta, date (YYYY-MM-DD), reading_time, category. Article HTML goes to blog/[slug].html",
+  "articles": [
+    {
+      "slug": "ejemplo-primer-articulo",
+      "title": "Guía completa: documentos para la regularización 2026",
+      "meta": "Todo lo que necesitas saber sobre los documentos requeridos para la regularización extraordinaria 2026 en España.",
+      "date": "2026-02-17",
+      "reading_time": "5 min",
+      "category": "guia",
+      "image": null
+    }
+  ]
+}
