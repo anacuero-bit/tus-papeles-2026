@@ -218,10 +218,24 @@
             {{CONTENT}}
         </div>
 
-        <div class="article-cta">
-            <h3>&iquest;Quieres saber si cumples los requisitos?</h3>
-            <a href="/verificar.html" class="btn btn-gold btn-lg">Verificar elegibilidad gratis</a>
-            <p>tuspapeles2026.es &middot; Abogados colegiados + tecnolog&iacute;a legal</p>
+        <!-- Article Navigation -->
+        <div id="article-nav" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0; margin: 30px 0; border-top: 1px solid #E5E7EB; border-bottom: 1px solid #E5E7EB; font-family: Inter, sans-serif;">
+            <a id="prev-article" href="#" style="display: none; text-decoration: none; color: #1E3A5F; font-size: 0.9rem; max-width: 45%;">
+                <span style="font-size: 0.75rem; color: #9CA3AF; display: block;">&larr; Anterior</span>
+                <span id="prev-title" style="font-weight: 600;"></span>
+            </a>
+            <div style="flex: 1;"></div>
+            <a id="next-article" href="#" style="display: none; text-decoration: none; color: #1E3A5F; font-size: 0.9rem; text-align: right; max-width: 45%;">
+                <span style="font-size: 0.75rem; color: #9CA3AF; display: block;">Siguiente &rarr;</span>
+                <span id="next-title" style="font-weight: 600;"></span>
+            </a>
+        </div>
+
+        <div style="background: linear-gradient(135deg, #1E3A5F 0%, #2C4A6E 100%); border-radius: 16px; padding: 40px; text-align: center; margin: 40px 0; color: white; font-family: Inter, sans-serif;">
+            <h3 style="font-size: 1.5rem; margin: 0 0 16px 0; font-weight: 700;">&iquest;Quieres saber si cumples los requisitos?</h3>
+            <p style="margin: 0 0 24px 0; opacity: 0.85; font-size: 0.95rem;">Comprueba tu elegibilidad gratis en 2 minutos. Sin compromiso.</p>
+            <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" style="display: inline-block; background: #E8D4A8; color: #1E3A5F; padding: 14px 32px; border-radius: 8px; font-weight: 700; font-size: 1rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Verificar elegibilidad gratis</a>
+            <p style="margin: 16px 0 0 0; font-size: 0.8rem; opacity: 0.6;">tuspapeles2026.es &middot; Abogados colegiados + tecnolog&iacute;a legal</p>
         </div>
     </main>
 
@@ -229,11 +243,8 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="/tp2026logo.svg" alt="tuspapeles2026" style="height:30px;width:auto;margin-bottom:15px;filter:sepia(1) saturate(3) brightness(1.2) hue-rotate(5deg);">
-                    <p>Servicio especializado en la regularizaci&oacute;n extraordinaria 2026. Te acompa&ntilde;amos en todo el proceso para que obtengas tu permiso de residencia y trabajo.</p>
-                    <div class="footer-badge">
-                        <span>Un servicio de profesionales del derecho especializados en extranjer&iacute;a</span>
-                    </div>
+                    <img src="/tp2026logo.svg" alt="tuspapeles2026" style="height:30px;width:auto;margin-bottom:15px;filter:brightness(0) invert(1);">
+                    <p>Servicio de regularizaci&oacute;n extraordinaria 2026, en colaboraci&oacute;n con abogados de extranjer&iacute;a colegiados en Espa&ntilde;a. Te acompa&ntilde;amos desde la verificaci&oacute;n de elegibilidad hasta la presentaci&oacute;n de tu solicitud.</p>
                 </div>
                 <div>
                     <h4>Navegaci&oacute;n</h4>
@@ -265,7 +276,7 @@
                 </div>
             </div>
             <div class="footer-disclaimer">
-                Servicio legal en colaboraci&oacute;n con Pombo &amp; Horowitz Abogados. tuspapeles2026 facilita la gesti&oacute;n de tr&aacute;mites de extranjer&iacute;a conforme a la normativa vigente.
+                Pombo, Horowitz &amp; Espinosa &middot; Abogados de extranjer&iacute;a &middot; Madrid
             </div>
             <div class="footer-bottom">
                 <div>&copy; 2026 tuspapeles2026.es</div>
@@ -275,11 +286,44 @@
     </footer>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Share bar URL replacement
         var title = encodeURIComponent(document.title);
         var url = encodeURIComponent(window.location.href);
         document.querySelectorAll('.article-share a').forEach(function(a) {
             a.href = a.href.replace('{{TITLE}}', title).replace('{{URL}}', url);
         });
+
+        // Prev/Next article navigation
+        var path = window.location.pathname;
+        var currentSlug = path.split('/').pop().replace('.html', '');
+        fetch('/blog/index.json')
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                var articles = data.articles || [];
+                var currentIndex = -1;
+                for (var i = 0; i < articles.length; i++) {
+                    if (articles[i].slug === currentSlug) {
+                        currentIndex = i;
+                        break;
+                    }
+                }
+                if (currentIndex === -1) return;
+                if (currentIndex > 0) {
+                    var prev = articles[currentIndex - 1];
+                    var prevEl = document.getElementById('prev-article');
+                    prevEl.href = '/blog/' + prev.slug + '.html';
+                    document.getElementById('prev-title').textContent = prev.title;
+                    prevEl.style.display = 'block';
+                }
+                if (currentIndex < articles.length - 1) {
+                    var next = articles[currentIndex + 1];
+                    var nextEl = document.getElementById('next-article');
+                    nextEl.href = '/blog/' + next.slug + '.html';
+                    document.getElementById('next-title').textContent = next.title;
+                    nextEl.style.display = 'block';
+                }
+            })
+            .catch(function(e) { console.log('Nav load error:', e); });
     });
     </script>
 </body>
