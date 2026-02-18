@@ -1863,6 +1863,17 @@
             line-height: 1.3;
         }
 
+        .update-card h4 a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .update-card h4 a:hover {
+            border-bottom-color: var(--navy);
+        }
+
         .update-card p {
             font-family: 'Inter', sans-serif;
             font-size: 0.9rem;
@@ -2744,8 +2755,43 @@
             .floating-telegram-label { display: none; }
             .channel-options { grid-template-columns: 1fr; }
             .hero-slots-counter { font-size: 0.8rem; padding: 8px 16px; }
-            .header-inner { justify-content: center; }
-            .header-right { display: none; }
+            .header-inner { justify-content: space-between; }
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            .header-right {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: white;
+                z-index: 1000;
+                padding: 80px 30px 30px;
+                flex-direction: column;
+            }
+            .header-right.active {
+                display: flex;
+            }
+            .header-right .nav {
+                flex-direction: column;
+                gap: 16px;
+                align-items: flex-start;
+                display: flex;
+            }
+            .header-right .nav a {
+                font-size: 1.1rem;
+                padding: 8px 0;
+                display: block;
+                width: 100%;
+            }
+            .header-right .nav .btn {
+                width: 100%;
+                text-align: center;
+                padding: 14px;
+                font-size: 1rem;
+            }
             .embajador-card { width: 120px; padding: 20px 12px; }
             .embajador-photo { width: 60px; height: 60px; }
             .programa-tiers {
@@ -2878,6 +2924,26 @@
             color: var(--gray-500);
             margin: 0;
         }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--navy);
+            transition: all 0.3s;
+        }
     </style>
 </head>
 <body>
@@ -2914,6 +2980,11 @@
                 <a href="/" class="logo">
                     <img src="tp2026logo.svg" alt="tuspapeles2026" style="height:36px;width:auto;">
                 </a>
+                <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <div class="header-right">
                     <nav class="nav">
                         <a href="informacion.html">Información</a>
@@ -2936,7 +3007,7 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <p class="hero-badge">🇪🇸 El portal del decreto de regularización en España</p>
+                <p class="hero-badge"><img src="https://flagcdn.com/w40/es.png" alt="España" style="width:20px; height:auto; vertical-align:middle; margin-right:6px; border-radius:2px;"> El portal del decreto de regularizaci&oacute;n en Espa&ntilde;a</p>
                 <h1>Todo sobre la <em>regularización 2026</em></h1>
                 <p class="hero-subtitle">La información más actualizada sobre el proceso.<br>Y el servicio para conseguir tus papeles.</p>
                 <p class="hero-tagline">Seguimos cada novedad desde el día uno. Miles nos pidieron ayuda. Creamos un servicio.</p>
@@ -2952,7 +3023,7 @@
                     </button>
 
                     <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="hero-cta-button telegram">
-                        <img class="cta-icon" src="https://telegram.org/img/t_logo.svg" alt="Telegram">
+                        <img class="cta-icon" src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="filter:brightness(0) invert(1);">
                         <span class="cta-main-text">Abrir asistente</span>
                         <span class="cta-subtext">Bot de Telegram 24/7</span>
                     </a>
@@ -3084,8 +3155,13 @@
                         <div class="update-card-top">
                             <span class="update-tag oficial">Oficial</span>
                         </div>
-                        <h4>Regularización Express 2026: El Gobierno Promete Resolver las Solicitudes en Solo 3 Meses</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">Regularización Express 2026: El Gobierno Promete Resolver las Solicitudes en Solo 3 Meses</a></h4>
                         <p>El Gobierno confirma que las solicitudes de regularización extraordinaria se presentarán entre abril y junio de 2026, con resolución garantizada en tres meses.</p>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=Regularizaci%C3%B3n%20Express%202026%3A%20El%20Gobierno%20Promete%20Resolver%20las%20Solicitudes%20en%20Solo%203%20Meses%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -3099,8 +3175,13 @@
                         <div class="update-card-top">
                             <span class="update-tag tramitacion">Tramitaci&oacute;n</span>
                         </div>
-                        <h4>¿Una &quot;errata del Gobierno&quot; facilitará la regularización en Canarias? Análisis de las últimas declaraciones</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">¿Una &quot;errata del Gobierno&quot; facilitará la regularización en Canarias? Análisis de las últimas declaraciones</a></h4>
                         <p>Un abogado de extranjería sugiere que una &quot;errata del Gobierno&quot; podría facilitar regularizaciones en Canarias, generando expectativas sobre posibles cambios en los requisitos.</p>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=%C2%BFUna%20errata%20del%20Gobierno%20facilitar%C3%A1%20la%20regularizaci%C3%B3n%20en%20Canarias%3F%20An%C3%A1lisis%20de%20las%20%C3%BAltimas%20declaraciones%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -3114,8 +3195,13 @@
                         <div class="update-card-top">
                             <span class="update-tag tramitacion">Tramitaci&oacute;n</span>
                         </div>
-                        <h4>¿Cómo saber si calificas para la Regularización 2026? Haz este test gratuito</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">¿Cómo saber si calificas para la Regularización 2026? Haz este test gratuito</a></h4>
                         <p>Descubre si puedes regularizar tu situación en España con la nueva ley de 2026. Test gratuito y guía completa con todos los requisitos actualizados.</p>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=%C2%BFC%C3%B3mo%20saber%20si%20calificas%20para%20la%20Regularizaci%C3%B3n%202026%3F%20Haz%20este%20test%20gratuito%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -3130,8 +3216,13 @@
                         <div class="update-card-top">
                             <span class="update-tag tramitacion">Tramitaci&oacute;n</span>
                         </div>
-                        <h4>Consejo de Estado contin&uacute;a la revisi&oacute;n del texto</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">Consejo de Estado contin&uacute;a la revisi&oacute;n del texto</a></h4>
                         <p>El Consejo de Estado sigue analizando el borrador del Real Decreto. Se espera su dictamen en los pr&oacute;ximos d&iacute;as h&aacute;biles. El calendario para apertura en abril se mantiene.</p>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=Consejo%20de%20Estado%20contin%C3%BAa%20la%20revisi%C3%B3n%20del%20texto%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -3145,8 +3236,13 @@
                         <div class="update-card-top">
                             <span class="update-tag tramitacion">Tramitaci&oacute;n</span>
                         </div>
-                        <h4>Polic&iacute;a detecta aumento de denuncias falsas de documentaci&oacute;n</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">Polic&iacute;a detecta aumento de denuncias falsas de documentaci&oacute;n</a></h4>
                         <p>La Comisar&iacute;a General de Extranjer&iacute;a alerta de un aumento del 60% en denuncias por p&eacute;rdida de pasaportes. Recuerdan que los documentos falsos descalifican autom&aacute;ticamente la solicitud.</p>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=Polic%C3%ADa%20detecta%20aumento%20de%20denuncias%20falsas%20de%20documentaci%C3%B3n%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -3160,8 +3256,13 @@
                         <div class="update-card-top">
                             <span class="update-tag oficial">Oficial</span>
                         </div>
-                        <h4>El Consejo Econ&oacute;mico y Social respalda la regularizaci&oacute;n</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">El Consejo Econ&oacute;mico y Social respalda la regularizaci&oacute;n</a></h4>
                         <p>El CES presenta su informe &ldquo;Realidad Migratoria en Espa&ntilde;a&rdquo; avalando el proceso. La ministra Elma Saiz confirma que el plan operativo est&aacute; en fase final. Espa&ntilde;a supera los 10 millones de residentes nacidos en el extranjero.</p>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=El%20Consejo%20Econ%C3%B3mico%20y%20Social%20respalda%20la%20regularizaci%C3%B3n%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -3175,8 +3276,13 @@
                         <div class="update-card-top">
                             <span class="update-tag tramitacion">Tramitaci&oacute;n</span>
                         </div>
-                        <h4>Real Decreto en fase de informes preceptivos</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">Real Decreto en fase de informes preceptivos</a></h4>
                         <p>Texto del Real Decreto en fase de informes preceptivos. Consejo de Estado revisando. Calendario previsto se mantiene.</p>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=Real%20Decreto%20en%20fase%20de%20informes%20preceptivos%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -3190,8 +3296,13 @@
                         <div class="update-card-top">
                             <span class="update-tag tramitacion">Tramitaci&oacute;n</span>
                         </div>
-                        <h4>Finaliza per&iacute;odo de audiencia p&uacute;blica</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">Finaliza per&iacute;odo de audiencia p&uacute;blica</a></h4>
                         <p>Finaliza per&iacute;odo de audiencia p&uacute;blica con m&aacute;s de 1.200 aportaciones.</p>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=Finaliza%20per%C3%ADodo%20de%20audiencia%20p%C3%BAblica%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -3205,9 +3316,14 @@
                         <div class="update-card-top">
                             <span class="update-tag oficial">Oficial</span>
                         </div>
-                        <h4>Ministerio de Inclusi&oacute;n confirma apertura en abril</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">Ministerio de Inclusi&oacute;n confirma apertura en abril</a></h4>
                         <p>Ministerio de Inclusi&oacute;n confirma apertura de solicitudes en abril.</p>
                         <span class="update-source">&#128279; Ministerio de Inclusi&oacute;n</span>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=Ministerio%20de%20Inclusi%C3%B3n%20confirma%20apertura%20en%20abril%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -3221,8 +3337,13 @@
                         <div class="update-card-top">
                             <span class="update-tag documento">Documento</span>
                         </div>
-                        <h4>Se publica el borrador del Real Decreto</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">Se publica el borrador del Real Decreto</a></h4>
                         <p>El Ministerio publica el texto provisional que modifica el Reglamento de Extranjer&iacute;a. Incluye dos v&iacute;as: una para solicitantes de asilo y otra para personas en situaci&oacute;n irregular.</p>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=Se%20publica%20el%20borrador%20del%20Real%20Decreto%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -3236,9 +3357,14 @@
                         <div class="update-card-top">
                             <span class="update-tag hito">Hito</span>
                         </div>
-                        <h4>El Consejo de Ministros aprueba la tramitaci&oacute;n urgente</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">El Consejo de Ministros aprueba la tramitaci&oacute;n urgente</a></h4>
                         <p>La ministra Elma Saiz anuncia la regularizaci&oacute;n extraordinaria. Beneficiar&aacute; a quienes estuvieran en Espa&ntilde;a antes del 31/12/2025 con al menos 5 meses de permanencia. No se requiere contrato de trabajo gracias a la cl&aacute;usula de vulnerabilidad.</p>
                         <span class="update-source">&#128279; La Moncloa</span>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=El%20Consejo%20de%20Ministros%20aprueba%20la%20tramitaci%C3%B3n%20urgente%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -3253,8 +3379,13 @@
                         <div class="update-card-top">
                             <span class="update-tag beneficio">Beneficio</span>
                         </div>
-                        <h4>Permiso provisional al admitir a tr&aacute;mite</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">Permiso provisional al admitir a tr&aacute;mite</a></h4>
                         <p>Gran novedad: desde la admisi&oacute;n a tr&aacute;mite (m&aacute;ximo 15 d&iacute;as), se podr&aacute; trabajar legalmente en cualquier sector y lugar de Espa&ntilde;a sin esperar la resoluci&oacute;n final.</p>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=Permiso%20provisional%20al%20admitir%20a%20tr%C3%A1mite%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -3268,8 +3399,13 @@
                         <div class="update-card-top">
                             <span class="update-tag beneficio">Beneficio</span>
                         </div>
-                        <h4>Protecci&oacute;n familiar incluida</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">Protecci&oacute;n familiar incluida</a></h4>
                         <p>Los hijos menores de los solicitantes podr&aacute;n regularizarse simult&aacute;neamente con un permiso de 5 a&ntilde;os. La unidad familiar es un pilar del nuevo decreto.</p>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=Protecci%C3%B3n%20familiar%20incluida%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -3283,8 +3419,13 @@
                         <div class="update-card-top">
                             <span class="update-tag politico">Pol&iacute;tico</span>
                         </div>
-                        <h4>Irene Montero adelanta el acuerdo</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">Irene Montero adelanta el acuerdo</a></h4>
                         <p>La eurodiputada de Podemos anuncia en un acto que el Gobierno ha acordado impulsar la regularizaci&oacute;n extraordinaria, retomando la ILP que consigui&oacute; m&aacute;s de 700.000 firmas.</p>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=Irene%20Montero%20adelanta%20el%20acuerdo%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -3298,8 +3439,13 @@
                         <div class="update-card-top">
                             <span class="update-tag historia">Historia</span>
                         </div>
-                        <h4>S&eacute;ptima regularizaci&oacute;n desde 1986</h4>
+                        <h4><a href="informacion.html" style="color: inherit; text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s;">S&eacute;ptima regularizaci&oacute;n desde 1986</a></h4>
                         <p>Espa&ntilde;a ha realizado 6 regularizaciones extraordinarias previas (1986, 1991, 1996, 2000, 2001, 2005). La de 2005, con gobierno del PSOE, regulariz&oacute; a casi 600.000 personas. Los gobiernos del PP (Aznar) regularizaron a m&aacute;s de 500.000 en 2000-2001.</p>
+                        <div style="display: flex; align-items: center; gap: 8px; margin-top: 8px;">
+                            <a href="https://wa.me/?text=S%C3%A9ptima%20regularizaci%C3%B3n%20desde%201986%20%E2%80%94%20tuspapeles2026.es%0Ahttps%3A%2F%2Ftuspapeles2026.es" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; justify-content:center; width:24px; height:24px; background:#25D366; border-radius:50%; flex-shrink:0;" title="Compartir por WhatsApp">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -3992,7 +4138,7 @@
                     <h3 class="programa-block-title" style="text-align: center;">&iquest;Quieres participar?</h3>
                     <div style="text-align: center;">
                         <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-lg">
-                            <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:20px;height:20px;vertical-align:middle;margin-right:8px;"> Obtener mi c&oacute;digo en Telegram
+                            <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:20px;height:20px;vertical-align:middle;margin-right:8px;filter:brightness(0) invert(1);"> Obtener mi c&oacute;digo en Telegram
                         </a>
                         <p>Es gratis. Sin compromiso. Tu c&oacute;digo no caduca.</p>
                     </div>
@@ -4104,7 +4250,7 @@
             <div class="hero-cta-container" style="margin-bottom: 0;">
                 <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="hero-cta-button telegram">
                     <span class="cta-badge">Recomendado</span>
-                    <img class="cta-icon" src="https://telegram.org/img/t_logo.svg" alt="Telegram">
+                    <img class="cta-icon" src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="filter:brightness(0) invert(1);">
                     <span class="cta-main-text">Comenzar gratis</span>
                     <span class="cta-subtext">Comienza tu regularizaci&oacute;n ahora</span>
                 </a>
@@ -4155,7 +4301,7 @@
 
                         <div class="bot-buttons">
                             <a href="https://t.me/TusPapeles2026Bot" class="btn btn-telegram btn-lg">
-                                <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;"> Abrir Bot de Telegram
+                                <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:20px;height:20px;vertical-align:middle;margin-right:6px;filter:brightness(0) invert(1);"> Abrir Bot de Telegram
                             </a>
                         </div>
                     </div>
@@ -4862,7 +5008,7 @@
 
             <div style="text-align: center; margin-top: 35px;">
                 <p style="color: var(--charcoal); margin-bottom: 15px;">&iquest;No encuentras tu pregunta?</p>
-                <a href="https://t.me/TusPapeles2026Bot" class="btn btn-telegram" target="_blank" rel="noopener noreferrer"><img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:22px;height:22px;vertical-align:middle;margin-right:8px;"> Preg&uacute;ntanos en Telegram</a>
+                <a href="https://t.me/TusPapeles2026Bot" class="btn btn-telegram" target="_blank" rel="noopener noreferrer"><img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:22px;height:22px;vertical-align:middle;margin-right:8px;filter:brightness(0) invert(1);"> Preg&uacute;ntanos en Telegram</a>
             </div>
         </div>
     </section>
@@ -4875,7 +5021,7 @@
 
             <div style="text-align: center; position: relative; z-index: 1; margin-top: 30px;">
                 <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="btn btn-telegram btn-large" style="font-size: 1.1rem; padding: 16px 36px;">
-                    <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:22px;height:22px;vertical-align:middle;margin-right:8px;"> Comenzar gratis
+                    <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:22px;height:22px;vertical-align:middle;margin-right:8px;filter:brightness(0) invert(1);"> Comenzar gratis
                 </a>
                 <p style="margin-top: 16px; font-family: 'Inter', sans-serif; font-size: 0.85rem; opacity: 0.6;">No cobramos hasta que el proceso sea oficial. Sin compromiso.</p>
             </div>
@@ -4888,7 +5034,6 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <img src="tp2026logo.svg" alt="tuspapeles2026" style="height:30px;width:auto;margin-bottom:15px;filter:brightness(0) invert(1);">
-                    <p style="font-size: 0.85rem; line-height: 1.7; opacity: 0.85;">El servicio de gesti&oacute;n documental y acompa&ntilde;amiento procesal de tuspapeles2026.es ha sido dise&ntilde;ado por Pombo, Horowitz &amp; Espinosa, Yellow Digital y expertos en inteligencia artificial independientes.</p>
                 </div>
                 <div>
                     <h4>Navegaci&oacute;n</h4>
@@ -4918,14 +5063,12 @@
                     </ul>
                 </div>
             </div>
-            <div class="footer-disclaimer" style="font-size: 0.75rem; line-height: 1.8; max-width: 800px; margin: 0 auto; text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                <p style="margin: 0 0 10px;">Pombo, Horowitz &amp; Espinosa es una joint venture entre profesionales del derecho de extranjer&iacute;a habilitados para el ejercicio de la abogac&iacute;a en Espa&ntilde;a y Pombo Horowitz De Irujo SAS. Los servicios de extranjer&iacute;a son prestados por abogados debidamente colegiados conforme a la normativa espa&ntilde;ola.</p>
-                <p style="margin: 0 0 10px;">La informaci&oacute;n contenida en este sitio web es de car&aacute;cter meramente informativo y no constituye asesoramiento jur&iacute;dico. Los resultados pasados no garantizan resultados futuros. El uso de este sitio web no establece una relaci&oacute;n abogado-cliente.</p>
-                <p style="margin: 0;">Consulte nuestra <a href="/privacidad" style="color: var(--gold); text-decoration: underline;">Pol&iacute;tica de Privacidad</a> y <a href="/cookies" style="color: var(--gold); text-decoration: underline;">Pol&iacute;tica de Cookies</a> para m&aacute;s informaci&oacute;n.</p>
-            </div>
             <div class="footer-bottom">
                 <div>&copy; 2026 tuspapeles2026.es</div>
                 <div>Informaci&oacute;n oficial: <a href="https://www.inclusion.gob.es">Ministerio de Inclusi&oacute;n</a></div>
+            </div>
+            <div style="margin-top: 20px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,0.08); font-family: 'Inter', sans-serif; font-size: 0.7rem; line-height: 1.8; color: rgba(255,255,255,0.45); text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+                El servicio de gesti&oacute;n documental y acompa&ntilde;amiento procesal de tuspapeles2026.es ha sido dise&ntilde;ado por Pombo, Horowitz &amp; Espinosa, Yellow Digital y expertos en inteligencia artificial independientes. Pombo, Horowitz &amp; Espinosa es una UTE entre profesionales del derecho de extranjer&iacute;a habilitados para el ejercicio de la abogac&iacute;a en Espa&ntilde;a y Pombo Horowitz De Irujo SAS. Los servicios de extranjer&iacute;a son prestados por abogados debidamente colegiados conforme a la normativa espa&ntilde;ola. La informaci&oacute;n contenida en este sitio web es de car&aacute;cter meramente informativo y no constituye asesoramiento jur&iacute;dico. Los resultados pasados no garantizan resultados futuros. El uso de este sitio web no establece una relaci&oacute;n abogado-cliente. Consulte nuestra <a href="/privacidad" style="color: rgba(255,255,255,0.6); text-decoration: underline;">Pol&iacute;tica de Privacidad</a> y <a href="/cookies" style="color: rgba(255,255,255,0.6); text-decoration: underline;">Pol&iacute;tica de Cookies</a> para m&aacute;s informaci&oacute;n.
             </div>
         </div>
     </footer>
@@ -4933,7 +5076,7 @@
     <!-- Floating Telegram Button -->
     <div class="floating-telegram">
         <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" title="Abrir Telegram">
-            <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:30px;height:30px;">
+            <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:30px;height:30px;filter:brightness(0) invert(1);">
         </a>
     </div>
 
@@ -4951,7 +5094,7 @@
 
             <!-- Header -->
             <div style="background:linear-gradient(135deg, #1E3A5F 0%, #2C4A6E 100%); padding:30px 30px 24px; border-radius:20px 20px 0 0; text-align:center; color:white;">
-                <p style="font-size:0.8rem; opacity:0.7; margin:0 0 8px; font-family:'Inter',sans-serif;">🇪🇸 Regularización 2026</p>
+                <p style="font-size:0.8rem; opacity:0.7; margin:0 0 8px; font-family:'Inter',sans-serif;"><img src="https://flagcdn.com/w40/es.png" alt="España" style="width:16px; height:auto; vertical-align:middle; margin-right:4px; border-radius:2px;"> Regularización 2026</p>
                 <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; margin:0 0 8px;">¿Calificas para la regularización?</h3>
                 <p style="font-size:0.9rem; opacity:0.8; margin:0; font-family:'Inter',sans-serif;">Responde 3 preguntas. Sin compromiso.</p>
             </div>
@@ -5077,6 +5220,26 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeEligibilityModal();
         });
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            var headerRight = document.querySelector('.header-right');
+            var toggle = document.querySelector('.mobile-menu-toggle');
+            headerRight.classList.toggle('active');
+            toggle.classList.toggle('active');
+            document.body.style.overflow = headerRight.classList.contains('active') ? 'hidden' : '';
+        }
+
+        // Close mobile menu when a nav link is clicked
+        var navLinks = document.querySelectorAll('.nav a');
+        for (var nl = 0; nl < navLinks.length; nl++) {
+            navLinks[nl].addEventListener('click', function() {
+                var headerRight = document.querySelector('.header-right');
+                if (headerRight.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+        }
 
         // Embajadores Carousel
         function scrollEmbajadores(direction) {
@@ -5250,7 +5413,7 @@
 
             function updateCounterUI() {
                 var count = getWaitlistCount();
-                var els = document.querySelectorAll('#waitlist-count, #stat-waitlist');
+                var els = document.querySelectorAll('#waitlist-count, #stat-waitlist, #ticker-count, #ticker-count-2');
                 for (var i = 0; i < els.length; i++) {
                     els[i].textContent = formatNumber(count);
                 }
