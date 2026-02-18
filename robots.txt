@@ -5,3 +5,4 @@ Sitemap: https://tuspapeles2026.es/sitemap.xml
 
 # Block client portal from indexing
 Disallow: /mi-caso.html
+Disallow: /deck/
