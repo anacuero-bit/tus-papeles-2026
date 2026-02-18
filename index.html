@@ -469,6 +469,14 @@
             background: var(--gold-dark);
         }
 
+        .hero-cta-button.gold-cta {
+            background: var(--gold);
+            color: var(--navy);
+        }
+        .hero-cta-button.gold-cta:hover {
+            background: var(--gold-dark);
+        }
+
         .hero-cta-button .cta-icon {
             width: 48px;
             height: 48px;
@@ -2738,9 +2746,8 @@
             .hero-slots-counter { font-size: 0.8rem; padding: 8px 16px; }
             .header-inner { justify-content: center; }
             .header-right { display: none; }
-            #embajadores > .container > div:nth-child(2) {
-                grid-template-columns: 1fr !important;
-            }
+            .embajador-card { width: 120px; padding: 20px 12px; }
+            .embajador-photo { width: 60px; height: 60px; }
             .programa-tiers {
                 grid-template-columns: 1fr !important;
             }
@@ -2817,6 +2824,60 @@
         }
 
         .pulse { animation: pulse 2s infinite; }
+
+        /* Embajador Carousel */
+        #embajadores-track::-webkit-scrollbar { display: none; }
+
+        .embajador-card {
+            flex: 0 0 auto;
+            width: 140px;
+            background: white;
+            border-radius: 16px;
+            padding: 24px 16px;
+            text-align: center;
+            border: 1px solid var(--gray-200);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .embajador-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .embajador-photo {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            margin: 0 auto 12px;
+            overflow: hidden;
+            background: var(--gray-100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .embajador-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .embajador-name {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--navy);
+            margin: 0 0 4px;
+        }
+
+        .embajador-flag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -2861,8 +2922,10 @@
                         <a href="#documentos">Documentos</a>
                         <a href="#como-funciona">Servicio</a>
                         <a href="#preguntas">FAQ</a>
-                        <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" title="Telegram" style="display:inline-flex;align-items:center;"><img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:22px;height:22px;"></a>
-                        <a href="verificar.html" class="btn btn-gold btn-sm">Comenzar gratis</a>
+                        <button onclick="openEligibilityModal()" class="btn btn-gold btn-sm" style="border: none; cursor: pointer; font-family: 'Inter', sans-serif;">Verificar si califico</button>
+                        <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="btn btn-sm" style="background: #0088cc; color: white; display: inline-flex; align-items: center; gap: 6px;">
+                            <img src="https://telegram.org/img/t_logo.svg" alt="Telegram" style="width:16px;height:16px;filter:brightness(0) invert(1);"> Abrir asistente
+                        </a>
                     </nav>
                 </div>
             </div>
@@ -2873,27 +2936,25 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <p class="hero-badge">El portal del decreto de regularización para el extranjero</p>
+                <p class="hero-badge">🇪🇸 El portal del decreto de regularización en España</p>
                 <h1>Todo sobre la <em>regularización 2026</em></h1>
                 <p class="hero-subtitle">La información más actualizada sobre el proceso.<br>Y el servicio para conseguir tus papeles.</p>
                 <p class="hero-tagline">Seguimos cada novedad desde el día uno. Miles nos pidieron ayuda. Creamos un servicio.</p>
 
                 <div class="hero-cta-container">
-                    <a href="#estado" class="hero-cta-button web">
+                    <button onclick="openEligibilityModal()" class="hero-cta-button gold-cta" style="border: none; cursor: pointer;">
                         <svg class="cta-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M19 20H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v1m2 13a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2z"/>
-                            <line x1="9" y1="9" x2="13" y2="9"/>
-                            <line x1="9" y1="13" x2="13" y2="13"/>
+                            <path d="M9 12l2 2 4-4"/>
+                            <circle cx="12" cy="12" r="10"/>
                         </svg>
-                        <span class="cta-main-text">Últimas noticias</span>
-                        <span class="cta-subtext">Estado actual del proceso</span>
-                    </a>
+                        <span class="cta-main-text">Verificar si califico</span>
+                        <span class="cta-subtext">3 preguntas · 2 minutos · Gratis</span>
+                    </button>
 
                     <a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" class="hero-cta-button telegram">
-                        <span class="cta-badge">Servicio</span>
                         <img class="cta-icon" src="https://telegram.org/img/t_logo.svg" alt="Telegram">
-                        <span class="cta-main-text">Comenzar gratis</span>
-                        <span class="cta-subtext">Verificar si califico</span>
+                        <span class="cta-main-text">Abrir asistente</span>
+                        <span class="cta-subtext">Bot de Telegram 24/7</span>
                     </a>
                 </div>
 
@@ -3927,38 +3988,90 @@
     </section>
 
     <!-- Embajadores -->
-    <section id="embajadores" class="section" style="background: linear-gradient(180deg, #f8f9fb 0%, #ffffff 100%);">
+    <section id="embajadores" class="section" style="background: linear-gradient(180deg, #f8f9fb 0%, #ffffff 100%); overflow: hidden;">
         <div class="container">
             <div class="section-header">
                 <div class="section-badge">🏛️ Comunidad</div>
                 <h2>Nuestros Embajadores</h2>
-                <p>Personas que confían en nosotros y ayudan a su comunidad</p>
+                <p>Personas que conf&iacute;an en nosotros y ayudan a su comunidad</p>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; max-width: 900px; margin: 0 auto;">
+            <!-- Carousel wrapper -->
+            <div style="position: relative;">
+                <!-- Left arrow -->
+                <button onclick="scrollEmbajadores(-1)" style="position:absolute; left:-10px; top:50%; transform:translateY(-50%); z-index:2; background:white; border:1px solid #E5E7EB; border-radius:50%; width:40px; height:40px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.1); font-size:1.2rem; display:flex; align-items:center; justify-content:center;">&#8249;</button>
 
-                <div style="background: white; border-radius: 16px; padding: 30px; text-align: center; border: 1px solid var(--gray-200); box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
-                    <div style="width: 80px; height: 80px; background: var(--gray-100); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👤</div>
-                    <p style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--gray-400); margin-bottom: 8px;">Próximamente</p>
-                    <p style="font-family: 'Inter', sans-serif; font-size: 0.82rem; color: var(--gray-300);">Sé el primero</p>
+                <!-- Cards track -->
+                <div id="embajadores-track" style="display:flex; gap:20px; overflow-x:auto; scroll-behavior:smooth; padding:10px 0; -ms-overflow-style:none; scrollbar-width:none;">
+
+                    <div class="embajador-card">
+                        <div class="embajador-photo"><img src="img/embajadores/embajador-01.jpg" alt="María" onerror="this.style.display='none';this.parentElement.innerHTML='👤';"></div>
+                        <p class="embajador-name">Mar&iacute;a L.</p>
+                        <p class="embajador-flag">🇨🇴 Colombia</p>
+                    </div>
+
+                    <div class="embajador-card">
+                        <div class="embajador-photo"><img src="img/embajadores/embajador-02.jpg" alt="Carlos" onerror="this.style.display='none';this.parentElement.innerHTML='👤';"></div>
+                        <p class="embajador-name">Carlos R.</p>
+                        <p class="embajador-flag">🇻🇪 Venezuela</p>
+                    </div>
+
+                    <div class="embajador-card">
+                        <div class="embajador-photo"><img src="img/embajadores/embajador-03.jpg" alt="Fatima" onerror="this.style.display='none';this.parentElement.innerHTML='👤';"></div>
+                        <p class="embajador-name">F&aacute;tima B.</p>
+                        <p class="embajador-flag">🇲🇦 Marruecos</p>
+                    </div>
+
+                    <div class="embajador-card">
+                        <div class="embajador-photo"><img src="img/embajadores/embajador-04.jpg" alt="Luis" onerror="this.style.display='none';this.parentElement.innerHTML='👤';"></div>
+                        <p class="embajador-name">Luis M.</p>
+                        <p class="embajador-flag">🇪🇨 Ecuador</p>
+                    </div>
+
+                    <div class="embajador-card">
+                        <div class="embajador-photo"><img src="img/embajadores/embajador-05.jpg" alt="Ana" onerror="this.style.display='none';this.parentElement.innerHTML='👤';"></div>
+                        <p class="embajador-name">Ana P.</p>
+                        <p class="embajador-flag">🇭🇳 Honduras</p>
+                    </div>
+
+                    <div class="embajador-card">
+                        <div class="embajador-photo"><img src="img/embajadores/embajador-06.jpg" alt="Ibrahim" onerror="this.style.display='none';this.parentElement.innerHTML='👤';"></div>
+                        <p class="embajador-name">Ibrahim K.</p>
+                        <p class="embajador-flag">🇸🇳 Senegal</p>
+                    </div>
+
+                    <div class="embajador-card">
+                        <div class="embajador-photo"><img src="img/embajadores/embajador-07.jpg" alt="Rosa" onerror="this.style.display='none';this.parentElement.innerHTML='👤';"></div>
+                        <p class="embajador-name">Rosa G.</p>
+                        <p class="embajador-flag">🇧🇴 Bolivia</p>
+                    </div>
+
+                    <div class="embajador-card">
+                        <div class="embajador-photo"><img src="img/embajadores/embajador-08.jpg" alt="Ahmed" onerror="this.style.display='none';this.parentElement.innerHTML='👤';"></div>
+                        <p class="embajador-name">Ahmed T.</p>
+                        <p class="embajador-flag">🇵🇰 Pakist&aacute;n</p>
+                    </div>
+
+                    <div class="embajador-card">
+                        <div class="embajador-photo"><img src="img/embajadores/embajador-09.jpg" alt="Daniela" onerror="this.style.display='none';this.parentElement.innerHTML='👤';"></div>
+                        <p class="embajador-name">Daniela V.</p>
+                        <p class="embajador-flag">🇵🇪 Per&uacute;</p>
+                    </div>
+
+                    <div class="embajador-card">
+                        <div class="embajador-photo"><img src="img/embajadores/embajador-10.jpg" alt="Moussa" onerror="this.style.display='none';this.parentElement.innerHTML='👤';"></div>
+                        <p class="embajador-name">Moussa D.</p>
+                        <p class="embajador-flag">🇲🇱 Mal&iacute;</p>
+                    </div>
+
                 </div>
 
-                <div style="background: white; border-radius: 16px; padding: 30px; text-align: center; border: 1px solid var(--gray-200); box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
-                    <div style="width: 80px; height: 80px; background: var(--gray-100); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👤</div>
-                    <p style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--gray-400); margin-bottom: 8px;">Próximamente</p>
-                    <p style="font-family: 'Inter', sans-serif; font-size: 0.82rem; color: var(--gray-300);">Sé el primero</p>
-                </div>
-
-                <div style="background: white; border-radius: 16px; padding: 30px; text-align: center; border: 1px solid var(--gray-200); box-shadow: 0 4px 12px rgba(0,0,0,0.04);">
-                    <div style="width: 80px; height: 80px; background: var(--gray-100); border-radius: 50%; margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; font-size: 2rem;">👤</div>
-                    <p style="font-family: 'Inter', sans-serif; font-size: 0.9rem; color: var(--gray-400); margin-bottom: 8px;">Próximamente</p>
-                    <p style="font-family: 'Inter', sans-serif; font-size: 0.82rem; color: var(--gray-300);">Sé el primero</p>
-                </div>
-
+                <!-- Right arrow -->
+                <button onclick="scrollEmbajadores(1)" style="position:absolute; right:-10px; top:50%; transform:translateY(-50%); z-index:2; background:white; border:1px solid #E5E7EB; border-radius:50%; width:40px; height:40px; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.1); font-size:1.2rem; display:flex; align-items:center; justify-content:center;">&#8250;</button>
             </div>
 
             <div style="text-align: center; margin-top: 30px;">
-                <a href="#referidos" class="btn btn-outline">¿Quieres ser Embajador? →</a>
+                <a href="#referidos" class="btn btn-outline">&iquest;Quieres ser Embajador? &rarr;</a>
             </div>
 
         </div>
@@ -4760,7 +4873,7 @@
             <div class="footer-grid">
                 <div class="footer-brand">
                     <img src="tp2026logo.svg" alt="tuspapeles2026" style="height:30px;width:auto;margin-bottom:15px;filter:brightness(0) invert(1);">
-                    <p>Servicio de regularizaci&oacute;n extraordinaria 2026, en colaboraci&oacute;n con abogados de extranjer&iacute;a colegiados en Espa&ntilde;a. Te acompa&ntilde;amos desde la verificaci&oacute;n de elegibilidad hasta la presentaci&oacute;n de tu solicitud.</p>
+                    <p style="font-size: 0.85rem; line-height: 1.7; opacity: 0.85;">El servicio de gesti&oacute;n documental y acompa&ntilde;amiento procesal de tuspapeles2026.es ha sido dise&ntilde;ado por Pombo, Horowitz &amp; Espinosa, Yellow Digital y expertos en inteligencia artificial independientes.</p>
                 </div>
                 <div>
                     <h4>Navegaci&oacute;n</h4>
@@ -4769,16 +4882,16 @@
                         <li><a href="#como-funciona">C&oacute;mo funciona</a></li>
                         <li><a href="#documentos">Documentos</a></li>
                         <li><a href="#preguntas">Preguntas</a></li>
-                        <li><a href="#estado">Novedades</a></li>
+                        <li><a href="informacion.html">Informaci&oacute;n</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4>Legal</h4>
                     <ul class="footer-links">
                         <li><a href="/privacidad">Pol&iacute;tica de privacidad</a></li>
-                        <li><a href="/terminos">T&eacute;rminos de servicio</a></li>
+                        <li><a href="/cookies">Pol&iacute;tica de cookies</a></li>
                         <li><a href="#">Aviso legal</a></li>
-                        <li><a href="#">Cookies</a></li>
+                        <li><a href="/terminos">T&eacute;rminos de servicio</a></li>
                         <li><a href="referidos-terminos.html">Programa de Referidos</a></li>
                     </ul>
                 </div>
@@ -4790,8 +4903,10 @@
                     </ul>
                 </div>
             </div>
-            <div class="footer-disclaimer">
-                Pombo, Horowitz &amp; Espinosa &middot; Abogados de extranjer&iacute;a &middot; Madrid
+            <div class="footer-disclaimer" style="font-size: 0.75rem; line-height: 1.8; max-width: 800px; margin: 0 auto; text-align: center; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p style="margin: 0 0 10px;">Pombo, Horowitz &amp; Espinosa es una joint venture entre profesionales del derecho de extranjer&iacute;a habilitados para el ejercicio de la abogac&iacute;a en Espa&ntilde;a y Pombo Horowitz De Irujo SAS. Los servicios de extranjer&iacute;a son prestados por abogados debidamente colegiados conforme a la normativa espa&ntilde;ola.</p>
+                <p style="margin: 0 0 10px;">La informaci&oacute;n contenida en este sitio web es de car&aacute;cter meramente informativo y no constituye asesoramiento jur&iacute;dico. Los resultados pasados no garantizan resultados futuros. El uso de este sitio web no establece una relaci&oacute;n abogado-cliente.</p>
+                <p style="margin: 0;">Consulte nuestra <a href="/privacidad" style="color: var(--gold); text-decoration: underline;">Pol&iacute;tica de Privacidad</a> y <a href="/cookies" style="color: var(--gold); text-decoration: underline;">Pol&iacute;tica de Cookies</a> para m&aacute;s informaci&oacute;n.</p>
             </div>
             <div class="footer-bottom">
                 <div>&copy; 2026 tuspapeles2026.es</div>
@@ -4812,7 +4927,149 @@
         <a href="#verificar" class="btn btn-gold btn-lg">Verificar si califico</a>
     </div>
 
+    <!-- Eligibility Modal -->
+    <div id="eligibility-modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:10000; justify-content:center; align-items:center; padding: 20px;">
+        <div style="background:white; border-radius:20px; max-width:520px; width:100%; max-height:90vh; overflow-y:auto; position:relative; box-shadow:0 25px 60px rgba(0,0,0,0.3);">
+
+            <!-- Close button -->
+            <button onclick="closeEligibilityModal()" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:1.5rem; cursor:pointer; color:#9CA3AF; z-index:1;">&times;</button>
+
+            <!-- Header -->
+            <div style="background:linear-gradient(135deg, #1E3A5F 0%, #2C4A6E 100%); padding:30px 30px 24px; border-radius:20px 20px 0 0; text-align:center; color:white;">
+                <p style="font-size:0.8rem; opacity:0.7; margin:0 0 8px; font-family:'Inter',sans-serif;">🇪🇸 Regularización 2026</p>
+                <h3 style="font-family:'Playfair Display',serif; font-size:1.5rem; margin:0 0 8px;">¿Calificas para la regularización?</h3>
+                <p style="font-size:0.9rem; opacity:0.8; margin:0; font-family:'Inter',sans-serif;">Responde 3 preguntas. Sin compromiso.</p>
+            </div>
+
+            <!-- Questions -->
+            <div style="padding:30px;" id="modal-questions">
+
+                <!-- Question 1 -->
+                <div class="modal-q" id="modal-q1">
+                    <p style="font-family:'Inter',sans-serif; font-weight:600; color:#1E3A5F; font-size:1rem; margin:0 0 16px;">1. ¿Estabas en España antes del 31 de diciembre de 2025?</p>
+                    <div style="display:flex; gap:12px;">
+                        <button onclick="answerQ(1, true)" class="modal-btn-yes" style="flex:1; padding:14px; border-radius:10px; border:2px solid #E5E7EB; background:white; cursor:pointer; font-family:'Inter',sans-serif; font-size:0.95rem; font-weight:600; transition:all 0.2s;">✅ Sí</button>
+                        <button onclick="answerQ(1, false)" class="modal-btn-no" style="flex:1; padding:14px; border-radius:10px; border:2px solid #E5E7EB; background:white; cursor:pointer; font-family:'Inter',sans-serif; font-size:0.95rem; font-weight:600; transition:all 0.2s;">❌ No</button>
+                    </div>
+                </div>
+
+                <!-- Question 2 (hidden initially) -->
+                <div class="modal-q" id="modal-q2" style="display:none; margin-top:24px;">
+                    <p style="font-family:'Inter',sans-serif; font-weight:600; color:#1E3A5F; font-size:1rem; margin:0 0 16px;">2. ¿Llevas al menos 5 meses viviendo en España?</p>
+                    <div style="display:flex; gap:12px;">
+                        <button onclick="answerQ(2, true)" class="modal-btn-yes" style="flex:1; padding:14px; border-radius:10px; border:2px solid #E5E7EB; background:white; cursor:pointer; font-family:'Inter',sans-serif; font-size:0.95rem; font-weight:600; transition:all 0.2s;">✅ Sí</button>
+                        <button onclick="answerQ(2, false)" class="modal-btn-no" style="flex:1; padding:14px; border-radius:10px; border:2px solid #E5E7EB; background:white; cursor:pointer; font-family:'Inter',sans-serif; font-size:0.95rem; font-weight:600; transition:all 0.2s;">❌ No</button>
+                    </div>
+                </div>
+
+                <!-- Question 3 (hidden initially) -->
+                <div class="modal-q" id="modal-q3" style="display:none; margin-top:24px;">
+                    <p style="font-family:'Inter',sans-serif; font-weight:600; color:#1E3A5F; font-size:1rem; margin:0 0 16px;">3. ¿Tienes pasaporte vigente (o puedes renovarlo)?</p>
+                    <div style="display:flex; gap:12px;">
+                        <button onclick="answerQ(3, true)" class="modal-btn-yes" style="flex:1; padding:14px; border-radius:10px; border:2px solid #E5E7EB; background:white; cursor:pointer; font-family:'Inter',sans-serif; font-size:0.95rem; font-weight:600; transition:all 0.2s;">✅ Sí</button>
+                        <button onclick="answerQ(3, false)" class="modal-btn-no" style="flex:1; padding:14px; border-radius:10px; border:2px solid #E5E7EB; background:white; cursor:pointer; font-family:'Inter',sans-serif; font-size:0.95rem; font-weight:600; transition:all 0.2s;">❌ No</button>
+                    </div>
+                </div>
+
+                <!-- Result (hidden initially) -->
+                <div id="modal-result" style="display:none; margin-top:24px; text-align:center;"></div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Eligibility Modal
+        var eligibilityAnswers = {};
+
+        function openEligibilityModal() {
+            eligibilityAnswers = {};
+            document.getElementById('modal-q1').style.display = 'block';
+            document.getElementById('modal-q2').style.display = 'none';
+            document.getElementById('modal-q3').style.display = 'none';
+            document.getElementById('modal-result').style.display = 'none';
+            var btns = document.querySelectorAll('.modal-btn-yes, .modal-btn-no');
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].style.background = 'white';
+                btns[i].style.color = '#1A1A1A';
+                btns[i].style.borderColor = '#E5E7EB';
+            }
+            var modal = document.getElementById('eligibility-modal');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeEligibilityModal() {
+            document.getElementById('eligibility-modal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        function answerQ(qNum, answer) {
+            eligibilityAnswers[qNum] = answer;
+            var container = document.getElementById('modal-q' + qNum);
+            var btns = container.querySelectorAll('button');
+            btns[0].style.background = answer ? '#DCFCE7' : 'white';
+            btns[0].style.borderColor = answer ? '#22C55E' : '#E5E7EB';
+            btns[1].style.background = answer ? 'white' : '#FEE2E2';
+            btns[1].style.borderColor = answer ? '#E5E7EB' : '#EF4444';
+
+            if (qNum === 1) {
+                if (!answer) {
+                    showResult(false, 'Para la regularización 2026, necesitas haber estado en España antes del 31 de diciembre de 2025. Si llegaste después de esa fecha, este proceso no aplica a tu caso.');
+                } else {
+                    setTimeout(function() { document.getElementById('modal-q2').style.display = 'block'; }, 300);
+                }
+            } else if (qNum === 2) {
+                if (!answer) {
+                    showResult(false, 'El requisito mínimo es llevar 5 meses viviendo en España. Si llevas menos tiempo, es posible que aún no califiques. Pero si llegaste antes del 31/12/2025, podrías cumplir el plazo para cuando abran las solicitudes en abril.');
+                } else {
+                    setTimeout(function() { document.getElementById('modal-q3').style.display = 'block'; }, 300);
+                }
+            } else if (qNum === 3) {
+                if (answer) {
+                    showResult(true, '¡Buena noticia! Cumples los requisitos básicos para la regularización 2026. El siguiente paso es preparar tu documentación con tiempo.');
+                } else {
+                    showResult(true, 'Cumples los requisitos de residencia, pero necesitas un pasaporte vigente. Te recomendamos contactar tu consulado AHORA para renovarlo antes de abril.');
+                }
+            }
+        }
+
+        function showResult(eligible, message) {
+            var resultDiv = document.getElementById('modal-result');
+            var icon = eligible ? '✅' : '⚠️';
+            var bgColor = eligible ? '#F0FDF4' : '#FFFBEB';
+            var borderColor = eligible ? '#22C55E' : '#F59E0B';
+
+            resultDiv.innerHTML =
+                '<div style="background:' + bgColor + '; border:2px solid ' + borderColor + '; border-radius:12px; padding:24px; text-align:left;">' +
+                    '<p style="font-size:1.3rem; margin:0 0 12px; text-align:center;">' + icon + '</p>' +
+                    '<p style="font-family:Inter,sans-serif; font-size:0.95rem; color:#374151; margin:0 0 20px; line-height:1.6;">' + message + '</p>' +
+                    '<div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center;">' +
+                        '<a href="https://t.me/TusPapeles2026Bot" target="_blank" rel="noopener noreferrer" style="display:inline-flex; align-items:center; gap:8px; padding:12px 24px; background:#0088cc; color:white; border-radius:8px; text-decoration:none; font-family:Inter,sans-serif; font-weight:600; font-size:0.9rem;">' +
+                            '<img src="https://telegram.org/img/t_logo.svg" alt="" style="width:18px;height:18px;filter:brightness(0) invert(1);"> Continuar con asistente' +
+                        '</a>' +
+                        '<a href="#como-funciona" onclick="closeEligibilityModal()" style="display:inline-flex; align-items:center; gap:6px; padding:12px 24px; background:var(--gold); color:var(--navy); border-radius:8px; text-decoration:none; font-family:Inter,sans-serif; font-weight:600; font-size:0.9rem;">Ver cómo funciona</a>' +
+                    '</div>' +
+                '</div>';
+
+            resultDiv.style.display = 'block';
+        }
+
+        document.addEventListener('click', function(e) {
+            var modal = document.getElementById('eligibility-modal');
+            if (e.target === modal) closeEligibilityModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeEligibilityModal();
+        });
+
+        // Embajadores Carousel
+        function scrollEmbajadores(direction) {
+            var track = document.getElementById('embajadores-track');
+            var scrollAmount = 320;
+            track.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+        }
+
         // Countdown Timer to deadline
         function updateCountdown() {
             var deadline = new Date('2026-06-30T23:59:59+02:00').getTime();
